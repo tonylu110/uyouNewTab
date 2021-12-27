@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="shortcut icon" href="imgs/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/cal.css">
+    <script src="js/function.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/print.js"></script>
+    <script src="js/cal.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/history.js"></script>
+</head>
+<body id="background">
+    <!-- This is top-left button -->
+    <div class="title" id="title">
+        <div class="titleButton" id="hide"><img src="imgs/hide.png"></div><!--hide button-->
+        <div class="titleButton" id="history"><img src="imgs/fy_ic_history.png"></div><!--history button-->
+        <div class="titleButton" id="reload"><img src="imgs/reload.png"></div><!--reload button-->
+        <div class="titleButton" id="cal"><img src="imgs/calculator.png"></div><!--calculator button-->
+        <div class="titleButton" id="clock"><img src="imgs/timer.png"></div><!--clock button-->
+    </div>
+    <!-- This is history bar -->
+    <div class="bar" id="bar">
+        <div class="historyButton">
+            <div class="historyback" id="historyback">
+                <img id="imgbefore" src="imgs/back_black.png">
+            </div>
+        </div>
+        <div id="historyIn"></div>
+    </div>
+    <!-- This is searchmain area -->
+    <div class="main" id="main">
+        <div class="searchbar" id="searchbar"><!--search bar-->
+            <img id="searchEngine" src="imgs/google.png">
+            <input type="text" id="keywords">
+        </div>
+        <!-- This is moreSearch area -->
+        <div class="moreSearch" id="moreSearch" hidden>
+            <div class="searchEngines"><!--set search engine-->
+                <div onclick="onGoogle()" id="google"><img src="imgs/google.png"></div><!--google-->
+                <div onclick="onBing()" id="bing" style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png"></div><!--bing-->
+                <div onclick="onBaidu()" id="baidu" style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png"></div><!--baidu-->
+            </div>
+        </div>
+
+        <div class="link" id="mainlink"><!--links-->
+            <a href="https://google.com"><div><img src="imgs/google.png"></div></a><!--google link-->
+            <a href="https://youtube.com"><div><img src="imgs/youtube.png"></div></a><!--youtube link-->
+            <a href="https://bing.com"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png"></div></a><!--bing link-->
+            <a href="https://baidu.com"><div style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png"></div></a><!--baidu link-->
+            <a href="https://bilibili.com"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/icon_bilibili-circle.png"></div></a><!--bilibili link-->
+            <a href="https://ithome.com" id="ithome"><div style="padding: 10px; width: 80px; height: 80px;"><img src="imgs/IT之家.png"></div></a><!--ithome link-->
+            <a href="https://chrome.google.com/webstore/category/extensions" id="chromeStore"><div><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" ></div></a><!--chrome web store link-->
+            <a href="https://www.aliyun.com/" id="aliyun"><div style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/阿里云.png"></div></a><!--aliyun link-->
+            <a href="https://azure.microsoft.com/zh-cn/" id="azure"><div><img src="imgs/azure-blue.png"></div></a><!--azure link-->
+            <a href="https://github.com"><div><img src="imgs/GitHub.png"></div></a><!--github link-->
+        </div>
+    </div>
+    <!-- This is calculator area -->
+    <div class="mainCal" id="mainCal" hidden>
+        <form class="card" name="cal" action="" id="card"><!--calculator card-->
+            <input type="text" class="value" id="txt" readonly="readonly" />
+            <span class="clear" id="clear" style="margin-left: 10px;">c</span>
+            <span class="num" id="/">/</span>
+            <span class="num" id="*" style="margin-right: 10px;">*</span>
+            <span class="num" id="7" style="margin-left: 10px;">7</span>
+            <span class="num" id="8">8</span>
+            <span class="num" id="9">9</span>
+            <span class="num" id="-">-</span>
+            <span class="num" id="4" style="margin-left: 10px;">4</span>
+            <span class="num" id="5">5</span>
+            <span class="num" id="6">6</span>
+            <span class="num" id="+">+</span>
+            <span class="num" id="1" style="margin-left: 10px;">1</span>
+            <span class="num" id="2">2</span>
+            <span class="num" id="3">3</span>
+            <span class="num" id="0">0</span>
+            <span class="num" id="00" style="margin-left: 10px;">00</span>
+            <span class="num" id=".">.</span>
+            <span class="result" id="result">=</span>
+        </form>
+    </div>
+    <!-- This is Clock area -->
+    <div class="mainClock" id="mainClock" style="display: none;">
+        <div id="time"></div>
+    </div>
+    <a href="neumorphismindex.html" class="button" id="button">neumorphism</a>
+</body>
+</html>

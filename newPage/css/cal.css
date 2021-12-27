@@ -1,0 +1,61 @@
+/* cal css */
+.mainCal{
+    position: relative;
+    background: #ffffff50;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 100;
+    border-top: 2px solid #ffffff70;
+    border-left: 2px solid #ffffff70;
+    box-shadow: 5px 5px 30px #00000050;
+}
+.mainCal .card{
+    position: relative;
+    display: grid;
+    backdrop-filter: blur(20px);
+}
+.card .value{
+    grid-column: span 4;
+    height: 150px;
+    width: 320px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    background-color: transparent;
+    color: black;
+    border-bottom:2px solid #00000030;
+    margin-bottom: 10px;
+}
+.card span{
+    display: grid;
+    place-items: center;
+    height: 80px;
+    width: 90px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    transition: 0.5s;
+    color: black;
+}
+.card span:hover{
+    background-color: #ffffff60;
+    transition: 0.5s;
+}
+.card span:active{
+    background: #00bcd450;
+    font-size: 70px;
+}
+.card .clear{
+    grid-column: 2 span;
+    width: 180px;
+}
+.card .result{
+    grid-column: 2 span;
+    width: 180px;
+    margin-bottom: 10px;
+}

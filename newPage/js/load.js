@@ -4,4 +4,6 @@ window.onload = function (){
     getTime();
     changeStyle();
     historyUse();
+    searchUse();
+    searchOnload();
 }

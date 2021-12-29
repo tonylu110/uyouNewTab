@@ -4,6 +4,6 @@
 * 这是一个好看的 chrome 新标签页插件
 
 * 主页
-![](demo.png)
+![](demo/demo.png)
 * 历史记录
-![](demo2.png)
+![](demo/demo2.png)

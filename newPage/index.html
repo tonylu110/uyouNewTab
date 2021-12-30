@@ -9,22 +9,29 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/history.css">
     <link rel="stylesheet" href="css/cal.css">
-    <script src="js/function.js"></script>
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/info.css">
+    <script src="js/main/function.js"></script>
+    <script src="js/main/main.js"></script>
+    <script src="js/features/hide.js"></script>
+    <script src="js/features/info.js"></script>
     <script src="js/features/search.js"></script>
-    <script src="js/print.js"></script>
+    <script src="js/main/print.js"></script>
     <script src="js/features/cal.js"></script>
-    <script src="js/load.js"></script>
+    <script src="js/main/load.js"></script>
     <script src="js/features/history.js"></script>
 </head>
 <body id="background">
-    <!-- This is top-left button -->
+    <!-- This is top-right button -->
     <div class="title" id="title">
         <div class="titleButton" id="hide"><img src="imgs/hide.png"></div><!--hide button-->
         <div class="titleButton" id="history"><img src="imgs/fy_ic_history.png"></div><!--history button-->
         <div class="titleButton" id="reload"><img src="imgs/reload.png"></div><!--reload button-->
         <div class="titleButton" id="cal"><img src="imgs/calculator.png"></div><!--calculator button-->
         <div class="titleButton" id="clock"><img src="imgs/timer.png"></div><!--clock button-->
+    </div>
+    <!-- This is bottom-right button -->
+    <div class="bottom-right" id="bottom-right">
+        <div class="bottomButton" id="info"><img src="imgs/info.png"></div><!--hide button-->
     </div>
     <!-- This is history bar -->
     <div class="bar" id="bar">
@@ -34,6 +41,26 @@
             </div>
         </div>
         <div id="historyIn"></div>
+    </div>
+    <!-- This is info bar -->
+    <div class="bar" id="infoBar">
+        <div class="infoButton">
+            <div class="infoBack" id="infoBack">
+                <img id="infoimgbefore" src="imgs/back_black.png">
+            </div>
+        </div>
+        <div class="infoMain">
+            <div class="infoTitle">关于 uyou 新标签页</div>
+            <div class="infoTxt">
+                <div>这个新标签页插件来自于我的另一个前端项目，这个项目的开源地址为：</div>
+                <a href="https://github.com/tonylu110/browserNewTabPage" target="view_window">点击前往</a>
+                <div style="margin-top: 15px;">如果你感兴趣可以去这个项目上给我一个 star，此标签页插件也开源了，开源地址为：</div>
+                <a href="https://github.com/tonylu110/uyouNewTab" target="view_window">点击前往</a>
+            </div>
+            <div class="infoTxt">
+                在这个项目的开源链接上我会提供非稳定版的更新，如果想要提前尝试新功能可以去这个项目上下载源码自己安装
+            </div>
+        </div>
     </div>
     <!-- This is searchmain area -->
     <div class="main" id="main">

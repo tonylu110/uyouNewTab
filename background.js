@@ -23,5 +23,5 @@ function getUpade(url){
 
 window.onload = function (){
     var url = 'http://crx.tnyl.xyz/';
-    getUpade(url)
+    getUpade(url);
 }

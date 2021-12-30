@@ -85,12 +85,16 @@
     flex-direction: column;
     width: 90%;
     padding: 20px;
+    overflow-y:scroll;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .infoTitle{
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 15px;
     margin-left: 10px;
+    margin-top: -15px;
 }
 .infoTxt{
     background-color: #ffffff90;
@@ -116,4 +120,18 @@
 }
 .infoTxt a:active{
     background-color: #035fa5;
+}
+.infoTxt img{
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.infoImg{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 8px #00000050;
 }

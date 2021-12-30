@@ -19,6 +19,7 @@ function hideUse(){
             if(screenWidth <= 813){
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
+                elemenetGetId('info').hidden = true; //hide info button
                 elemenetGetId('hide').style.marginRight = '20px';
             }
         }
@@ -40,6 +41,7 @@ function hs(){
             if(screenWidth <= 813){
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
+                lemenetGetId('info').hidden = true; //hide info button
                 elemenetGetId('hide').style.marginRight = '20px';
             }
         }

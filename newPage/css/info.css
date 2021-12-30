@@ -125,6 +125,7 @@
     width: 100%;
     margin-bottom: 5px;
     border-radius: 10px;
+    border: 1px #ddd solid;
 }
 
 .infoImg{

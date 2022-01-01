@@ -12,6 +12,7 @@ function hideUse(){
             elemenetGetId('searchbar').style.display=""; //show searchBar element
             if(screenWidth <= 813){
                 elemenetGetId('hide').style.marginRight = '0px';
+                elemenetGetId('info').hidden = true; //hide info button
             }
         }else{
             onShow();
@@ -19,7 +20,7 @@ function hideUse(){
             if(screenWidth <= 813){
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
-                elemenetGetId('info').hidden = true; //hide info button
+                elemenetGetId('info').hidden = false; //hide info button
                 elemenetGetId('hide').style.marginRight = '20px';
             }
         }
@@ -35,13 +36,14 @@ function hs(){
             elemenetGetId('searchbar').style.display=""; //show searchBar element
             if(screenWidth <= 813){
                 elemenetGetId('hide').style.marginRight = '0px';
+                elemenetGetId('info').hidden = true; //hide info button
             }
         }else{
             onShow();
             if(screenWidth <= 813){
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
-                lemenetGetId('info').hidden = true; //hide info button
+                elemenetGetId('info').hidden = false; //hide info button
                 elemenetGetId('hide').style.marginRight = '20px';
             }
         }

@@ -13,6 +13,7 @@ function changeStyle(){
   var screenHeight = body().offsetHeight - 140;//get tools button margin top
   //if screen is phone to phone style
   if(screenWidth <= 813){
+    elemenetGetId('info').style.marginBottom = screenHeight + 20 + 'px';
     elemenetGetId('searchbar').style.width = '330px';//set search bar to phone style
     elemenetGetId('mainlink').style.width = '370px';//set links to phone style
     elemenetGetId('title').style.display = 'flex';
@@ -23,7 +24,14 @@ function changeStyle(){
     elemenetGetId('cal').style.marginRight = '0';//set calculator button margin right to 0px
     elemenetGetId('clock').hidden = true; //hide clock button
     elemenetGetId('history').hidden = true; //hide history button
-    elemenetGetId('button').style.marginBottom = -screenHeight + 'px';//hide chenge ui button
+    elemenetGetId('button').style.marginBottom = '150px';//chenge ui button
+    elemenetGetId('button').style.maxWidth = '280px';
+    elemenetGetId('oneMain').style.width = '270px';
+    elemenetGetId('oneMain').style.height = '400px';
+    elemenetGetId('oneMain').style.padding = '40px';
+    elemenetGetId('oneTxt').style.fontSize = '30px';
+    elemenetGetId('oneNum').style.fontSize = '20px';
+    elemenetGetId('oneFrom').style.fontSize = '25px';
     //hide links button
     elemenetGetId('azure').hidden = true;
     elemenetGetId('ithome').hidden = true;
@@ -74,6 +82,8 @@ function mainUse(){
   backgroundImg.onerror = function() {
       print('network is not working');
       elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+      elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+      elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
   };
 
   //This is historybar function

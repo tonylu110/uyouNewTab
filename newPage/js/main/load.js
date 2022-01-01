@@ -4,6 +4,8 @@ window.onload = function (){
     hs();
     calUse();
     getTime();
+    one();
+    oneUse();
     changeStyle();
     infoUse();
     historyUse();

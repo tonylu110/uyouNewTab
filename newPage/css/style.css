@@ -27,7 +27,7 @@ body{
     width: 570px;
     height: 30px;
     background-color: #ffffff90;
-    box-shadow: 5px 5px 30px #00000050;
+    box-shadow: 3px 3px 10px #00000050;
     backdrop-filter: blur(20px);
     border-radius: 10px;
     padding: 10px;
@@ -76,7 +76,7 @@ body{
     backdrop-filter: blur(20px);
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 5px 5px 30px #00000050;
+    box-shadow: 0px 0px 10px #00000050;
     border-top: 2px solid #ffffff70;
     border-left: 2px solid #ffffff70;
     display: flex;
@@ -180,21 +180,9 @@ body{
     background-color: #00000010;
 }
 
-.button{
+#blackBack{
     position: fixed;
-    bottom: -500px;
-    padding: 20px;
-    background-color: #ffffff90;
-    border-radius: 50px;
-    box-shadow: 10px 5px 50px #00000050;
-    backdrop-filter: blur(40px);
-    margin-bottom: 30px;
-}
-.button:active{
-    background-color: #00000030;
-}
-a{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
+    background-color: #00000010;
+    width: 100vw;
+    height: 100vh;
 }

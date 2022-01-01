@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/history.css">
     <link rel="stylesheet" href="css/cal.css">
     <link rel="stylesheet" href="css/info.css">
+    <link rel="stylesheet" href="css/one.css">
     <script src="js/main/function.js"></script>
     <script src="js/main/main.js"></script>
     <script src="js/features/hide.js"></script>
@@ -17,10 +18,20 @@
     <script src="js/features/search.js"></script>
     <script src="js/main/print.js"></script>
     <script src="js/features/cal.js"></script>
-    <script src="js/main/load.js"></script>
     <script src="js/features/history.js"></script>
+    <script src="js/features/one.js"></script>
+    <script src="js/main/load.js"></script>
 </head>
 <body id="background">
+    <div id="blackBack"></div>
+    <div id="oneMain" style="display: none;">
+        <div id="closeButton"><img src="imgs/close.png"></div>
+        <div id="innerMain">
+            <div id="oneNum"></div>
+            <div id="oneTxt"></div>
+            <div id="oneFrom"></div>
+        </div>
+    </div>
     <!-- This is top-right button -->
     <div class="title" id="title">
         <div class="titleButton" id="hide"><img src="imgs/hide.png"></div><!--hide button-->
@@ -128,6 +139,6 @@
     <div class="mainClock" id="mainClock" style="display: none;">
         <div id="time"></div>
     </div>
-    <a href="neumorphismindex.html" class="button" id="button">neumorphism</a>
+    <a class="button" id="button"></a>
 </body>
 </html>

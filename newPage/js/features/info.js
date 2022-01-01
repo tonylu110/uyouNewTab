@@ -5,6 +5,6 @@ function infoUse(){
     }
     elemenetGetId('infoBack').onclick = function onBarButtonBack(){
         elemenetGetId('infoBar').className = 'bar'; 
-        elemenetGetId('infoimgbefore').className = 'infoimgbefore'; 
+        elemenetGetId('infoimgbefore').className = 'infoimgbefore';
     }
 }

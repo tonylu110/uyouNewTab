@@ -1,6 +1,6 @@
 # uyou 新标签页
 
-** 这是一个好看的 chrome 新标签页插件
+**这是一个好看的 chrome 新标签页插件**
 
 ## 桌面端样式
 * 主页
@@ -15,9 +15,13 @@
 
 ## 移动端样式
 * 主页
-![](demo/mobile/demo1.png)
-![](demo/mobile/demo2.png)
+
+<img src="demo/mobile/demo1.png" width="45%" height="45%"/><img src="demo/mobile/demo2.png" width="45%" height="45%" align="right"/>
+
 * 关于页面
-![](demo/mobile/demo3.png)
+
+<img src="demo/mobile/demo3.png" width="45%" height="45%"/>
+
 * 一言
-![](demo/mobile/demo4.png)
+
+<img src="demo/mobile/demo4.png" width="45%" height="45%"/>

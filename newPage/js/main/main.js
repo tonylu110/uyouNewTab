@@ -73,19 +73,35 @@ function mainUse(){
   //test 'https://api.iyk0.com/ecy/api.php' can or not work
   //if it is working to load 'https://api.iyk0.com/ecy/api.php'
   //else load 'imgs/background.png'
-  var backgroundImg = new Image();
-  backgroundImg.src = 'https://api.iyk0.com/ecy/api.php';
-  backgroundImg.onload = function() {
-      print('network is working');
-      elemenetGetId('background').style.backgroundImage = "url('https://api.iyk0.com/ecy/api.php')";
-  };
-  backgroundImg.onerror = function() {
-      print('network is not working');
-      elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
-      elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
-      elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
-  };
-
+  var screenWidth = body().offsetWidth;
+  if(screenWidth <= 813){
+    var backgroundImg = new Image();
+    backgroundImg.src = 'https://iw233.cn/api/Random.php';
+    backgroundImg.onload = function() {
+        print('network is working');
+        elemenetGetId('background').style.backgroundImage = "url('https://iw233.cn/api/Random.php')";
+    };
+    backgroundImg.onerror = function() {
+        print('network is not working');
+        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+        elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+        elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
+    };
+  }else{
+    var backgroundImg = new Image();
+    backgroundImg.src = 'https://api.iyk0.com/ecy/api.php';
+    backgroundImg.onload = function() {
+        print('network is working');
+        elemenetGetId('background').style.backgroundImage = "url('https://api.iyk0.com/ecy/api.php')";
+    };
+    backgroundImg.onerror = function() {
+        print('network is not working');
+        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+        elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+        elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
+    };
+  }
+  
   //This is historybar function
   elemenetGetId('history').onclick = function onBarButton(){
     elemenetGetId('bar').className = 'barSel'; //change historyBar style to barSelect style

@@ -5,7 +5,7 @@
     border-radius: 50px;
     box-shadow: 0px 0px 20px #00000070;
     backdrop-filter: blur(40px);
-    margin-bottom: 20px;
+    margin-bottom: -100px;
     cursor: pointer;
     height: 50px;
     line-height: 50px;
@@ -13,7 +13,7 @@
     padding-left: 20px;
     padding-right: 20px;
     max-width: 500px;
-    transition: 0.25s;
+    transition: margin 0.7s;
 }
 .button:hover{
     background-color: #ffffff70;
@@ -31,7 +31,7 @@ a{
     white-space: nowrap;
 }
 
-#oneMain{
+.oneMain{
     position: fixed;
     z-index: 200;
     width: 550px;
@@ -46,6 +46,21 @@ a{
     margin-bottom: 10px;
     border-top: 2px solid #ffffff70;
     border-left: 2px solid #ffffff70;
+    transition: 0.5s;
+}
+.oneMainBefore{
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    margin-top: 90vh;
+    transition: 0.5s;
+    z-index: 200;
+}
+.oneMainBeforeMobile{
+    position: fixed;
+    margin-top: 60vh;
+    transition: 0.5s;
+    z-index: 200;
 }
 #innerMain{
     height: 100%;
@@ -58,23 +73,24 @@ a{
     font-weight: bold;
 }
 #oneNum{
-    font-size: 25px;
+    color: transparent;
 }
 #oneTxt{
     width: 100%;
     text-align: center;
-    font-size: 40px;
+    color: transparent;
 }
+
 #oneFrom{
     width: 100%;
     text-align: right;
-    font-size: 30px;
+    color: transparent;
 }
 
 #closeButton{
-    padding: 8px;
-    width: 14px;
-    height: 14px;
+    padding: 0px;
+    width: 0px;
+    height: 0px;
     background-color: #ffffff90;
     position: absolute;
     right: 30px;
@@ -85,6 +101,7 @@ a{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 0.3s;
 }
 #closeButton:hover{
     background-color: #00000005;

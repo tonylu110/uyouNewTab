@@ -16,12 +16,12 @@
 ## 移动端样式
 * 主页
 
-<img src="demo/mobile/demo1.png" width="45%" height="45%"/><img src="demo/mobile/demo2.png" width="45%" height="45%" align="right"/>
+<img src="demo/mobile/demo1.png" width="47%" height="47%"/><img src="demo/mobile/demo2.png" width="47%" height="47%" align="right"/>
 
 * 关于页面
 
-<img src="demo/mobile/demo3.png" width="45%" height="45%"/>
+<img src="demo/mobile/demo3.png" width="47%" height="47%"/>
 
 * 一言
 
-<img src="demo/mobile/demo4.png" width="45%" height="45%"/>
+<img src="demo/mobile/demo4.png" width="47%" height="47%"/>

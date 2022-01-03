@@ -26,18 +26,21 @@ function changeStyle(){
     elemenetGetId('history').hidden = true; //hide history button
     elemenetGetId('button').style.marginBottom = '150px';//chenge ui button
     elemenetGetId('button').style.maxWidth = '280px';
-    elemenetGetId('oneMain').style.width = '270px';
-    elemenetGetId('oneMain').style.height = '400px';
-    elemenetGetId('oneMain').style.padding = '40px';
-    elemenetGetId('oneTxt').style.fontSize = '30px';
-    elemenetGetId('oneNum').style.fontSize = '20px';
-    elemenetGetId('oneFrom').style.fontSize = '25px';
+    elemenetGetId('button').style.transition = 'margin 0.5s';
+    elemenetGetId('button').style.zIndex = '100';
+    elemenetGetId('oneMain').style.width = '0px';
+    elemenetGetId('oneMain').style.height = '0px';
+    elemenetGetId('oneMain').style.padding = '0px';
+    elemenetGetId('oneMain').className = 'oneMainBeforeMobile';
     //hide links button
     elemenetGetId('azure').hidden = true;
     elemenetGetId('ithome').hidden = true;
     elemenetGetId('chromeStore').hidden = true;
     elemenetGetId('aliyun').hidden = true;
     elemenetGetId('main').style.marginTop = '-100px';//set search area margin top
+  }else{
+    elemenetGetId('button').style.marginBottom = '20px'
+    elemenetGetId('oneMain').className = 'oneMainBefore';
   }
 }
 

@@ -51,6 +51,21 @@
     flex-direction: column;
     align-items: center;
 }
+.barSelMobile{
+    height: 100vh;
+    width: 100vw;
+    box-shadow: -10px 0px 20px #00000050;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: width 0.5s;
+    background-color: #ffffff90;
+    backdrop-filter: blur(20px);
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .infoButton{
     width: 100%;
 }

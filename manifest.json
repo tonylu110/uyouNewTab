@@ -22,7 +22,8 @@
     "permissions": [
         "tabs",
         "history",
-        "storage"
+        "storage",
+        "downloads"
     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

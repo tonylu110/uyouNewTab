@@ -14,6 +14,8 @@ function changeStyle(){
   //if screen is phone to phone style
   if(screenWidth <= 813){
     elemenetGetId('info').style.marginBottom = screenHeight + 20 + 'px';
+    elemenetGetId('down').style.marginBottom = '-50px';
+    elemenetGetId('down').style.marginLeft = '-65px';
     elemenetGetId('searchbar').style.width = '330px';//set search bar to phone style
     elemenetGetId('mainlink').style.width = '370px';//set links to phone style
     elemenetGetId('title').style.display = 'flex';
@@ -55,6 +57,7 @@ function onShow(){
   elemenetGetId('hide').hidden = false; // show hide button
   elemenetGetId('searchbar').style.display=""; //show searchBar button
   elemenetGetId('clock').hidden = false; //show clock button
+  elemenetGetId('down').hidden = false; 
 }
 
 //This is hide all element function
@@ -68,43 +71,85 @@ function onHide(){
   elemenetGetId('hide').hidden = true; //hide hide button
   elemenetGetId('searchbar').style.display="none"; //hide searchBar button
   elemenetGetId('clock').hidden = true; //hide clock button
+  elemenetGetId('down').hidden = true;
 }
 
 
 function mainUse(){
+  var httpRequest = new XMLHttpRequest();
+  function picget(url){
+    httpRequest.open('GET', url, true);
+    httpRequest.send();
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+            var pic = httpRequest.responseText;
+
+            var obj = eval("(" + pic + ")");
+            var pic = obj.pic;
+
+            console.log(obj);
+            elemenetGetId('picurl').className = pic;
+        }
+    };
+  }
   //This is onload script
-  //test 'https://api.iyk0.com/ecy/api.php' can or not work
-  //if it is working to load 'https://api.iyk0.com/ecy/api.php'
   //else load 'imgs/background.png'
   var screenWidth = body().offsetWidth;
   if(screenWidth <= 813){
-    var backgroundImg = new Image();
-    backgroundImg.src = 'https://iw233.cn/api/Random.php';
-    backgroundImg.onload = function() {
+    picget('http://mark.tnyl.xyz/api/API/mp.php?type=json');
+    setTimeout(function(){
+      if(elemenetGetId('button').innerHTML!=''){
         print('network is working');
-        elemenetGetId('background').style.backgroundImage = "url('https://iw233.cn/api/Random.php')";
-    };
-    backgroundImg.onerror = function() {
+        elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
+        setTimeout(function(){
+          if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+            elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
+          }
+        },200)
+      }else{
         print('network is not working');
         elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
         elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
         elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
-    };
+      }
+    },300)
+    setTimeout(function(){
+      if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+      }
+    },700)
   }else{
-    var backgroundImg = new Image();
-    backgroundImg.src = 'https://api.iyk0.com/ecy/api.php';
-    backgroundImg.onload = function() {
+    picget('http://mark.tnyl.xyz/api/API/pc.php?type=json');
+    setTimeout(function(){
+      if(elemenetGetId('button').innerHTML!=''){  
         print('network is working');
-        elemenetGetId('background').style.backgroundImage = "url('https://api.iyk0.com/ecy/api.php')";
-    };
-    backgroundImg.onerror = function() {
+        elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
+        setTimeout(function(){
+          if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+            elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
+          }
+        },200)
+      }else{  
         print('network is not working');
         elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
         elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
         elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
-    };
+      }
+    },300)
+    setTimeout(function(){
+      if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+      }
+    },700)
   }
-  
+
+  elemenetGetId('down').onclick = function(){
+    chrome.downloads.download({ 
+      url: elemenetGetId('picurl').className, 
+      filename: "pic-"+ Math.ceil(Math.random()*1000) +".png" 
+    }); 
+  }
+
   //This is historybar function
   elemenetGetId('history').onclick = function onBarButton(){
     elemenetGetId('bar').className = 'barSel'; //change historyBar style to barSelect style

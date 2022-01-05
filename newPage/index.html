@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/cal.css">
     <link rel="stylesheet" href="css/info.css">
     <link rel="stylesheet" href="css/one.css">
+    <link rel="stylesheet" href="css/setting.css">
     <script src="js/main/function.js"></script>
     <script src="js/main/main.js"></script>
     <script src="js/features/hide.js"></script>
@@ -20,6 +21,7 @@
     <script src="js/features/cal.js"></script>
     <script src="js/features/history.js"></script>
     <script src="js/features/one.js"></script>
+    <script src="js/features/settings.js"></script>
     <script src="js/main/load.js"></script>
 </head>
 <body id="background">
@@ -34,15 +36,19 @@
         </div>
     </div>
     <!-- This is top-right button -->
-    <div class="title" id="title">
+    <div class="title" id="title" style="top: 0;">
         <div class="titleButton" id="hide"><img src="imgs/hide.png"></div><!--hide button-->
         <div class="titleButton" id="history"><img src="imgs/fy_ic_history.png"></div><!--history button-->
         <div class="titleButton" id="reload"><img src="imgs/reload.png"></div><!--reload button-->
         <div class="titleButton" id="cal"><img src="imgs/calculator.png"></div><!--calculator button-->
         <div class="titleButton" id="clock"><img src="imgs/timer.png"></div><!--clock button-->
     </div>
+    <!-- This is top-left button -->
+    <div class="top-left" id="top-right" style="top: 0;">
+        <div class="topButton" id="settings"><img src="imgs/setting.png"></div><!--settings button-->
+    </div>
     <!-- This is bottom-right button -->
-    <div class="bottom-right" id="bottom-right">
+    <div class="bottom-right" id="bottom-right" style="bottom: 0;">
         <div class="bottomButton" id="down"><img src="imgs/down.png"></div><!--download button-->
         <div class="bottomButton" id="info"><img src="imgs/info.png"></div><!--info button-->
     </div>

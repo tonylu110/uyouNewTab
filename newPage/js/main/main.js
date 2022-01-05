@@ -13,16 +13,20 @@ function changeStyle(){
   var screenHeight = body().offsetHeight - 140;//get tools button margin top
   //if screen is phone to phone style
   if(screenWidth <= 813){
-    elemenetGetId('info').style.marginBottom = screenHeight + 20 + 'px';
+    elemenetGetId('bottom-right').style.marginTop = '20px';
+    elemenetGetId('bottom-right').style.top = '0';
+    elemenetGetId('bottom-right').style.bottom = '';
     elemenetGetId('down').style.marginBottom = '-50px';
     elemenetGetId('down').style.marginLeft = '-65px';
-    elemenetGetId('searchbar').style.width = '330px';//set search bar to phone style
-    elemenetGetId('mainlink').style.width = '370px';//set links to phone style
+    elemenetGetId('searchbar').style.width = '324px';//set search bar to phone style
+    elemenetGetId('mainlink').style.width = '366px';//set links to phone style
     elemenetGetId('title').style.display = 'flex';
     //set tools button style
-    elemenetGetId('title').style.width = screenWidth + 'px';
-    elemenetGetId('title').style.marginTop = screenHeight + 'px'
     elemenetGetId('title').style.justifyContent = 'center';
+    elemenetGetId('title').style.bottom = '0';
+    elemenetGetId('title').style.top = '';
+    elemenetGetId('title').style.width = '100%';
+    elemenetGetId('title').style.marginBottom = '40px';
     elemenetGetId('cal').style.marginRight = '0';//set calculator button margin right to 0px
     elemenetGetId('clock').hidden = true; //hide clock button
     elemenetGetId('history').hidden = true; //hide history button
@@ -39,7 +43,7 @@ function changeStyle(){
     elemenetGetId('ithome').hidden = true;
     elemenetGetId('chromeStore').hidden = true;
     elemenetGetId('aliyun').hidden = true;
-    elemenetGetId('main').style.marginTop = '-100px';//set search area margin top
+    elemenetGetId('main').style.marginTop = '-160px';//set search area margin top
   }else{
     elemenetGetId('button').style.marginBottom = '20px'
     elemenetGetId('oneMain').className = 'oneMainBefore';
@@ -58,6 +62,7 @@ function onShow(){
   elemenetGetId('searchbar').style.display=""; //show searchBar button
   elemenetGetId('clock').hidden = false; //show clock button
   elemenetGetId('down').hidden = false; 
+  elemenetGetId('settings').hidden = false; 
 }
 
 //This is hide all element function
@@ -72,6 +77,7 @@ function onHide(){
   elemenetGetId('searchbar').style.display="none"; //hide searchBar button
   elemenetGetId('clock').hidden = true; //hide clock button
   elemenetGetId('down').hidden = true;
+  elemenetGetId('settings').hidden = true;
 }
 
 
@@ -98,7 +104,7 @@ function mainUse(){
   if(screenWidth <= 813){
     picget('http://mark.tnyl.xyz/api/API/mp.php?type=json');
     setTimeout(function(){
-      if(elemenetGetId('button').innerHTML!=''){
+      if(elemenetGetId('button').innerHTML != ''){
         print('network is working');
         elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
         setTimeout(function(){
@@ -108,20 +114,42 @@ function mainUse(){
         },200)
       }else{
         print('network is not working');
-        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+        elemenetGetId('background').style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random()*5) + ".jfif')";
         elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
         elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
+        elemenetGetId('down').onclick = function(){
+          elemenetGetId('button').innerHTML = '本地图片无法下载哦~';
+          setTimeout(function(){
+            elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+          },2500)
+        }
       }
     },300)
     setTimeout(function(){
-      if(elemenetGetId('background').style.backgroundImage == 'url("")'){
-        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+      if(elemenetGetId('picurl').className != ''){
+        if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+          elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
+        }
+      }else{
+        if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+          elemenetGetId('background').style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random()*5) + ".jfif')";
+          setTimeout(function(){
+            elemenetGetId('button').innerHTML = '在线图片加载失败，已加载内建图片哦~';
+          },500)
+          elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
+          elemenetGetId('down').onclick = function(){
+            elemenetGetId('button').innerHTML = '本地图片无法下载哦~';
+            setTimeout(function(){
+              elemenetGetId('button').innerHTML = '在线图片加载失败，已加载内建图片哦~';
+            },2500)
+          }
+        }
       }
-    },700)
+    },1000)
   }else{
     picget('http://mark.tnyl.xyz/api/API/pc.php?type=json');
     setTimeout(function(){
-      if(elemenetGetId('button').innerHTML!=''){  
+      if(elemenetGetId('button').innerHTML != ''){  
         print('network is working');
         elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
         setTimeout(function(){
@@ -131,16 +159,38 @@ function mainUse(){
         },200)
       }else{  
         print('network is not working');
-        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*5) + ".jpg')";
         elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
         elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
+        elemenetGetId('down').onclick = function(){
+          elemenetGetId('button').innerHTML = '本地图片无法下载哦~';
+          setTimeout(function(){
+            elemenetGetId('button').innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+          },2500)
+        }
       }
     },300)
     setTimeout(function(){
-      if(elemenetGetId('background').style.backgroundImage == 'url("")'){
-        elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*10) + ".jpg')";
+      if(elemenetGetId('picurl').className != ''){
+        if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+          elemenetGetId('background').style.backgroundImage = "url(" + elemenetGetId('picurl').className + ")";
+        }
+      }else{
+        if(elemenetGetId('background').style.backgroundImage == 'url("")'){
+          elemenetGetId('background').style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random()*5) + ".jpg')";
+          setTimeout(function(){
+            elemenetGetId('button').innerHTML = '在线图片加载失败，已加载内建图片哦~';
+          },500)
+          elemenetGetId('button').onclick = elemenetGetId('oneMain').style.display = 'none';
+          elemenetGetId('down').onclick = function(){
+            elemenetGetId('button').innerHTML = '本地图片无法下载哦~';
+            setTimeout(function(){
+              elemenetGetId('button').innerHTML = '在线图片加载失败，已加载内建图片哦~';
+            },2500)
+          }
+        }
       }
-    },700)
+    },1000)
   }
 
   elemenetGetId('down').onclick = function(){

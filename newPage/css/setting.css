@@ -1,0 +1,24 @@
+.top-left{
+    position: fixed;
+    left: 0;
+    z-index: 100;
+}
+.topButton{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: #ffffff90;
+    box-shadow: 5px 5px 30px #00000050;
+    border-radius: 50%;
+    backdrop-filter: blur(20px);
+    cursor: pointer
+}
+.topButton:active{
+    background-color: #00000010;
+}
+.topButton img{
+    width: 100%;
+    height: 100%;
+}

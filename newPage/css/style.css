@@ -104,7 +104,6 @@ body{
 /* This is top-left button element style */
 .title{
     position: fixed;
-    top: 0;
     right: 0;
     z-index: 100;
 }

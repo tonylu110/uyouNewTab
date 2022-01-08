@@ -35,6 +35,34 @@
             <div id="oneFrom" style="font-size: 0px;"></div>
         </div>
     </div>
+    <div id="settingMain" style="display: none;" >
+        <div id="settingCloseButton"><img src="imgs/close.png"></div>
+        <div id="settingInnerMain">
+            <div class="settingTitle">设置</div>
+            <div class="settingInner">
+                <div id="backgroundSetting">设置背景
+                    <div class="uploadBtn" id="uploadBtn">
+                        <div id="fileName">选择你的图片</div>
+                        <input type="file" id="backgroundUpload" accept="image/*">
+                    </div>
+                    <img src="" id="viewImg" style="display: none;">
+                    <div class="backgroundButtons">
+                        <div id="backgroundSetButton" hidden>设置为此图片</div>
+                        <div id="backgroundBefore">恢复默认</div>
+                    </div>
+                </div>
+            </div>
+            <div class="helpTitle">帮助</div>
+            <div class="helpInner">
+                <div class="helpQ">Q：如何切换搜索引擎？</div>
+                <div class="helpA">A：点击搜索框最左边的的搜索引擎图标可以更换搜索引擎，包括：Google、bing、百度。</div>
+                <div class="helpQ">Q：显示“在线图片加载失败，已加载内建图片”是上面原因？</div>
+                <div class="helpA">A：因为您的网络可能未能及时获取到背景图片的链接，刷新一下可以尝试重新获取。</div>
+                <div class="helpQ">Q：如何更换书签栏的链接？</div>
+                <div class="helpA">A：暂时没有可视化的界面可以操作，可以通过修改源码自己添加自己喜欢的书签。</div>
+            </div>
+        </div>
+    </div>
     <!-- This is top-right button -->
     <div class="title" id="title" style="top: 0;">
         <div class="titleButton" id="hide"><img src="imgs/hide.png"></div><!--hide button-->

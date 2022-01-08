@@ -8,6 +8,9 @@
 ![](demo/demo4.png)
 * 历史记录
 ![](demo/demo2.png)
+* 设置及帮助页面
+![](demo/demo6.png)
+![](demo/demo7.png)
 * 关于页面
 ![](demo/demo3.png)
 * 一言
@@ -17,6 +20,10 @@
 * 主页
 
 <img src="demo/mobile/demo1.png" width="47%" height="47%"/><img src="demo/mobile/demo2.png" width="47%" height="47%" align="right"/>
+
+* 设置及帮助页面
+
+<img src="demo/mobile/demo5.png" width="47%" height="47%"/><img src="demo/mobile/demo6.png" width="47%" height="47%" align="right"/>
 
 * 关于页面
 

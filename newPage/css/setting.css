@@ -26,8 +26,8 @@
 .settingMain{
     position: fixed;
     z-index: 200;
-    width: 550px;
-    height: 400px;
+    width: 650px;
+    height: 500px;
     background-color: #ffffff90;
     box-shadow: 0px 0px 70px #00000070;
     backdrop-filter: blur(20px);
@@ -142,6 +142,12 @@
 #backgroundBefore:active{
     background-color: #9e9e9e;
 }
+.backgroundTitile{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    margin-top: 5px;
+}
 #viewImg{
     max-width: 300px;
     max-height: 169px;
@@ -161,7 +167,6 @@
     border-radius: 10px;
     font-weight: normal;
     margin-top: 5px;
-    margin-bottom: 10px;
     cursor: pointer;
 }
 #fileName{
@@ -214,7 +219,35 @@
 }
 
 .donateImg img{
-    max-width: 170px;
+    max-width: 200px;
     border-radius: 10px;
     margin-bottom: 10px;
+}
+
+.onlinePic{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+#onlinePicUrl{
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    outline: 0px;
+    margin-right: 5px;
+    width: 180px;
+}
+#review{
+    padding: 10px;
+    background-color: #0078d4;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+}
+#review:active{
+    background-color: #035fa5;
 }

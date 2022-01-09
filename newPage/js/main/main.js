@@ -47,7 +47,7 @@ function changeStyle(){
     elemenetGetId('uploadBtn').style.width = '250px';
     elemenetGetId('backgroundSetButton').style.flex = '1';
     elemenetGetId('backgroundBefore').style.flex = '1';
-
+    elemenetGetId('donateImg').style.flexDirection = 'column';
   }else{
     elemenetGetId('button').style.marginBottom = '20px'
     elemenetGetId('oneMain').className = 'oneMainBefore';
@@ -111,6 +111,8 @@ function mainUse(){
       elemenetGetId('background').style.backgroundImage = "url(" + budget.picUrl + ")";
       elemenetGetId('down').style.display = 'none';
     }else{
+      elemenetGetId('backgroundBefore').hidden = true;
+      elemenetGetId('backgroundSetButton').style.marginRight = '0px';
       //This is onload script
       //else load 'imgs/background.png'
       var screenWidth = body().offsetWidth;

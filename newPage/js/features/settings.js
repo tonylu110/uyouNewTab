@@ -8,6 +8,7 @@ function settingUse(){
     var fileName = elemenetGetId('fileName');
     var backgroundSetButton = elemenetGetId('backgroundSetButton');
     var onlinePicUrl = elemenetGetId('onlinePicUrl');
+    var picError = elemenetGetId('picError');
     elemenetGetId('settings').onclick = function(){
         settingMain.className = 'settingMain';
         setTimeout(function(){
@@ -32,6 +33,7 @@ function settingUse(){
         fileName.innerText = '选择你的图片';
         backgroundSetButton.hidden = true;
         onlinePicUrl.value = '';
+        picError.hidden = true;
         if(screenWidth <= 813){
             settingMain.style.width = '0px';
             settingMain.style.height = '0px';
@@ -59,10 +61,17 @@ function settingUse(){
         }
     }
     elemenetGetId('review').onclick = function(){
-        backgroundSetButton.hidden = false;
-        viewImg.style.display = '';
-        viewImg.hidden = false;
         viewImg.src = onlinePicUrl.value
+        viewImg.onerror = function(){
+            picError.innerText = '请输入正确的图片链接'
+            picError.hidden = false;
+        }
+        viewImg.onload = function(){
+            picError.hidden = true;
+            viewImg.style.display = '';
+            viewImg.hidden = false;
+            backgroundSetButton.hidden = false;
+        }
         backgroundSetButton.onclick = function(){
             chrome.storage.local.set({'picUrl':onlinePicUrl.value});
             location.reload();

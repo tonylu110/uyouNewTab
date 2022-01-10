@@ -251,3 +251,7 @@
 #review:active{
     background-color: #035fa5;
 }
+
+#picError{
+    font-size: 15px;
+}

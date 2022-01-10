@@ -5,7 +5,7 @@ function getUpade(url){
     httpRequest.send();
             
     httpRequest.onreadystatechange = function () {
-        var version = 20;
+        var version = 21;
         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
             var mainUpdate = httpRequest.responseXML;
             var json = mainUpdate.getElementById('mainUpdate').innerHTML;

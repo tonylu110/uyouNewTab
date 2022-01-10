@@ -67,6 +67,12 @@ function changeStyle(){
     backgroundSetButton.style.flex = '1';
     backgroundBefore.style.flex = '1';
     donateImg.style.flexDirection = 'column';
+    elemenetGetId('historyFeatureBtn').style.display = 'none';
+    elemenetGetId('clockFeatureBtn').style.display = 'none';
+    elemenetGetId('hide').style.marginRight = '0px';
+    elemenetGetId('reload').style.marginLeft = '20px';
+    elemenetGetId('reload').style.marginRight = '0px';
+    elemenetGetId('cal').style.marginLeft = '20px'
   }else{
     button.style.marginBottom = '20px'
     oneMain.className = 'oneMainBefore';

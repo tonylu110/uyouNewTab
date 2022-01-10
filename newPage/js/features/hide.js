@@ -23,7 +23,7 @@ function hideUse(){
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
                 info.hidden = false; //hide info button
-                hide.style.marginRight = '20px';
+                // hide.style.marginRight = '20px';
             }
         }
     }
@@ -48,7 +48,7 @@ function hs(){
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
                 info.hidden = false; //hide info button
-                hide.style.marginRight = '20px';
+                // hide.style.marginRight = '20px';
             }
         }
     })

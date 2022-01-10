@@ -81,4 +81,5 @@ function settingUse(){
         chrome.storage.local.set({'picUrl':''});
         location.reload();
     }
+    hsFeature();
 }

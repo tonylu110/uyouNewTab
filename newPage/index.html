@@ -21,6 +21,7 @@
     <script src="js/features/cal.js"></script>
     <script src="js/features/history.js"></script>
     <script src="js/features/one.js"></script>
+    <script src="js/features/hsFeature.js"></script>
     <script src="js/features/settings.js"></script>
     <script src="js/main/load.js"></script>
 </head>
@@ -40,7 +41,7 @@
         <div id="settingInnerMain" style="display: none;">
             <div class="settingTitle">设置</div>
             <div class="settingInner">
-                <div id="backgroundSetting">背景设置
+                <div id="backgroundSetting" class="settingInnerTitle">背景设置
                     <div class="backgroundTitile">本地图片</div>
                     <div class="uploadBtn" id="uploadBtn">
                         <div id="fileName">选择你的图片</div>
@@ -58,8 +59,40 @@
                         <div id="backgroundBefore">恢复默认</div>
                     </div>
                 </div>
+                <div class="settingInnerTitle">功能设置
+                    <div class="featureSetting">
+                        <div class="featureBtn">
+                            <div class="featuresBtn"><img src="imgs/hide.png"></div>
+                            <div class="hsFeature" id="hideHS">显示</div>
+                        </div>
+                        <div class="featureBtn" id="historyFeatureBtn">
+                            <div class="featuresBtn"><img src="imgs/fy_ic_history.png"></div>
+                            <div class="hsFeature" id="historyHS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="featuresBtn"><img src="imgs/reload.png"></div>
+                            <div class="hsFeature" id="reloadHS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="featuresBtn"><img src="imgs/calculator.png"></div>
+                            <div class="hsFeature" id="calHS">显示</div>
+                        </div>
+                        <div class="featureBtn" id="clockFeatureBtn">
+                            <div class="featuresBtn"><img src="imgs/timer.png"></div>
+                            <div class="hsFeature" id="timeHS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="featuresBtn"><img src="imgs/down.png"></div>
+                            <div class="hsFeature" id="downHS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="featuresBtn"><img src="imgs/info.png"></div>
+                            <div class="hsFeature" id="infoHS">显示</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="helpTitle">帮助</div>
+            <div class="helpTitle">帮助 Q&A</div>
             <div class="helpInner">
                 <div class="helpQ">Q：如何切换搜索引擎？</div>
                 <div class="helpA">A：点击搜索框最左边的的搜索引擎图标可以更换搜索引擎，包括：Google、bing、百度。</div>

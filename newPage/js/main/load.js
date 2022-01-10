@@ -3,6 +3,7 @@ window.onload = function (){
     mainUse();
     hideUse();
     hs();
+    hsFeatureUse();
     calUse();
     getTime();
     one();

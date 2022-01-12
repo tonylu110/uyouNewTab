@@ -22,6 +22,7 @@
     <script src="js/features/history.js"></script>
     <script src="js/features/one.js"></script>
     <script src="js/features/hsFeature.js"></script>
+    <script src="js/features/hsLink.js"></script>
     <script src="js/features/settings.js"></script>
     <script src="js/main/load.js"></script>
 </head>
@@ -88,6 +89,54 @@
                         <div class="featureBtn">
                             <div class="featuresBtn"><img src="imgs/info.png"></div>
                             <div class="hsFeature" id="infoHS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="featuresBtn" style="width: 70px; border-radius: 30px; text-align: center; font-size: 17px; line-height: 30px;">一言</div>
+                            <div class="hsFeature" id="oneHS">显示</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="settingInnerTitle">书签设置
+                    <div class="featureSetting">
+                        <div class="featureBtn">
+                            <div class="linkBtn"><img src="imgs/google.png"></div>
+                            <div class="hsFeature" id="link1HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn"><img src="imgs/youtube.png"></div>
+                            <div class="hsFeature" id="link2HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn" style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png"></div>
+                            <div class="hsFeature" id="link3HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn" style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png"></div>
+                            <div class="hsFeature" id="link4HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn" style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/icon_bilibili-circle.png"></div>
+                            <div class="hsFeature" id="link5HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn" style="padding: 10px; width: 80px; height: 80px;"><img src="imgs/IT之家.png"></div>
+                            <div class="hsFeature" id="link6HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn"><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" ></div>
+                            <div class="hsFeature" id="link7HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn" style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/阿里云.png"></div>
+                            <div class="hsFeature" id="link8HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn"><img src="imgs/azure-blue.png"></div></a>
+                            <div class="hsFeature" id="link9HS">显示</div>
+                        </div>
+                        <div class="featureBtn">
+                            <div class="linkBtn"><img src="imgs/GitHub.png"></div>
+                            <div class="hsFeature" id="link10HS">显示</div>
                         </div>
                     </div>
                 </div>
@@ -182,16 +231,16 @@
         </div>
 
         <div class="link" id="mainlink"><!--links-->
-            <a href="https://google.com"><div><img src="imgs/google.png"></div></a><!--google link-->
-            <a href="https://youtube.com"><div><img src="imgs/youtube.png"></div></a><!--youtube link-->
-            <a href="https://bing.com"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png"></div></a><!--bing link-->
-            <a href="https://baidu.com"><div style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png"></div></a><!--baidu link-->
-            <a href="https://bilibili.com"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/icon_bilibili-circle.png"></div></a><!--bilibili link-->
+            <a href="https://google.com" id="link1"><div><img src="imgs/google.png"></div></a><!--google link-->
+            <a href="https://youtube.com" id="link2"><div><img src="imgs/youtube.png"></div></a><!--youtube link-->
+            <a href="https://bing.com" id="link3"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png"></div></a><!--bing link-->
+            <a href="https://baidu.com" id="link4"><div style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png"></div></a><!--baidu link-->
+            <a href="https://bilibili.com" id="link5"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/icon_bilibili-circle.png"></div></a><!--bilibili link-->
             <a href="https://ithome.com" id="ithome"><div style="padding: 10px; width: 80px; height: 80px;"><img src="imgs/IT之家.png"></div></a><!--ithome link-->
             <a href="https://chrome.google.com/webstore/category/extensions" id="chromeStore"><div><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" ></div></a><!--chrome web store link-->
             <a href="https://www.aliyun.com/" id="aliyun"><div style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/阿里云.png"></div></a><!--aliyun link-->
             <a href="https://azure.microsoft.com/zh-cn/" id="azure"><div><img src="imgs/azure-blue.png"></div></a><!--azure link-->
-            <a href="https://github.com"><div><img src="imgs/GitHub.png"></div></a><!--github link-->
+            <a href="https://github.com" id="link10"><div><img src="imgs/GitHub.png"></div></a><!--github link-->
         </div>
     </div>
     <!-- This is calculator area -->

@@ -1,4 +1,5 @@
 function hsFeature(){
+    var screenWidth = body().offsetWidth;//get screen width
     var hideHS = elemenetGetId('hideHS');
     var historyHS = elemenetGetId('historyHS');
     var reloadHS = elemenetGetId('reloadHS');
@@ -6,6 +7,7 @@ function hsFeature(){
     var timeHS = elemenetGetId('timeHS');
     var downHS = elemenetGetId('downHS');
     var infoHS = elemenetGetId('infoHS');
+    var oneHS = elemenetGetId('oneHS');
     hideHS.onclick = function(){
         if(hideHS.className == 'hsFeature'){
             chrome.storage.local.set({'hideHS':'hide'});
@@ -97,9 +99,26 @@ function hsFeature(){
             elemenetGetId('info').hidden = false;
         }
     }
+    oneHS.onclick = function(){
+        if(oneHS.className == 'hsFeature'){
+            chrome.storage.local.set({'oneHS':'hide'});
+            oneHS.className = 'hsFeatureHide';
+            oneHS.innerText = '隐藏';
+            elemenetGetId('button').style.marginBottom = '-100px';
+        }else{
+            chrome.storage.local.set({'oneHS':'show'});
+            oneHS.className = 'hsFeature';
+            oneHS.innerText = '显示';
+            if(screenWidth <= 813){
+                elemenetGetId('button').style.marginBottom = '150px';
+            }else{
+                elemenetGetId('button').style.marginBottom = '20px';
+            }
+        }
+    }
 }
 function hsFeatureUse(){
-    chrome.storage.local.get(['hideHS','historyHS','reloadHS','calHS','timeHS','downHS','infoHS'],function(budget){
+    chrome.storage.local.get(['hideHS','historyHS','reloadHS','calHS','timeHS','downHS','infoHS','oneHS'],function(budget){
         let hideHS = budget.hideHS;
         let historyHS = budget.historyHS;
         let reloadHS = budget.reloadHS;
@@ -107,7 +126,7 @@ function hsFeatureUse(){
         let timeHS = budget.timeHS;
         let downHS = budget.downHS;
         let infoHS = budget.infoHS;
-        console.log(reloadHS);
+        let oneHS = budget.oneHS;
         if(hideHS == 'hide'){
             elemenetGetId('hide').hidden = true;
             elemenetGetId('hideHS').className = 'hsFeatureHide';
@@ -142,6 +161,11 @@ function hsFeatureUse(){
             elemenetGetId('info').hidden = true;
             elemenetGetId('infoHS').className = 'hsFeatureHide';
             elemenetGetId('infoHS').innerText = '隐藏';
+        }
+        if(oneHS == 'hide'){
+            elemenetGetId('button').style.marginBottom = '-100px';
+            elemenetGetId('oneHS').className = 'hsFeatureHide';
+            elemenetGetId('oneHS').innerText = '隐藏';
         }
     })
 }

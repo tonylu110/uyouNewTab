@@ -4,6 +4,7 @@ window.onload = function (){
     hideUse();
     hs();
     hsFeatureUse();
+    hsLinkUse();
     calUse();
     getTime();
     one();

@@ -63,7 +63,7 @@ function changeStyle(){
     chromeStore.hidden = true;
     aliyun.hidden = true;
     main.style.marginTop = '-160px';//set search area margin top
-    uploadBtn.style.width = '250px';
+    uploadBtn.style.width = '255px';
     backgroundSetButton.style.flex = '1';
     backgroundBefore.style.flex = '1';
     donateImg.style.flexDirection = 'column';

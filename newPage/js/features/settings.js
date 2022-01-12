@@ -18,8 +18,8 @@ function settingUse(){
         blackBack.style.zIndex = 150;
         blackBack.style.backgroundColor = '#00000050';
         if(screenWidth <= 813){
-            settingMain.style.width = '270px';
-            settingMain.style.height = '400px';
+            settingMain.style.width = '70%';
+            settingMain.style.height = '50%';
             settingMain.style.padding = '40px';
         }
     }
@@ -82,4 +82,5 @@ function settingUse(){
         location.reload();
     }
     hsFeature();
+    hsLink();
 }

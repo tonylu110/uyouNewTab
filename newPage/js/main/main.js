@@ -72,7 +72,11 @@ function changeStyle(){
     elemenetGetId('hide').style.marginRight = '0px';
     elemenetGetId('reload').style.marginLeft = '20px';
     elemenetGetId('reload').style.marginRight = '0px';
-    elemenetGetId('cal').style.marginLeft = '20px'
+    elemenetGetId('cal').style.marginLeft = '20px';
+    elemenetGetId('link6Btn').style.display = 'none';
+    elemenetGetId('link7Btn').style.display = 'none';
+    elemenetGetId('link8Btn').style.display = 'none';
+    elemenetGetId('link9Btn').style.display = 'none';
   }else{
     button.style.marginBottom = '20px'
     oneMain.className = 'oneMainBefore';

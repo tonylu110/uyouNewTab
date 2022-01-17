@@ -23,6 +23,7 @@
     <script src="js/features/one.js"></script>
     <script src="js/features/hsFeature.js"></script>
     <script src="js/features/hsLink.js"></script>
+    <script src="js/features/changeLink.js"></script>
     <script src="js/features/settings.js"></script>
     <script src="js/main/load.js"></script>
 </head>
@@ -36,6 +37,22 @@
             <div id="oneTxt" style="font-size: 0px;"></div>
             <div id="oneFrom" style="font-size: 0px;"></div>
         </div>
+    </div>
+    <div id="changeLink" style="display: none;">
+        <div id="linkNum"></div>
+        <div class="linkBtn" id="linkChangePadding"><img src="" id="linkImg" hidden></div>
+        <div id="linkImgChange">
+            <div id="linkImgName">选择你的图片</div>
+            <input type="file" id="linkUpload" accept="image/*">
+        </div>
+        <div class="linkPadding">
+            <div class="paddingButton" id="small">-</div>
+            <div id="paddingNum">25</div>
+            <div class="paddingButton" id="big">+</div>
+        </div>
+        <input type="text" placeholder="请输入链接" id="changeLinkInput" value="http://">
+        <div id="useLink">确认</div>
+        <div id="closeChangeLink">关闭</div>                
     </div>
     <div id="settingMain" class="settingMainBefore" >
         <div id="settingCloseButton" style="display: none;"><img src="imgs/close.png"></div>
@@ -99,43 +116,53 @@
                 <div class="settingInnerTitle">书签设置
                     <div class="featureSetting">
                         <div class="featureBtn">
-                            <div class="linkBtn"><img src="imgs/google.png"></div>
+                            <div class="linkBtn" id="link1Paddings"><img src="imgs/google.png" id="link1Imgs"></div>
+                            <div class="changeFeature" id="link1CH">自定义</div>
                             <div class="hsFeature" id="link1HS">显示</div>
                         </div>
                         <div class="featureBtn">
-                            <div class="linkBtn"><img src="imgs/youtube.png"></div>
+                            <div class="linkBtn" id="link2Paddings"><img src="imgs/youtube.png" id="link2Imgs"></div>
+                            <div class="changeFeature" id="link2CH">自定义</div>
                             <div class="hsFeature" id="link2HS">显示</div>
                         </div>
                         <div class="featureBtn">
-                            <div class="linkBtn" style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png"></div>
+                            <div class="linkBtn" style="padding: 15px; width: 70px; height: 70px;" id="link3Paddings"><img src="imgs/bing-logo.png" id="link3Imgs"></div>
+                            <div class="changeFeature" id="link3CH">自定义</div>
                             <div class="hsFeature" id="link3HS">显示</div>
                         </div>
                         <div class="featureBtn">
-                            <div class="linkBtn" style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png"></div>
+                            <div class="linkBtn" style="padding: 20px; height: 60px; width: 60px;" id="link4Paddings"><img src="imgs/baidu.png" id="link4Imgs"></div>
+                            <div class="changeFeature" id="link4CH">自定义</div>
                             <div class="hsFeature" id="link4HS">显示</div>
                         </div>
                         <div class="featureBtn">
-                            <div class="linkBtn" style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/icon_bilibili-circle.png"></div>
+                            <div class="linkBtn" style="padding: 15px; width: 70px; height: 70px;" id="link5Paddings"><img src="imgs/icon_bilibili-circle.png" id="link5Imgs"></div>
+                            <div class="changeFeature" id="link5CH">自定义</div>
                             <div class="hsFeature" id="link5HS">显示</div>
                         </div>
                         <div class="featureBtn" id="link6Btn">
-                            <div class="linkBtn" style="padding: 10px; width: 80px; height: 80px;"><img src="imgs/IT之家.png"></div>
+                            <div class="linkBtn" style="padding: 10px; width: 80px; height: 80px;" id="link6Paddings"><img src="imgs/IT之家.png" id="link6Imgs"></div>
+                            <div class="changeFeature" id="link6CH">自定义</div>
                             <div class="hsFeature" id="link6HS">显示</div>
                         </div>
                         <div class="featureBtn" id="link7Btn">
-                            <div class="linkBtn"><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" ></div>
+                            <div class="linkBtn" id="link7Paddings"><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" id="link7Imgs"></div>
+                            <div class="changeFeature" id="link7CH">自定义</div>
                             <div class="hsFeature" id="link7HS">显示</div>
                         </div>
                         <div class="featureBtn" id="link8Btn">
-                            <div class="linkBtn" style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/阿里云.png"></div>
+                            <div class="linkBtn" style="padding: 20px; height: 60px; width: 60px;" id="link8Paddings"><img src="imgs/阿里云.png" id="link8Imgs"></div>
+                            <div class="changeFeature" id="link8CH">自定义</div>
                             <div class="hsFeature" id="link8HS">显示</div>
                         </div>
                         <div class="featureBtn" id="link9Btn">
-                            <div class="linkBtn"><img src="imgs/azure-blue.png"></div></a>
+                            <div class="linkBtn" id="link9Paddings"><img src="imgs/azure-blue.png" id="link9Imgs"></div></a>
+                            <div class="changeFeature" id="link9CH">自定义</div>
                             <div class="hsFeature" id="link9HS">显示</div>
                         </div>
                         <div class="featureBtn">
-                            <div class="linkBtn"><img src="imgs/GitHub.png"></div>
+                            <div class="linkBtn" id="link10Paddings"><img src="imgs/GitHub.png" id="link10Imgs"></div>
+                            <div class="changeFeature" id="link10CH">自定义</div>
                             <div class="hsFeature" id="link10HS">显示</div>
                         </div>
                     </div>
@@ -147,8 +174,6 @@
                 <div class="helpA">A：点击搜索框最左边的的搜索引擎图标可以更换搜索引擎，包括：Google、bing、百度。</div>
                 <div class="helpQ">Q：显示“在线图片加载失败，已加载内建图片”是上面原因？</div>
                 <div class="helpA">A：因为您的网络可能未能及时获取到背景图片的链接，刷新一下可以尝试重新获取。</div>
-                <div class="helpQ">Q：如何更换书签栏的链接？</div>
-                <div class="helpA">A：暂时没有可视化的界面可以操作，可以通过修改源码自己添加自己喜欢的书签。</div>
             </div>
             <div class="donateTitle">捐赠</div>
             <div class="donateInner">
@@ -231,16 +256,16 @@
         </div>
 
         <div class="link" id="mainlink"><!--links-->
-            <a href="https://google.com" id="link1"><div><img src="imgs/google.png"></div></a><!--google link-->
-            <a href="https://youtube.com" id="link2"><div><img src="imgs/youtube.png"></div></a><!--youtube link-->
-            <a href="https://bing.com" id="link3"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png"></div></a><!--bing link-->
-            <a href="https://baidu.com" id="link4"><div style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png"></div></a><!--baidu link-->
-            <a href="https://bilibili.com" id="link5"><div style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/icon_bilibili-circle.png"></div></a><!--bilibili link-->
-            <a href="https://ithome.com" id="ithome"><div style="padding: 10px; width: 80px; height: 80px;"><img src="imgs/IT之家.png"></div></a><!--ithome link-->
-            <a href="https://chrome.google.com/webstore/category/extensions" id="chromeStore"><div><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" ></div></a><!--chrome web store link-->
-            <a href="https://www.aliyun.com/" id="aliyun"><div style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/阿里云.png"></div></a><!--aliyun link-->
-            <a href="https://azure.microsoft.com/zh-cn/" id="azure"><div><img src="imgs/azure-blue.png"></div></a><!--azure link-->
-            <a href="https://github.com" id="link10"><div><img src="imgs/GitHub.png"></div></a><!--github link-->
+            <a href="https://google.com" id="link1"><div id="link1Padding"><img src="imgs/google.png" id="link1Img"></div></a><!--google link-->
+            <a href="https://youtube.com" id="link2"><div id="link2Padding"><img src="imgs/youtube.png" id="link2Img"></div></a><!--youtube link-->
+            <a href="https://bing.com" id="link3"><div style="padding: 15px; width: 70px; height: 70px;" id="link3Padding"><img src="imgs/bing-logo.png" id="link3Img"></div></a><!--bing link-->
+            <a href="https://baidu.com" id="link4"><div style="padding: 20px; height: 60px; width: 60px;" id="link4Padding"><img src="imgs/baidu.png" id="link4Img"></div></a><!--baidu link-->
+            <a href="https://bilibili.com" id="link5"><div style="padding: 15px; width: 70px; height: 70px;" id="link5Padding"><img src="imgs/icon_bilibili-circle.png" id="link5Img"></div></a><!--bilibili link-->
+            <a href="https://ithome.com" id="ithome"><div style="padding: 10px; width: 80px; height: 80px;" id="link6Padding"><img src="imgs/IT之家.png" id="link6Img"></div></a><!--ithome link-->
+            <a href="https://chrome.google.com/webstore/category/extensions" id="chromeStore"><div id="link7Padding"><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" id="link7Img" ></div></a><!--chrome web store link-->
+            <a href="https://www.aliyun.com/" id="aliyun"><div style="padding: 20px; height: 60px; width: 60px;" id="link8Padding"><img src="imgs/阿里云.png" id="link8Img"></div></a><!--aliyun link-->
+            <a href="https://azure.microsoft.com/zh-cn/" id="azure"><div id="link9Padding"><img src="imgs/azure-blue.png" id="link9Img"></div></a><!--azure link-->
+            <a href="https://github.com" id="link10"><div id="link10Padding"><img src="imgs/GitHub.png" id="link10Img"></div></a><!--github link-->
         </div>
     </div>
     <!-- This is calculator area -->

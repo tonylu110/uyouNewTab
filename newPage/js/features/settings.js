@@ -83,4 +83,6 @@ function settingUse(){
     }
     hsFeature();
     hsLink();
+    changeLink();
+    useChangeLink();
 }

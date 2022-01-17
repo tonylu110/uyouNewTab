@@ -83,7 +83,6 @@ body{
     align-items: center;
     text-align: center;
     padding: 25px;
-    transition: 0.25s;
 }
 .link div:hover{
     background-color: #aaaaaa70;

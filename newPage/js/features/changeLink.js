@@ -99,6 +99,9 @@ function useChangeLink(){
         let linkHeight = elemenetGetId('linkChangePadding').style.height;
         let changeLinkInput = elemenetGetId('changeLinkInput').value;
         function change(num){
+            if(linkImgUrl == 'chrome-extension://ipccoedebcknfogkkoaahnngilkhcfkb/newPage/index.html'){
+                linkImgUrl = 'imgs/dLinkIcon.png';
+            }
             elemenetGetId('link'+ num +'Img').src = linkImgUrl;
             elemenetGetId('link'+ num +'Padding').style.padding = linkPadding;
             elemenetGetId('link'+ num +'Padding').style.width = linkWidth;
@@ -108,105 +111,118 @@ function useChangeLink(){
             elemenetGetId('link'+ num +'Paddings').style.width = linkWidth;
             elemenetGetId('link'+ num +'Paddings').style.height = linkHeight;
         }
-        if(elemenetGetId('linkNum').className == 'link1'){
-            chrome.storage.local.set({'link1Img':linkImgUrl});
-            chrome.storage.local.set({'link1Padding':num});
-            chrome.storage.local.set({'link1Width':numi * 2 + 50});
-            chrome.storage.local.set({'link1Height':numi * 2 + 50});
-            chrome.storage.local.set({'link1':changeLinkInput})
-            change('1');
-            elemenetGetId('link1').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link2'){
-            chrome.storage.local.set({'link2Img':linkImgUrl});
-            chrome.storage.local.set({'link2Padding':num});
-            chrome.storage.local.set({'link2Width':numi * 2 + 50});
-            chrome.storage.local.set({'link2Height':numi * 2 + 50});
-            chrome.storage.local.set({'link2':changeLinkInput})
-            change('2');
-            elemenetGetId('link2').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link3'){
-            chrome.storage.local.set({'link3Img':linkImgUrl});
-            chrome.storage.local.set({'link3Padding':num});
-            chrome.storage.local.set({'link3Width':numi * 2 + 50});
-            chrome.storage.local.set({'link3Height':numi * 2 + 50});
-            chrome.storage.local.set({'link3':changeLinkInput})
-            change('3');
-            elemenetGetId('link3').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link4'){
-            chrome.storage.local.set({'link4Img':linkImgUrl});
-            chrome.storage.local.set({'link4Padding':num});
-            chrome.storage.local.set({'link4Width':numi * 2 + 50});
-            chrome.storage.local.set({'link4Height':numi * 2 + 50});
-            chrome.storage.local.set({'link4':changeLinkInput})
-            change('4');
-            elemenetGetId('link4').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link5'){
-            chrome.storage.local.set({'link5Img':linkImgUrl});
-            chrome.storage.local.set({'link5Padding':num});
-            chrome.storage.local.set({'link5Width':numi * 2 + 50});
-            chrome.storage.local.set({'link5Height':numi * 2 + 50});
-            chrome.storage.local.set({'link5':changeLinkInput})
-            change('5');
-            elemenetGetId('link5').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link6'){
-            chrome.storage.local.set({'link6Img':linkImgUrl});
-            chrome.storage.local.set({'link6Padding':num});
-            chrome.storage.local.set({'link6Width':numi * 2 + 50});
-            chrome.storage.local.set({'link6Height':numi * 2 + 50});
-            chrome.storage.local.set({'link6':changeLinkInput})
-            change('6');
-            elemenetGetId('ithome').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link7'){
-            chrome.storage.local.set({'link7Img':linkImgUrl});
-            chrome.storage.local.set({'link7Padding':num});
-            chrome.storage.local.set({'link7Width':numi * 2 + 50});
-            chrome.storage.local.set({'link7Height':numi * 2 + 50});
-            chrome.storage.local.set({'link7':changeLinkInput})
-            change('7');
-            elemenetGetId('chromeStore').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link8'){
-            chrome.storage.local.set({'link8Img':linkImgUrl});
-            chrome.storage.local.set({'link8Padding':num});
-            chrome.storage.local.set({'link8Width':numi * 2 + 50});
-            chrome.storage.local.set({'link8Height':numi * 2 + 50});
-            chrome.storage.local.set({'link8':changeLinkInput})
-            change('8');
-            elemenetGetId('aliyun').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link9'){
-            chrome.storage.local.set({'link9Img':linkImgUrl});
-            chrome.storage.local.set({'link9Padding':num});
-            chrome.storage.local.set({'link9Width':numi * 2 + 50});
-            chrome.storage.local.set({'link9Height':numi * 2 + 50});
-            chrome.storage.local.set({'link9':changeLinkInput})
-            change('9');
-            elemenetGetId('azure').href = changeLinkInput;
-            close();
-        }
-        if(elemenetGetId('linkNum').className == 'link10'){
-            chrome.storage.local.set({'link10Img':linkImgUrl});
-            chrome.storage.local.set({'link10Padding':num});
-            chrome.storage.local.set({'link10Width':numi * 2 + 50});
-            chrome.storage.local.set({'link10Height':numi * 2 + 50});
-            chrome.storage.local.set({'link10':changeLinkInput})
-            change('10');
-            elemenetGetId('link10').href = changeLinkInput;
-            close();
+        if(elemenetGetId('changeLinkInput').value == 'http://'){
+            elemenetGetId('toast').style.display = '';
+            elemenetGetId('blackBack').style.zIndex = '251';
+            elemenetGetId('Msg').innerText = '链接不能为空';
+            elemenetGetId('toastButton').onclick = function(){
+                elemenetGetId('toast').style.display = 'none';
+                elemenetGetId('blackBack').style.zIndex = '201';
+            }
+        }else{
+            if(linkImgUrl == 'chrome-extension://ipccoedebcknfogkkoaahnngilkhcfkb/newPage/index.html'){
+                linkImgUrl = 'imgs/dLinkIcon.png';
+            }
+            if(elemenetGetId('linkNum').className == 'link1'){
+                chrome.storage.local.set({'link1Img':linkImgUrl});
+                chrome.storage.local.set({'link1Padding':num});
+                chrome.storage.local.set({'link1Width':numi * 2 + 50});
+                chrome.storage.local.set({'link1Height':numi * 2 + 50});
+                chrome.storage.local.set({'link1':changeLinkInput})
+                change('1');
+                elemenetGetId('link1').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link2'){
+                chrome.storage.local.set({'link2Img':linkImgUrl});
+                chrome.storage.local.set({'link2Padding':num});
+                chrome.storage.local.set({'link2Width':numi * 2 + 50});
+                chrome.storage.local.set({'link2Height':numi * 2 + 50});
+                chrome.storage.local.set({'link2':changeLinkInput})
+                change('2');
+                elemenetGetId('link2').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link3'){
+                chrome.storage.local.set({'link3Img':linkImgUrl});
+                chrome.storage.local.set({'link3Padding':num});
+                chrome.storage.local.set({'link3Width':numi * 2 + 50});
+                chrome.storage.local.set({'link3Height':numi * 2 + 50});
+                chrome.storage.local.set({'link3':changeLinkInput})
+                change('3');
+                elemenetGetId('link3').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link4'){
+                chrome.storage.local.set({'link4Img':linkImgUrl});
+                chrome.storage.local.set({'link4Padding':num});
+                chrome.storage.local.set({'link4Width':numi * 2 + 50});
+                chrome.storage.local.set({'link4Height':numi * 2 + 50});
+                chrome.storage.local.set({'link4':changeLinkInput})
+                change('4');
+                elemenetGetId('link4').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link5'){
+                chrome.storage.local.set({'link5Img':linkImgUrl});
+                chrome.storage.local.set({'link5Padding':num});
+                chrome.storage.local.set({'link5Width':numi * 2 + 50});
+                chrome.storage.local.set({'link5Height':numi * 2 + 50});
+                chrome.storage.local.set({'link5':changeLinkInput})
+                change('5');
+                elemenetGetId('link5').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link6'){
+                chrome.storage.local.set({'link6Img':linkImgUrl});
+                chrome.storage.local.set({'link6Padding':num});
+                chrome.storage.local.set({'link6Width':numi * 2 + 50});
+                chrome.storage.local.set({'link6Height':numi * 2 + 50});
+                chrome.storage.local.set({'link6':changeLinkInput})
+                change('6');
+                elemenetGetId('ithome').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link7'){
+                chrome.storage.local.set({'link7Img':linkImgUrl});
+                chrome.storage.local.set({'link7Padding':num});
+                chrome.storage.local.set({'link7Width':numi * 2 + 50});
+                chrome.storage.local.set({'link7Height':numi * 2 + 50});
+                chrome.storage.local.set({'link7':changeLinkInput})
+                change('7');
+                elemenetGetId('chromeStore').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link8'){
+                chrome.storage.local.set({'link8Img':linkImgUrl});
+                chrome.storage.local.set({'link8Padding':num});
+                chrome.storage.local.set({'link8Width':numi * 2 + 50});
+                chrome.storage.local.set({'link8Height':numi * 2 + 50});
+                chrome.storage.local.set({'link8':changeLinkInput})
+                change('8');
+                elemenetGetId('aliyun').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link9'){
+                chrome.storage.local.set({'link9Img':linkImgUrl});
+                chrome.storage.local.set({'link9Padding':num});
+                chrome.storage.local.set({'link9Width':numi * 2 + 50});
+                chrome.storage.local.set({'link9Height':numi * 2 + 50});
+                chrome.storage.local.set({'link9':changeLinkInput})
+                change('9');
+                elemenetGetId('azure').href = changeLinkInput;
+                close();
+            }
+            if(elemenetGetId('linkNum').className == 'link10'){
+                chrome.storage.local.set({'link10Img':linkImgUrl});
+                chrome.storage.local.set({'link10Padding':num});
+                chrome.storage.local.set({'link10Width':numi * 2 + 50});
+                chrome.storage.local.set({'link10Height':numi * 2 + 50});
+                chrome.storage.local.set({'link10':changeLinkInput})
+                change('10');
+                elemenetGetId('link10').href = changeLinkInput;
+                close();
+            }
         }
     }
 }

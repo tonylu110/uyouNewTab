@@ -55,7 +55,7 @@ function useChangeLink(){
         num = 25;
         numi = 0;
         elemenetGetId('paddingNum').innerText = num;
-        elemenetGetId('linkImg').src = '';
+        elemenetGetId('linkImg').src = 'imgs/dLinkIcon.png';
         elemenetGetId('linkImg').hidden = true;
         elemenetGetId('linkChangePadding').style.padding = num + 'px';
         elemenetGetId('linkChangePadding').style.width = numi * 2 + 50 + 'px';
@@ -99,7 +99,7 @@ function useChangeLink(){
         let linkHeight = elemenetGetId('linkChangePadding').style.height;
         let changeLinkInput = elemenetGetId('changeLinkInput').value;
         function change(num){
-            if(linkImgUrl == 'chrome-extension://ipccoedebcknfogkkoaahnngilkhcfkb/newPage/index.html'){
+            if(linkImgUrl == 'imgs/dLinkIcon.png'){
                 linkImgUrl = 'imgs/dLinkIcon.png';
             }
             elemenetGetId('link'+ num +'Img').src = linkImgUrl;
@@ -120,7 +120,7 @@ function useChangeLink(){
                 elemenetGetId('blackBack').style.zIndex = '201';
             }
         }else{
-            if(linkImgUrl == 'chrome-extension://ipccoedebcknfogkkoaahnngilkhcfkb/newPage/index.html'){
+            if(linkImgUrl == 'imgs/dLinkIcon.png'){
                 linkImgUrl = 'imgs/dLinkIcon.png';
             }
             if(elemenetGetId('linkNum').className == 'link1'){

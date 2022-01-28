@@ -178,7 +178,6 @@ function hsFeatureUse(){
         }else if(calHS == 'show'){
             elemenetGetId('calHS').className = 'hsFeature';
             elemenetGetId('calHS').innerText = '显示';
-            elemenetGetId('cal').hidden = false;
             if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeature'){
                 elemenetGetId('cal').style.marginLeft = '20px'
             }

@@ -50,6 +50,7 @@ function hs(){
                 info.hidden = false; //hide info button
                 // hide.style.marginRight = '20px';
             }
+            
         }
     })
 }

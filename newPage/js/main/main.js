@@ -113,7 +113,6 @@ function onHide(){
   elemenetGetId('settings').hidden = true;
 }
 
-
 function mainUse(){
   var httpRequest = new XMLHttpRequest();
   function picget(url){

@@ -184,3 +184,19 @@ body{
     width: 100vw;
     height: 100vh;
 }
+
+#loading{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff10;
+    backdrop-filter: blur(20px);
+    z-index: -2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loading{
+    font-size: 50px;
+    font-weight: bold;
+}

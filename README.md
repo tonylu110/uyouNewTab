@@ -4,17 +4,11 @@
 
 ## 桌面端样式
 * 主页
-![](demo/demo.png)
-![](demo/demo4.png)
-* 历史记录
-![](demo/demo2.png)
-* 设置及帮助页面
-![](demo/demo6.png)
-![](demo/demo7.png)
-* 关于页面
-![](demo/demo3.png)
+![](demo/demo1.png)
 * 一言
-![](demo/demo5.png)
+![](demo/demo2.png)
+* 设置
+![](demo/demo3.png)
 
 ## 移动端样式
 * 主页

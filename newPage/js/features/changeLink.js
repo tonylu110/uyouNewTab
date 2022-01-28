@@ -99,9 +99,6 @@ function useChangeLink(){
         let linkHeight = elemenetGetId('linkChangePadding').style.height;
         let changeLinkInput = elemenetGetId('changeLinkInput').value;
         function change(num){
-            if(linkImgUrl == 'imgs/dLinkIcon.png'){
-                linkImgUrl = 'imgs/dLinkIcon.png';
-            }
             elemenetGetId('link'+ num +'Img').src = linkImgUrl;
             elemenetGetId('link'+ num +'Padding').style.padding = linkPadding;
             elemenetGetId('link'+ num +'Padding').style.width = linkWidth;
@@ -111,7 +108,7 @@ function useChangeLink(){
             elemenetGetId('link'+ num +'Paddings').style.width = linkWidth;
             elemenetGetId('link'+ num +'Paddings').style.height = linkHeight;
         }
-        if(elemenetGetId('changeLinkInput').value == 'http://'){
+        if(changeLinkInput == 'http://'){
             elemenetGetId('toast').style.display = '';
             elemenetGetId('blackBack').style.zIndex = '251';
             elemenetGetId('Msg').innerText = '链接不能为空';
@@ -119,10 +116,7 @@ function useChangeLink(){
                 elemenetGetId('toast').style.display = 'none';
                 elemenetGetId('blackBack').style.zIndex = '201';
             }
-        }else{
-            if(linkImgUrl == 'imgs/dLinkIcon.png'){
-                linkImgUrl = 'imgs/dLinkIcon.png';
-            }
+        }else if(changeLinkInput.slice(0,7) == 'http://' || changeLinkInput.slice(0,8) == 'https://' || changeLinkInput == ''){
             if(elemenetGetId('linkNum').className == 'link1'){
                 chrome.storage.local.set({'link1Img':linkImgUrl});
                 chrome.storage.local.set({'link1Padding':num});
@@ -223,6 +217,15 @@ function useChangeLink(){
                 elemenetGetId('link10').href = changeLinkInput;
                 close();
             }
+        }else{
+            elemenetGetId('toast').style.display = '';
+            elemenetGetId('blackBack').style.zIndex = '251';
+            elemenetGetId('Msg').innerText = '链接格式不对';
+            elemenetGetId('toastButton').onclick = function(){
+                elemenetGetId('toast').style.display = 'none';
+                elemenetGetId('blackBack').style.zIndex = '201';
+            }
+            console.log(changeLinkInput.slice(0,8));
         }
     }
 }

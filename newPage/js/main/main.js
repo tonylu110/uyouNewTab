@@ -162,7 +162,7 @@ function mainUse(){
             },200)
           }else{
             print('network is not working');
-            background.style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random()*5) + ".jfif')";
+            background.style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random()*5) + ".jpg')";
             button.innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
             button.onclick = oneMain.style.display = 'none';
             down.onclick = function(){

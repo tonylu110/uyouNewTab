@@ -26,7 +26,7 @@
 .settingMain{
     position: fixed;
     z-index: 200;
-    width: 650px;
+    width: 750px;
     height: 500px;
     background-color: #ffffff90;
     box-shadow: 0px 0px 70px #00000070;
@@ -58,6 +58,49 @@
     overflow-y: scroll;
 }
 
+#settingMenu{
+    width: 400px;
+    margin-right: 20px;
+}
+.mainSettings{
+    margin-top: 20px;
+    margin-left: -5px;
+    background-color: #ffffff50;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 1px;
+}
+.settingBtn{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    margin: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.settingBtn img{
+    height: 20px;
+}
+
+.exImgs{
+    margin-left: -5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#exImg img{
+    margin: 5px;
+    width: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 #settingCloseButton{
     padding: 8px;
     width: 14px;
@@ -87,11 +130,11 @@
 .settingTitle{
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .helpTitle{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -99,7 +142,7 @@
 .settingInnerTitle{
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 #backgroundUpload{
@@ -189,17 +232,23 @@
 .helpQ{
     font-size: 18px;
     font-weight: bold;
-    margin-top: 5px;
 }
 .helpA{
     font-size: 18px;
     font-weight: bold;
     margin-top: 5px;
+}
+
+.helpBox{
+    background-color: #ffffff50;
+    border-radius: 10px;
+    padding: 15px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .donateTitle{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -214,13 +263,14 @@
 .donateImg{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .donateImg img{
     max-width: 200px;
     border-radius: 10px;
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 .onlinePic{
@@ -263,11 +313,17 @@
     box-shadow: 0px 0px 2px #00000050;
     border-radius: 50%;
     backdrop-filter: blur(20px);
-    margin-bottom: 10px;
+    margin-right: 20px;
 }
 .featuresBtn img{
     width: 100%;
     height: 100%;
+}
+
+.featureNames{
+    font-size: 17px;
+    font-weight: bold;
+    width: 61%;
 }
 .featureSetting{
     display: flex;
@@ -278,11 +334,37 @@
     margin-bottom: 10px;
 }
 
+.featureBtns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    background-color: #ffffff50;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
 .featureBtn{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5px;
+}
+.hsFeatures{
+    background-color: #0078d4;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 5px;
+    user-select: none;
+}
+.hsFeatures:active{
+    background-color: #035fa5;
 }
 .hsFeature{
     background-color: #0078d4;
@@ -293,11 +375,26 @@
     font-size: 15px;
     text-align: center;
     cursor: pointer;
+    user-select: none;
 }
 .hsFeature:active{
     background-color: #035fa5;
 }
 
+.hsFeatureHides{
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 5px;
+    user-select: none;
+}
+.hsFeatureHides:active{
+    background-color: #9e9e9e;
+}
 .hsFeatureHide{
     background-color: #e6e6e6;
     border-radius: 10px;
@@ -306,8 +403,53 @@
     font-size: 15px;
     text-align: center;
     cursor: pointer;
+    user-select: none;
 }
 .hsFeatureHide:active{
+    background-color: #9e9e9e;
+}
+
+.otherBtn{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff50;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.otherName{
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.otherFeatures{
+    background-color: #0078d4;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+}
+.otherFeatures:active{
+    background-color: #035fa5;
+}
+.otherFeaturesBefore{
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+.otherFeaturesBefore:active{
     background-color: #9e9e9e;
 }
 

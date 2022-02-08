@@ -24,6 +24,7 @@
     <script src="js/features/hsFeature.js"></script>
     <script src="js/features/hsLink.js"></script>
     <script src="js/features/changeLink.js"></script>
+    <script src="js/features/settingMenu.js"></script>
     <script src="js/features/settings.js"></script>
     <script src="js/main/load.js"></script>
 </head>
@@ -63,11 +64,25 @@
     </div>
     <div id="settingMain" class="settingMainBefore" >
         <div id="settingCloseButton" style="display: none;"><img src="imgs/close.png"></div>
-        <div id="settingInnerMain" style="display: none;">
+        <div id="settingMenu" style="display: none;">
             <div class="settingTitle">设置</div>
+            <div class="mainSettings">
+                <div class="settingBtn" id="backgroundSettings" style="background-color: #ffffff70;">背景<img src="imgs/to.png"></div>
+                <div class="settingBtn" id="festuresSettings">功能<img src="imgs/to.png"></div>
+                <div class="settingBtn" id="linkSettings">书签<img src="imgs/to.png"></div>
+            </div>
+            <div class="mainSettings">
+                <div class="settingBtn" id="otherSettings">其他设置<img src="imgs/to.png"></div>
+            </div>
+            <div class="mainSettings">
+                <div class="settingBtn" id="helpInfo">帮助 Q&A<img src="imgs/to.png"></div>
+                <div class="settingBtn" id="donateInfo">捐赠<img src="imgs/to.png"></div>
+            </div>
+        </div>
+        <div id="settingInnerMain" style="display: none;">
             <div class="settingInner">
                 <div id="backgroundSetting" class="settingInnerTitle">背景设置
-                    <div class="backgroundTitile">本地图片</div>
+                    <div class="backgroundTitile">选择图片</div>
                     <div class="uploadBtn" id="uploadBtn">
                         <div id="fileName">选择你的图片</div>
                         <input type="file" id="backgroundUpload" accept="image/*">
@@ -79,48 +94,68 @@
                     </div>
                     <div id="picError"></div>
                     <img src="" id="viewImg" style="display: none;">
+                    <div id="exImg">
+                        <div class="backgroundTitile">本地图片</div>
+                        <div class="exImgs">
+                            <img id="background0" src="imgs/background - 0.jpg">
+                            <img id="background1" src="imgs/background - 1.jpg">
+                            <img id="background2" src="imgs/background - 2.jpg">
+                            <img id="background3" src="imgs/background - 3.jpg">
+                            <img id="background4" src="imgs/background - 4.jpg">
+                            <img id="background5" src="imgs/background - 5.jpg">
+                        </div>
+                    </div>
                     <div class="backgroundButtons">
                         <div id="backgroundSetButton" hidden>设置为此图片</div>
                         <div id="backgroundBefore">恢复默认</div>
                     </div>
                 </div>
-                <div class="settingInnerTitle">功能设置
+                <div id="festuresSetting" class="settingInnerTitle" style="display: none;">功能设置
+                    <div class="backgroundTitile">设置隐藏/显示功能按钮</div>
                     <div class="featureSetting">
-                        <div class="featureBtn">
+                        <div class="featureBtns">
                             <div class="featuresBtn"><img src="imgs/hide.png"></div>
-                            <div class="hsFeature" id="hideHS">显示</div>
+                            <div class="featureNames">隐藏全部</div>
+                            <div class="hsFeatures" id="hideHS">显示</div>
                         </div>
-                        <div class="featureBtn" id="historyFeatureBtn">
+                        <div class="featureBtns" id="historyFeatureBtn">
                             <div class="featuresBtn"><img src="imgs/fy_ic_history.png"></div>
-                            <div class="hsFeature" id="historyHS">显示</div>
+                            <div class="featureNames">历史记录</div>
+                            <div class="hsFeatures" id="historyHS">显示</div>
                         </div>
-                        <div class="featureBtn">
+                        <div class="featureBtns">
                             <div class="featuresBtn"><img src="imgs/reload.png"></div>
-                            <div class="hsFeature" id="reloadHS">显示</div>
+                            <div class="featureNames">刷新</div>
+                            <div class="hsFeatures" id="reloadHS">显示</div>
                         </div>
-                        <div class="featureBtn">
+                        <div class="featureBtns">
                             <div class="featuresBtn"><img src="imgs/calculator.png"></div>
-                            <div class="hsFeature" id="calHS">显示</div>
+                            <div class="featureNames">计算器</div>
+                            <div class="hsFeatures" id="calHS">显示</div>
                         </div>
-                        <div class="featureBtn" id="clockFeatureBtn">
+                        <div class="featureBtns" id="clockFeatureBtn">
                             <div class="featuresBtn"><img src="imgs/timer.png"></div>
-                            <div class="hsFeature" id="timeHS">显示</div>
+                            <div class="featureNames">时钟</div>
+                            <div class="hsFeatures" id="timeHS">显示</div>
                         </div>
-                        <div class="featureBtn">
+                        <div class="featureBtns">
                             <div class="featuresBtn"><img src="imgs/down.png"></div>
-                            <div class="hsFeature" id="downHS">显示</div>
+                            <div class="featureNames">下载背景</div>
+                            <div class="hsFeatures" id="downHS">显示</div>
                         </div>
-                        <div class="featureBtn">
+                        <div class="featureBtns">
                             <div class="featuresBtn"><img src="imgs/info.png"></div>
-                            <div class="hsFeature" id="infoHS">显示</div>
+                            <div class="featureNames">关于</div>
+                            <div class="hsFeatures" id="infoHS">显示</div>
                         </div>
-                        <div class="featureBtn">
+                        <div class="featureBtns">
                             <div class="featuresBtn" style="width: 70px; border-radius: 30px; text-align: center; font-size: 17px; line-height: 30px;">一言</div>
-                            <div class="hsFeature" id="oneHS">显示</div>
+                            <div class="hsFeatures" id="oneHS">显示</div>
                         </div>
                     </div>
                 </div>
-                <div class="settingInnerTitle">书签设置
+                <div id="linkSetting" class="settingInnerTitle" style="display: none;">书签设置
+                    <div class="backgroundTitile">设置书签的显示/隐藏，以及自定义书签</div>
                     <div class="featureSetting">
                         <div class="featureBtn">
                             <div class="linkBtn" id="link1Paddings"><img src="imgs/google.png" id="link1Imgs"></div>
@@ -174,21 +209,43 @@
                         </div>
                     </div>
                 </div>
+                <div id="otherSetting" class="settingInnerTitle" style="display: none;">其他设置
+                    <div class="otherBtn">
+                        <div class="otherName">加载动画</div>
+                        <div class="otherFeaturesBefore" id="loadingAn">隐藏</div>
+                    </div>
+                </div>
             </div>
-            <div class="helpTitle">帮助 Q&A</div>
-            <div class="helpInner">
-                <div class="helpQ">Q：如何切换搜索引擎？</div>
-                <div class="helpA">A：点击搜索框最左边的的搜索引擎图标可以更换搜索引擎，包括：Google、bing、百度。</div>
-                <div class="helpQ">Q：显示“在线图片加载失败，已加载内建图片”是上面原因？</div>
-                <div class="helpA">A：因为您的网络可能未能及时获取到背景图片的链接，刷新一下可以尝试重新获取。</div>
+            <div id="helpMain" class="otherInfo" style="display: none;">
+                <div class="helpTitle">帮助 Q&A</div>
+                <div class="helpInner">
+                    <div class="helpBox">
+                        <div class="helpQ">Q：如何切换搜索引擎？</div>
+                        <div class="helpA">A：点击搜索框最左边的的搜索引擎图标可以更换搜索引擎，包括：Google、bing、百度。</div>
+                    </div>
+                    <div class="helpBox">
+                        <div class="helpQ">Q：显示“在线图片加载失败，已加载内建图片”是什么原因？</div>
+                        <div class="helpA">A：因为您的网络可能未能及时获取到背景图片的链接，刷新一下可以尝试重新获取。</div>
+                    </div>
+                    <div class="helpBox">
+                        <div class="helpQ">Q：书签自定义链接无效是什么原因？</div>
+                        <div class="helpA">A：请以 “http://” 或 “https://” 为开头设置连接，其他形式的连接无效。</div>
+                    </div>
+                    <div class="helpBox">
+                        <div class="helpQ">Q：如何恢复原书签位的书签？</div>
+                        <div class="helpA">A：以空白为连接设置即可恢复原书签位书签。</div>
+                    </div>
+                </div>
             </div>
-            <div class="donateTitle">捐赠</div>
-            <div class="donateInner">
-                <div class="donateMsg">如果你觉得这个项目帮到你的话可以请我喝杯咖啡吗？</div>
-                <div class="donateImg" id="donateImg">
-                    <img src="imgs/donate/donate1.png">
-                    <img src="imgs/donate/donate2.jpg">
-                    <img src="imgs/donate/donate3.png">
+            <div id="donateMain" class="otherInfo" style="display: none;">
+                <div class="donateTitle">捐赠</div>
+                <div class="donateInner">
+                    <div class="donateMsg">如果你觉得这个项目帮到你的话可以请我喝杯咖啡吗？</div>
+                    <div class="donateImg" id="donateImg">
+                        <img src="imgs/donate/donate1.png">
+                        <img src="imgs/donate/donate2.jpg">
+                        <img src="imgs/donate/donate3.png">
+                    </div>
                 </div>
             </div>
         </div>

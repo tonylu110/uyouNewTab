@@ -9,20 +9,20 @@ function hsFeature(){
     var infoHS = elemenetGetId('infoHS');
     var oneHS = elemenetGetId('oneHS');
     hideHS.onclick = function(){
-        if(hideHS.className == 'hsFeature'){
+        if(hideHS.className == 'hsFeatures'){
             chrome.storage.local.set({'hideHS':'hide'});
-            hideHS.className = 'hsFeatureHide';
+            hideHS.className = 'hsFeatureHides';
             hideHS.innerText = '隐藏';
             elemenetGetId('hide').hidden = true;
             if(screenWidth <= 813){
                 elemenetGetId('reload').style.marginLeft = '0px'
-                if(historyHS.className == 'hsFeatureHide'){
+                if(historyHS.className == 'hsFeatureHides'){
                     elemenetGetId('cal').style.marginLeft = '0px'
                 }
             }
         }else{
             chrome.storage.local.set({'hideHS':'show'});
-            hideHS.className = 'hsFeature';
+            hideHS.className = 'hsFeatures';
             hideHS.innerText = '显示';
             elemenetGetId('hide').hidden = false;
             if(screenWidth <= 813){
@@ -32,101 +32,101 @@ function hsFeature(){
         }
     }
     historyHS.onclick = function(){
-        if(historyHS.className == 'hsFeature'){
+        if(historyHS.className == 'hsFeatures'){
             chrome.storage.local.set({'historyHS':'hide'});
-            historyHS.className = 'hsFeatureHide';
+            historyHS.className = 'hsFeatureHides';
             historyHS.innerText = '隐藏';
             elemenetGetId('history').hidden = true;
         }else{
             chrome.storage.local.set({'historyHS':'show'});
-            historyHS.className = 'hsFeature';
+            historyHS.className = 'hsFeatures';
             historyHS.innerText = '显示';
             elemenetGetId('history').hidden = false;
         }
     }
     reloadHS.onclick = function(){
-        if(reloadHS.className == 'hsFeature'){
+        if(reloadHS.className == 'hsFeatures'){
             chrome.storage.local.set({'reloadHS':'hide'});
-            reloadHS.className = 'hsFeatureHide';
+            reloadHS.className = 'hsFeatureHides';
             reloadHS.innerText = '隐藏';
             elemenetGetId('reload').hidden = true;
-            if(screenWidth <= 813 && hideHS.className == 'hsFeatureHide'){
+            if(screenWidth <= 813 && hideHS.className == 'hsFeatureHides'){
                 elemenetGetId('cal').style.marginLeft = '0px'
             }
         }else{
             chrome.storage.local.set({'reloadHS':'show'});
-            reloadHS.className = 'hsFeature';
+            reloadHS.className = 'hsFeatures';
             reloadHS.innerText = '显示';
             elemenetGetId('reload').hidden = false;
-            if(screenWidth <= 813 && hideHS.className == 'hsFeatureHide'){
+            if(screenWidth <= 813 && hideHS.className == 'hsFeatureHides'){
                 elemenetGetId('cal').style.marginLeft = '20px'
             }
         }
     }
     calHS.onclick = function(){
-        if(calHS.className == 'hsFeature'){
+        if(calHS.className == 'hsFeatures'){
             chrome.storage.local.set({'calHS':'hide'});
-            calHS.className = 'hsFeatureHide';
+            calHS.className = 'hsFeatureHides';
             calHS.innerText = '隐藏';
             elemenetGetId('cal').hidden = true;
         }else{
             chrome.storage.local.set({'calHS':'show'});
-            calHS.className = 'hsFeature';
+            calHS.className = 'hsFeatures';
             calHS.innerText = '显示';
             elemenetGetId('cal').hidden = false;
-            if(screenWidth <= 813 && hideHS.className == 'hsFeature'){
+            if(screenWidth <= 813 && hideHS.className == 'hsFeatures'){
                 elemenetGetId('cal').style.marginLeft = '20px'
             }
         }
     }
     timeHS.onclick = function(){
-        if(timeHS.className == 'hsFeature'){
+        if(timeHS.className == 'hsFeatures'){
             chrome.storage.local.set({'timeHS':'hide'});
-            timeHS.className = 'hsFeatureHide';
+            timeHS.className = 'hsFeatureHides';
             timeHS.innerText = '隐藏';
             elemenetGetId('clock').hidden = true;
         }else{
             chrome.storage.local.set({'timeHS':'show'});
-            timeHS.className = 'hsFeature';
+            timeHS.className = 'hsFeatures';
             timeHS.innerText = '显示';
             elemenetGetId('clock').hidden = false;
         }
     }
     downHS.onclick = function(){
-        if(downHS.className == 'hsFeature'){
+        if(downHS.className == 'hsFeatures'){
             chrome.storage.local.set({'downHS':'hide'});
-            downHS.className = 'hsFeatureHide';
+            downHS.className = 'hsFeatureHides';
             downHS.innerText = '隐藏';
             elemenetGetId('down').hidden = true;
         }else{
             chrome.storage.local.set({'downHS':'show'});
-            downHS.className = 'hsFeature';
+            downHS.className = 'hsFeatures';
             downHS.innerText = '显示';
             elemenetGetId('down').hidden = false;
         }
     }
     infoHS.onclick = function(){
-        if(infoHS.className == 'hsFeature'){
+        if(infoHS.className == 'hsFeatures'){
             chrome.storage.local.set({'infoHS':'hide'});
-            infoHS.className = 'hsFeatureHide';
+            infoHS.className = 'hsFeatureHides';
             infoHS.innerText = '隐藏';
             elemenetGetId('info').hidden = true;
         }else{
             chrome.storage.local.set({'infoHS':'show'});
-            infoHS.className = 'hsFeature';
+            infoHS.className = 'hsFeatures';
             infoHS.innerText = '显示';
             elemenetGetId('info').hidden = false;
         }
     }
     oneHS.onclick = function(){
-        if(oneHS.className == 'hsFeature'){
+        if(oneHS.className == 'hsFeatures'){
             chrome.storage.local.set({'oneHS':'hide'});
-            oneHS.className = 'hsFeatureHide';
+            oneHS.className = 'hsFeatureHides';
             oneHS.innerText = '隐藏';
             elemenetGetId('button').style.marginBottom = '-100px';
         }else{
             chrome.storage.local.set({'oneHS':'show'});
-            oneHS.className = 'hsFeature';
+            oneHS.className = 'hsFeatures';
             oneHS.innerText = '显示';
             if(screenWidth <= 813){
                 elemenetGetId('button').style.marginBottom = '150px';
@@ -149,57 +149,57 @@ function hsFeatureUse(){
         let oneHS = budget.oneHS;
         if(hideHS == 'hide'){
             elemenetGetId('hide').hidden = true;
-            elemenetGetId('hideHS').className = 'hsFeatureHide';
+            elemenetGetId('hideHS').className = 'hsFeatureHides';
             elemenetGetId('hideHS').innerText = '隐藏';
             if(screenWidth <= 813){
                 elemenetGetId('reload').style.marginLeft = '0px'
-                if(elemenetGetId('historyHS').className == 'hsFeatureHide'){
+                if(elemenetGetId('historyHS').className == 'hsFeatureHides'){
                     elemenetGetId('cal').style.marginLeft = '0px'
                 }
             }
         }
         if(historyHS == 'hide'){
             elemenetGetId('history').hidden = true;
-            elemenetGetId('historyHS').className = 'hsFeatureHide';
+            elemenetGetId('historyHS').className = 'hsFeatureHides';
             elemenetGetId('historyHS').innerText = '隐藏';
         }
         if(reloadHS == 'hide'){
             elemenetGetId('reload').hidden = true;
-            elemenetGetId('reloadHS').className = 'hsFeatureHide';
+            elemenetGetId('reloadHS').className = 'hsFeatureHides';
             elemenetGetId('reloadHS').innerText = '隐藏';
-            if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeatureHide'){
+            if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeatureHides'){
                 elemenetGetId('cal').style.marginLeft = '0px'
             }
         }
         if(calHS == 'hide'){
             elemenetGetId('cal').hidden = true;
-            elemenetGetId('calHS').className = 'hsFeatureHide';
+            elemenetGetId('calHS').className = 'hsFeatureHides';
             elemenetGetId('calHS').innerText = '隐藏';
         }else if(calHS == 'show'){
-            elemenetGetId('calHS').className = 'hsFeature';
+            elemenetGetId('calHS').className = 'hsFeatures';
             elemenetGetId('calHS').innerText = '显示';
-            if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeature'){
+            if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeatures'){
                 elemenetGetId('cal').style.marginLeft = '20px'
             }
         }
         if(timeHS == 'hide'){
             elemenetGetId('clock').hidden = true;
-            elemenetGetId('timeHS').className = 'hsFeatureHide';
+            elemenetGetId('timeHS').className = 'hsFeatureHides';
             elemenetGetId('timeHS').innerText = '隐藏';
         }
         if(downHS == 'hide'){
             elemenetGetId('down').hidden = true;
-            elemenetGetId('downHS').className = 'hsFeatureHide';
+            elemenetGetId('downHS').className = 'hsFeatureHides';
             elemenetGetId('downHS').innerText = '隐藏';
         }
         if(infoHS == 'hide'){
             elemenetGetId('info').hidden = true;
-            elemenetGetId('infoHS').className = 'hsFeatureHide';
+            elemenetGetId('infoHS').className = 'hsFeatureHides';
             elemenetGetId('infoHS').innerText = '隐藏';
         }
         if(oneHS == 'hide'){
             elemenetGetId('button').style.marginBottom = '-100px';
-            elemenetGetId('oneHS').className = 'hsFeatureHide';
+            elemenetGetId('oneHS').className = 'hsFeatureHides';
             elemenetGetId('oneHS').innerText = '隐藏';
         }
     })

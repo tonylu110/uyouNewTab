@@ -7,8 +7,6 @@ function historyUse(){
         'maxResults': 50
     };
     chrome.history.search(query,function(results) {
-        console.log(results);
-        
         for(i = 0; i < results.length; i++){
             var title = results[i].title;
             var link = results[i].url;

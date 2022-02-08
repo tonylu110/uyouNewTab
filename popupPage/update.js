@@ -9,9 +9,8 @@ function getUpade(url){
         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
             var mainUpdate = httpRequest.responseXML;
             var json = mainUpdate.getElementById('mainUpdate').innerHTML;
-            console.log(json);
-
-            var obj = eval("(" + json + ")");
+            var obj = JSON.parse(json);
+            console.log(obj);
 
             document.getElementById('updateTitle').innerHTML = '有新版本';
             document.getElementById('updateVersion').innerHTML = '新版本：' + obj.codename;

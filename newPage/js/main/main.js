@@ -120,12 +120,9 @@ function mainUse(){
     httpRequest.send();
     httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-            var pic = httpRequest.responseText;
-
-            var obj = eval("(" + pic + ")");
+            var obj = JSON.parse(httpRequest.responseText);
             var pic = obj.pic;
 
-            console.log(obj);
             elemenetGetId('picurl').className = pic;
         }
     };
@@ -141,7 +138,7 @@ function mainUse(){
       picUrl = '';
     }
     if(picUrl != ''){
-      background.style.backgroundImage = "url(" + budget.picUrl + ")";
+      background.style.backgroundImage = 'url(' + budget.picUrl + ')';
       down.style.display = 'none';
     }else{
       elemenetGetId('backgroundBefore').hidden = true;
@@ -249,6 +246,20 @@ function mainUse(){
     }); 
   }
 
+  chrome.storage.local.get(['loadingAn'],function(budget){
+    var loadingAn = budget.loadingAn;
+    if(loadingAn == 'show'){
+      elemenetGetId('loadingAn').className = 'otherFeatures';
+      elemenetGetId('loadingAn').innerText = '显示';
+      elemenetGetId('loading').style.zIndex = '300';
+      elemenetGetId('loading').style.display = '';
+      setTimeout(function(){
+        elemenetGetId('loading').style.zIndex = '-3';
+        elemenetGetId('loading').style.display = 'none';
+      },500)
+    }
+  })
+
   //This is historybar function
   elemenetGetId('history').onclick = function onBarButton(){
     elemenetGetId('bar').className = 'barSel'; //change historyBar style to barSelect style
@@ -289,7 +300,15 @@ function mainUse(){
   }
 
   elemenetGetId('clock').onclick = function onClock(){
-    setInterval("getTime()",1000);
+    setInterval(function(){
+      var time=new Date();
+      var timeele = elemenetGetId('time')
+      var h=time.getHours();
+      var m=time.getMinutes();
+      var s=time.getSeconds();
+    
+      timeele.innerHTML=h+":"+m+":"+s;
+    },1000);
     var hide = elemenetGetId('button').hidden;
     if(hide == false){
       elemenetGetId('mainClock').style.display=""; //show clock element

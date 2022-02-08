@@ -9,11 +9,13 @@ function settingUse(){
     var backgroundSetButton = elemenetGetId('backgroundSetButton');
     var onlinePicUrl = elemenetGetId('onlinePicUrl');
     var picError = elemenetGetId('picError');
+    var settingMenu = elemenetGetId('settingMenu');
     elemenetGetId('settings').onclick = function(){
         settingMain.className = 'settingMain';
         setTimeout(function(){
             settingInnerMain.style.display = '';
             settingCloseButton.style.display = '';
+            settingMenu.style.display = '';
         },450)
         blackBack.style.zIndex = 150;
         blackBack.style.backgroundColor = '#00000050';
@@ -21,12 +23,14 @@ function settingUse(){
             settingMain.style.width = '70%';
             settingMain.style.height = '50%';
             settingMain.style.padding = '40px';
+            settingMenu.style.display = 'none';
         }
     }
     settingCloseButton.onclick = function(){
         settingMain.className = 'settingMainBefore';
         settingCloseButton.style.display = 'none';
         settingInnerMain.style.display = 'none';
+        settingMenu.style.display = 'none';
         blackBack.style.zIndex = -1;
         blackBack.style.backgroundColor = '#00000010';
         viewImg.style.display = 'none';
@@ -34,7 +38,9 @@ function settingUse(){
         backgroundSetButton.hidden = true;
         onlinePicUrl.value = '';
         picError.hidden = true;
+        elemenetGetId('exImg').style.display = '';
         if(screenWidth <= 813){
+            settingMenu.style.display = 'none';
             settingMain.style.width = '0px';
             settingMain.style.height = '0px';
             settingMain.style.padding = '0px';
@@ -43,6 +49,7 @@ function settingUse(){
     elemenetGetId('backgroundUpload').onchange = function(){
         let file = this.files[0];
         let reader = new FileReader;
+        elemenetGetId('exImg').style.display = 'none';
         reader.readAsDataURL(file);
         reader.onload = function(e){
             backgroundSetButton.hidden = false;
@@ -67,6 +74,7 @@ function settingUse(){
             picError.hidden = false;
         }
         viewImg.onload = function(){
+            elemenetGetId('exImg').style.display = 'none';
             picError.hidden = true;
             viewImg.style.display = '';
             viewImg.hidden = false;
@@ -85,4 +93,7 @@ function settingUse(){
     hsLink();
     changeLink();
     useChangeLink();
+    settingMenus();
+    loaclImgChange();
+    otherFeatures();
 }

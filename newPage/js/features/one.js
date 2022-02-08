@@ -1,31 +1,16 @@
-function chageOneFontSize(){
-    elemenetGetId('oneNum').style.color = 'transparent';
-    elemenetGetId('oneTxt').style.color = 'transparent';
-    elemenetGetId('oneFrom').style.color = 'transparent';
-}
-function chageOneAni(){
-    elemenetGetId('oneNum').style.transition = '0.5s';
-    elemenetGetId('oneTxt').style.transition = '0.5s';
-    elemenetGetId('oneFrom').style.transition = '0.5s';
-}
-
 var httpRequest = new XMLHttpRequest();
 function one(){
     httpRequest.open('GET', 'https://v1.hitokoto.cn/', true);
-    // httpRequest.overrideMimeType('application/xml');
     httpRequest.send();
             
     httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-            var one = httpRequest.responseText;
-
-            var obj = eval("(" + one + ")");
+            var obj = JSON.parse(httpRequest.responseText);
 
             elemenetGetId('button').innerHTML = obj.hitokoto;
             elemenetGetId('oneNum').innerHTML = '#' + obj.id;
             elemenetGetId('oneTxt').innerHTML = obj.hitokoto;
             elemenetGetId('oneFrom').innerHTML = '————' + obj.from;
-            console.log(obj);
         }
     };
 }
@@ -85,7 +70,15 @@ function oneUse(){
         oneNum.style.transition = '0s';
         oneTxt.style.transition = '0s';
         oneFrom.style.transition = '0s';
-        setTimeout('chageOneFontSize()',502);
-        setTimeout('chageOneAni()',1000);
+        setTimeout(function(){
+            elemenetGetId('oneNum').style.color = 'transparent';
+            elemenetGetId('oneTxt').style.color = 'transparent';
+            elemenetGetId('oneFrom').style.color = 'transparent';
+        },502);
+        setTimeout(function(){
+            elemenetGetId('oneNum').style.transition = '0.5s';
+            elemenetGetId('oneTxt').style.transition = '0.5s';
+            elemenetGetId('oneFrom').style.transition = '0.5s';
+        },1000);
     }
 }

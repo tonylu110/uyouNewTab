@@ -6,7 +6,7 @@ window.onload = function (){
     }
 
     var url = 'http://crx.tnyl.xyz/';
-    getUpade(url)
+    // getUpade(url)
 
     document.getElementById('update').onclick = function(){
         chrome.tabs.create({

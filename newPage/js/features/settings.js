@@ -10,10 +10,16 @@ function settingUse(){
     var onlinePicUrl = elemenetGetId('onlinePicUrl');
     var picError = elemenetGetId('picError');
     var settingMenu = elemenetGetId('settingMenu');
+    var backSettingMenu = elemenetGetId('backSettingMenu');
     elemenetGetId('settings').onclick = function(){
         settingMain.className = 'settingMain';
         setTimeout(function(){
-            settingInnerMain.style.display = '';
+            if(screenWidth <= 813){
+                settingInnerMain.style.display = 'none';
+                settingMenu.style.marginRight = '-20px';
+            }else{
+                settingInnerMain.style.display = '';
+            }
             settingCloseButton.style.display = '';
             settingMenu.style.display = '';
         },450)
@@ -29,6 +35,7 @@ function settingUse(){
     settingCloseButton.onclick = function(){
         settingMain.className = 'settingMainBefore';
         settingCloseButton.style.display = 'none';
+        backSettingMenu.style.display = 'none';
         settingInnerMain.style.display = 'none';
         settingMenu.style.display = 'none';
         blackBack.style.zIndex = -1;

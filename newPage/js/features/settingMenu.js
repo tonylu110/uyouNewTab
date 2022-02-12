@@ -15,41 +15,71 @@ function hideMenu(){
     elemenetGetId('otherSetting').style.display = 'none';
 }
 function settingMenus(){
+    var screenWidth = body().offsetWidth;//get screen width
+    function mobileUse(){
+        elemenetGetId('settingMenu').style.display = 'none';
+        elemenetGetId('settingInnerMain').style.display = '';
+        elemenetGetId('backSettingMenu').style.display = '';
+        elemenetGetId('settingInnerMain').style.marginTop = '30px';
+    }
+    elemenetGetId('backSettingMenu').onclick = function(){
+        elemenetGetId('settingMenu').style.display = '';
+        elemenetGetId('settingInnerMain').style.display = 'none';
+        elemenetGetId('backSettingMenu').style.display = 'none';
+    }
     elemenetGetId('backgroundSettings').onclick = function(){
         menuStyle();
         elemenetGetId('backgroundSettings').style.backgroundColor = '#ffffff70';
         hideMenu();
         elemenetGetId('backgroundSetting').style.display = '';
+        if(screenWidth <= 813){
+            mobileUse();
+        }
     }
     elemenetGetId('festuresSettings').onclick = function(){
         menuStyle();
         elemenetGetId('festuresSettings').style.backgroundColor = '#ffffff70';
         hideMenu();
         elemenetGetId('festuresSetting').style.display = '';
+        if(screenWidth <= 813){
+            mobileUse();
+        }
     }
     elemenetGetId('linkSettings').onclick = function(){
         menuStyle();
         elemenetGetId('linkSettings').style.backgroundColor = '#ffffff70';
         hideMenu();
         elemenetGetId('linkSetting').style.display = '';
+        if(screenWidth <= 813){
+            mobileUse();
+        }
     }
     elemenetGetId('otherSettings').onclick = function(){
         menuStyle();
         elemenetGetId('otherSettings').style.backgroundColor = '#ffffff70';
         hideMenu();
         elemenetGetId('otherSetting').style.display = '';
+        if(screenWidth <= 813){
+            mobileUse();
+        }
     }
     elemenetGetId('helpInfo').onclick = function(){
         menuStyle();
         elemenetGetId('helpInfo').style.backgroundColor = '#ffffff70';
         hideMenu();
         elemenetGetId('helpMain').style.display = '';
+        if(screenWidth <= 813){
+            mobileUse();
+        }
     }
     elemenetGetId('donateInfo').onclick = function(){
         menuStyle();
         elemenetGetId('donateInfo').style.backgroundColor = '#ffffff70';
         hideMenu();
         elemenetGetId('donateMain').style.display = '';
+        if(screenWidth <= 813){
+            mobileUse();
+        }
     }
 }
 

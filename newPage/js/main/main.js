@@ -63,7 +63,7 @@ function changeStyle(){
     chromeStore.hidden = true;
     aliyun.hidden = true;
     main.style.marginTop = '-160px';//set search area margin top
-    uploadBtn.style.width = '255px';
+    uploadBtn.style.width = '200px';
     backgroundSetButton.style.flex = '1';
     backgroundBefore.style.flex = '1';
     donateImg.style.flexDirection = 'column';
@@ -77,6 +77,15 @@ function changeStyle(){
     elemenetGetId('link7Btn').style.display = 'none';
     elemenetGetId('link8Btn').style.display = 'none';
     elemenetGetId('link9Btn').style.display = 'none';
+    elemenetGetId('backgroundSettings').style.backgroundColor = 'transparent';
+    elemenetGetId('exImg').style.display = 'none';
+    elemenetGetClass('featureNames')[0].style.display = 'none';
+    elemenetGetClass('featureNames')[1].style.display = 'none';
+    elemenetGetClass('featureNames')[2].style.display = 'none';
+    elemenetGetClass('featureNames')[3].style.display = 'none';
+    elemenetGetClass('featureNames')[4].style.display = 'none';
+    elemenetGetClass('featureNames')[5].style.display = 'none';
+    elemenetGetClass('featureNames')[6].style.display = 'none';
   }else{
     button.style.marginBottom = '20px'
     oneMain.className = 'oneMainBefore';
@@ -177,7 +186,7 @@ function mainUse(){
             }
           }else{
             if(background.style.backgroundImage == 'url("")'){
-              background.style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random()*5) + ".jfif')";
+              background.style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random()*5) + ".jpg')";
               setTimeout(function(){
                 button.innerHTML = '在线图片加载失败，已加载内建图片哦~';
               },500)

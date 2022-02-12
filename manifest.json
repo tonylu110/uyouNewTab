@@ -11,17 +11,11 @@
     "chrome_url_overrides": {
         "newtab": "newPage/index.html"
     },
-    "host_permissions": [
-        "https://v1.hitokoto.cn/",
-        "http://mark.tnyl.xyz/api/API/mp.php?type=json",
-        "http://crx.tnyl.xyz/"
-    ],
     "action": {
         "default_popup": "popupPage/extension.html",
         "default_icon": "extension.png"
     },
     "permissions": [
-        "tabs",
         "history",
         "storage",
         "unlimitedStorage", 

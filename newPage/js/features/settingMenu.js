@@ -108,6 +108,26 @@ function loaclImgChange(){
         chrome.storage.local.set({'picUrl':"'imgs/background - 5.jpg'"});
         elemenetGetId('background').style.backgroundImage = 'url("imgs/background - 5.jpg")';
     }
+    elemenetGetId('mbackground1').onclick = function(){
+        chrome.storage.local.set({'picUrl':"'imgs/mobile/background - 1.jpg'"});
+        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 1.jpg")';
+    }
+    elemenetGetId('mbackground2').onclick = function(){
+        chrome.storage.local.set({'picUrl':"'imgs/mobile/background - 2.jpg'"});
+        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 2.jpg")';
+    }
+    elemenetGetId('mbackground3').onclick = function(){
+        chrome.storage.local.set({'picUrl':"'imgs/mobile/background - 3.jpg'"});
+        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 3.jpg")';
+    }
+    elemenetGetId('mbackground4').onclick = function(){
+        chrome.storage.local.set({'picUrl':"'imgs/mobile/background - 4.jpg'"});
+        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 4.jpg")';
+    }
+    elemenetGetId('mbackground5').onclick = function(){
+        chrome.storage.local.set({'picUrl':"'imgs/mobile/background - 5.jpg'"});
+        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 5.jpg")';
+    }
 }
 function otherFeatures(){
     elemenetGetId('loadingAn').onclick = function(){

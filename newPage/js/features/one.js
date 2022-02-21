@@ -17,6 +17,7 @@ function one(){
 
 function oneUse(){
     var screenWidth = body().offsetWidth;//get screen width
+    var screenHeight = document.documentElement.clientHeight;
     var blackBack = elemenetGetId('blackBack');
     var oneMain = elemenetGetId('oneMain');
     var closeButton = elemenetGetId('closeButton');
@@ -38,6 +39,8 @@ function oneUse(){
             oneMain.style.width = '270px';
             oneMain.style.height = '400px';
             oneMain.style.padding = '40px';
+            oneMain.style.bottom = '0';
+            oneMain.style.marginBottom = (screenHeight - 480) / 2 + 'px';
         }else{
             oneNum.style.fontSize = '25px';
             oneTxt.style.fontSize = '40px';
@@ -58,6 +61,7 @@ function oneUse(){
             oneMain.style.height = '0px';
             oneMain.style.padding = '0px';
             oneMain.className = 'oneMainBeforeMobile';
+            oneMain.style.marginBottom = '20vh';
         }else{
             oneMain.className = 'oneMainBefore';
         }

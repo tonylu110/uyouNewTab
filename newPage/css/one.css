@@ -58,7 +58,8 @@ a{
 }
 .oneMainBeforeMobile{
     position: fixed;
-    margin-top: 60vh;
+    bottom: 0;
+    margin-bottom: 20vh;
     transition: 0.5s;
     z-index: 200;
 }

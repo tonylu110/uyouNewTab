@@ -11,6 +11,7 @@ function getTime(){
 // get screen width to change style
 function changeStyle(){
   var screenWidth = body().offsetWidth;//get screen width
+  var screenHeight = document.documentElement.clientHeight;
   var bottom_right = elemenetGetId('bottom-right');
   var down = elemenetGetId('down');
   var searchbar = elemenetGetId('searchbar');
@@ -32,7 +33,7 @@ function changeStyle(){
   var donateImg = elemenetGetId('donateImg');
   //if screen is phone to phone style
   if(screenWidth <= 813){
-    bottom_right.style.marginTop = '20px';
+    bottom_right.style.marginTop = '15px';
     bottom_right.style.top = '0';
     bottom_right.style.bottom = '';
     down.style.marginBottom = '-50px';
@@ -45,11 +46,11 @@ function changeStyle(){
     title.style.bottom = '0';
     title.style.top = '';
     title.style.width = '100%';
-    title.style.marginBottom = '40px';
+    title.style.marginBottom = '5vh';
     cal.style.marginRight = '0';//set calculator button margin right to 0px
     clock.hidden = true; //hide clock button
     history.hidden = true; //hide history button
-    button.style.marginBottom = '150px';//chenge ui button
+    button.style.marginBottom = '20vh';//chenge ui button
     button.style.maxWidth = '280px';
     button.style.transition = 'margin 0.5s';
     button.style.zIndex = '100';
@@ -62,11 +63,14 @@ function changeStyle(){
     ithome.hidden = true;
     chromeStore.hidden = true;
     aliyun.hidden = true;
-    main.style.marginTop = '-160px';//set search area margin top
+    main.style.marginTop = - (screenHeight / 4) + 20 + 'px';//set search area margin top
     uploadBtn.style.width = '200px';
     backgroundSetButton.style.flex = '1';
     backgroundBefore.style.flex = '1';
     donateImg.style.flexDirection = 'column';
+    elemenetGetId('infoBar').style.height = screenHeight + 'px';
+    elemenetGetId('background').style.height = screenHeight + 'px';
+    elemenetGetId('settings').style.marginTop = '15px';
     elemenetGetId('historyFeatureBtn').style.display = 'none';
     elemenetGetId('clockFeatureBtn').style.display = 'none';
     elemenetGetId('hide').style.marginRight = '0px';
@@ -78,7 +82,8 @@ function changeStyle(){
     elemenetGetId('link8Btn').style.display = 'none';
     elemenetGetId('link9Btn').style.display = 'none';
     elemenetGetId('backgroundSettings').style.backgroundColor = 'transparent';
-    elemenetGetId('exImg').style.display = 'none';
+    elemenetGetId('exImgs').style.display = 'none';
+    elemenetGetClass('mobileExImgs')[0].style.display = '';
     elemenetGetClass('featureNames')[0].style.display = 'none';
     elemenetGetClass('featureNames')[1].style.display = 'none';
     elemenetGetClass('featureNames')[2].style.display = 'none';
@@ -86,6 +91,17 @@ function changeStyle(){
     elemenetGetClass('featureNames')[4].style.display = 'none';
     elemenetGetClass('featureNames')[5].style.display = 'none';
     elemenetGetClass('featureNames')[6].style.display = 'none';
+    window.onresize = function(){
+      var nowHeight = document.documentElement.clientHeight;
+      if(screenHeight - nowHeight > 50){
+        elemenetGetId('button').style.transition = '0s';
+        elemenetGetId('button').style.marginBottom = '-60px';
+        elemenetGetId('title').style.marginBottom = '-60px';
+      }else{
+        elemenetGetId('button').style.marginBottom = '20vh';
+        elemenetGetId('title').style.marginBottom = '5vh';
+      }
+    }
   }else{
     button.style.marginBottom = '20px'
     oneMain.className = 'oneMainBefore';

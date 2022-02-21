@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background-repeat: no-repeat;
     flex-direction: column;
     background-size: cover;
@@ -182,8 +182,8 @@ body{
 #blackBack{
     position: fixed;
     background-color: #00000010;
-    width: 100vw;
-    height: 100vh;
+    width: 200vw;
+    height: 200vh;
 }
 
 #loading{

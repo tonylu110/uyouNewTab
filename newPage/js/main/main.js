@@ -27,10 +27,19 @@ function changeStyle(){
   var chromeStore = elemenetGetId('chromeStore');
   var aliyun = elemenetGetId('aliyun');
   var main = elemenetGetId('main');
-  var uploadBtn = elemenetGetId('uploadBtn');
   var backgroundSetButton = elemenetGetId('backgroundSetButton');
   var backgroundBefore = elemenetGetId('backgroundBefore');
-  var donateImg = elemenetGetId('donateImg');
+  function titleBack(num){
+    elemenetGetClass('backgroundTitile')[num].style.backgroundColor = '#ffffff70';
+    elemenetGetClass('backgroundTitile')[num].style.borderRadius = '10px';
+    elemenetGetClass('backgroundTitile')[num].style.padding = '10px';
+    if(num == 0 || num == 1 || num == 2){
+      elemenetGetClass('backgroundTitile')[num].style.width = 'fit-content';
+    }
+    if(num == 1){
+      elemenetGetClass('backgroundTitile')[num].style.marginTop = '10px';
+    }
+  }
   //if screen is phone to phone style
   if(screenWidth <= 813){
     bottom_right.style.marginTop = '15px';
@@ -64,10 +73,8 @@ function changeStyle(){
     chromeStore.hidden = true;
     aliyun.hidden = true;
     main.style.marginTop = - (screenHeight / 4) + 20 + 'px';//set search area margin top
-    uploadBtn.style.width = '200px';
     backgroundSetButton.style.flex = '1';
     backgroundBefore.style.flex = '1';
-    donateImg.style.flexDirection = 'column';
     elemenetGetId('infoBar').style.height = screenHeight + 'px';
     elemenetGetId('background').style.height = screenHeight + 'px';
     elemenetGetId('settings').style.marginTop = '15px';
@@ -83,14 +90,19 @@ function changeStyle(){
     elemenetGetId('link9Btn').style.display = 'none';
     elemenetGetId('backgroundSettings').style.backgroundColor = 'transparent';
     elemenetGetId('exImgs').style.display = 'none';
+    elemenetGetId('searchEngines').style.maxWidth = '300px';
+    elemenetGetId('settingCloseButton').style.top = '20px';
+    elemenetGetId('settingCloseButton').style.right = '20px';
     elemenetGetClass('mobileExImgs')[0].style.display = '';
-    elemenetGetClass('featureNames')[0].style.display = 'none';
-    elemenetGetClass('featureNames')[1].style.display = 'none';
-    elemenetGetClass('featureNames')[2].style.display = 'none';
-    elemenetGetClass('featureNames')[3].style.display = 'none';
-    elemenetGetClass('featureNames')[4].style.display = 'none';
-    elemenetGetClass('featureNames')[5].style.display = 'none';
-    elemenetGetClass('featureNames')[6].style.display = 'none';
+    elemenetGetClass('donateMsg')[0].style.backgroundColor = '#ffffff70'
+    elemenetGetClass('donateMsg')[0].style.borderRadius = '10px';
+    elemenetGetClass('donateMsg')[0].style.padding = '10px';
+    titleBack(0);
+    titleBack(1);
+    titleBack(2);
+    titleBack(3);
+    titleBack(4);
+    titleBack(5);
     window.onresize = function(){
       var nowHeight = document.documentElement.clientHeight;
       if(screenHeight - nowHeight > 50){
@@ -271,17 +283,26 @@ function mainUse(){
     }); 
   }
 
-  chrome.storage.local.get(['loadingAn'],function(budget){
+  chrome.storage.local.get(['loadingAn','loadingTime'],function(budget){
     var loadingAn = budget.loadingAn;
+    var loadingTime = budget.loadingTime;
+    if(typeof(loadingTime) == 'undefined'){
+      loadingTime = '300';
+    }
+    elemenetGetId('newTimeout').innerHTML = loadingTime;
     if(loadingAn == 'show'){
       elemenetGetId('loadingAn').className = 'otherFeatures';
       elemenetGetId('loadingAn').innerText = '显示';
       elemenetGetId('loading').style.zIndex = '300';
       elemenetGetId('loading').style.display = '';
+      elemenetGetId('loadingTimeBtn').style.display = '';
+      elemenetGetClass('otherBtn')[0].style.borderRadius = '10px 10px 0px 0px';
+      elemenetGetClass('otherBtn')[0].style.borderBottom = '1px solid #00000020';
+      elemenetGetClass('otherBtn')[0].style.backgroundColor = '#ffffff90';
       setTimeout(function(){
         elemenetGetId('loading').style.zIndex = '-3';
         elemenetGetId('loading').style.display = 'none';
-      },500)
+      },Number(loadingTime))
     }
   })
 

@@ -10,9 +10,10 @@ function settingUse(){
     var onlinePicUrl = elemenetGetId('onlinePicUrl');
     var picError = elemenetGetId('picError');
     var settingMenu = elemenetGetId('settingMenu');
-    var backSettingMenu = elemenetGetId('backSettingMenu');
+    var backSettingMenu = elemenetGetId('backSettingMenus');
     elemenetGetId('settings').onclick = function(){
         settingMain.className = 'settingMain';
+        elemenetGetId('settingMain').style.transition = '0.5s';
         setTimeout(function(){
             if(screenWidth <= 813){
                 settingInnerMain.style.display = 'none';
@@ -33,6 +34,7 @@ function settingUse(){
         }
     }
     settingCloseButton.onclick = function(){
+        elemenetGetId('settingMain').style.transition = '0.5s';
         settingMain.className = 'settingMainBefore';
         settingCloseButton.style.display = 'none';
         backSettingMenu.style.display = 'none';
@@ -103,4 +105,5 @@ function settingUse(){
     settingMenus();
     loaclImgChange();
     otherFeatures();
+    moreSearch();
 }

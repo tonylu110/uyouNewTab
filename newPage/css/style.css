@@ -162,18 +162,18 @@ body{
     z-index: 100;
 }
 .searchEngines{
-    height: 100px;
-    width: 300px;
+    max-width: 500px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .searchEngines div{
     padding: 25px;
     border-radius: 20px;
 }
 .searchEngines div img{
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
 }
 .searchEngines div:hover{
     background-color: #00000010;

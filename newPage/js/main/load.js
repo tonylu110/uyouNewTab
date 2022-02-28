@@ -2,7 +2,6 @@ window.onload = function (){
     settingUse();
     mainUse();
     hideUse();
-    hs();
     hsFeatureUse();
     hsLinkUse();
     useLinkChange();

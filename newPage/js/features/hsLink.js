@@ -155,52 +155,72 @@ function hsLinkUse(){
         if(link1HS == 'hide'){
             elemenetGetId('link1HS').className = 'hsFeatureHide';
             elemenetGetId('link1HS').innerText = '隐藏';
-            elemenetGetId('link1').style.display = 'none'
+            elemenetGetId('link1').style.display = 'none';
+        }else{
+            elemenetGetId('link1').style.display = '';
         }
         if(link2HS == 'hide'){
             elemenetGetId('link2HS').className = 'hsFeatureHide';
             elemenetGetId('link2HS').innerText = '隐藏';
-            elemenetGetId('link2').style.display = 'none'
+            elemenetGetId('link2').style.display = 'none';
+        }else{
+            elemenetGetId('link2').style.display = '';
         }
         if(link3HS == 'hide'){
             elemenetGetId('link3HS').className = 'hsFeatureHide';
             elemenetGetId('link3HS').innerText = '隐藏';
-            elemenetGetId('link3').style.display = 'none'
+            elemenetGetId('link3').style.display = 'none';
+        }else{
+            elemenetGetId('link3').style.display = '';
         }
         if(link4HS == 'hide'){
             elemenetGetId('link4HS').className = 'hsFeatureHide';
             elemenetGetId('link4HS').innerText = '隐藏';
-            elemenetGetId('link4').style.display = 'none'
+            elemenetGetId('link4').style.display = 'none';
+        }else{
+            elemenetGetId('link4').style.display = '';
         }
         if(link5HS == 'hide'){
             elemenetGetId('link5HS').className = 'hsFeatureHide';
             elemenetGetId('link5HS').innerText = '隐藏';
-            elemenetGetId('link5').style.display = 'none'
+            elemenetGetId('link5').style.display = 'none';
+        }else{
+            elemenetGetId('link5').style.display = '';
         }
         if(link6HS == 'hide'){
             elemenetGetId('link6HS').className = 'hsFeatureHide';
             elemenetGetId('link6HS').innerText = '隐藏';
-            elemenetGetId('ithome').style.display = 'none'
+            elemenetGetId('ithome').style.display = 'none';
+        }else{
+            elemenetGetId('ithome').style.display = '';
         }
         if(link7HS == 'hide'){
             elemenetGetId('link7HS').className = 'hsFeatureHide';
             elemenetGetId('link7HS').innerText = '隐藏';
-            elemenetGetId('chromeStore').style.display = 'none'
+            elemenetGetId('chromeStore').style.display = 'none';
+        }else{
+            elemenetGetId('chromeStore').style.display = '';
         }
         if(link8HS == 'hide'){
             elemenetGetId('link8HS').className = 'hsFeatureHide';
             elemenetGetId('link8HS').innerText = '隐藏';
-            elemenetGetId('aliyun').style.display = 'none'
+            elemenetGetId('aliyun').style.display = 'none';
+        }else{
+            elemenetGetId('aliyun').style.display = '';
         }
         if(link9HS == 'hide'){
             elemenetGetId('link9HS').className = 'hsFeatureHide';
             elemenetGetId('link9HS').innerText = '隐藏';
-            elemenetGetId('azure').style.display = 'none'
+            elemenetGetId('azure').style.display = 'none';
+        }else{
+            elemenetGetId('azure').style.display = '';
         }
         if(link10HS == 'hide'){
             elemenetGetId('link10HS').className = 'hsFeatureHide';
             elemenetGetId('link10HS').innerText = '隐藏';
-            elemenetGetId('link10').style.display = 'none'
+            elemenetGetId('link10').style.display = 'none';
+        }else{
+            elemenetGetId('link10').style.display = '';
         }
     })
 }

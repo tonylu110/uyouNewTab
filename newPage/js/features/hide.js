@@ -8,7 +8,7 @@ function hideUse(){
         var hide = elemenetGetId('hide');
         var info = elemenetGetId('info');
         if(hideButton == false){ 
-            chrome.storage.sync.set({'hs':'show'});
+            chrome.storage.local.set({'hs':'show'});
             onHide();
             hide.hidden = false; //show hide button
             elemenetGetId('searchbar').style.display=""; //show searchBar element
@@ -18,7 +18,7 @@ function hideUse(){
             }
         }else{
             onShow();
-            chrome.storage.sync.set({'hs':'hide'});
+            chrome.storage.local.set({'hs':'hide'});
             if(screenWidth <= 813){
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
@@ -27,30 +27,4 @@ function hideUse(){
             }
         }
     }
-}
-
-function hs(){
-    var screenWidth = body().offsetWidth;
-    var hide = elemenetGetId('hide');
-    var info = elemenetGetId('info');
-    chrome.storage.sync.get(['hs'],function(budget){
-        if(budget.hs == 'show'){
-            onHide();
-            hide.hidden = false; //show hide button
-            elemenetGetId('searchbar').style.display=""; //show searchBar element
-            if(screenWidth <= 813){
-                hide.style.marginRight = '0px';
-                info.hidden = true; //hide info button
-            }
-        }else{
-            onShow();
-            if(screenWidth <= 813){
-                elemenetGetId('history').hidden = true; //hide history button
-                elemenetGetId('clock').hidden = true; //hide clock button
-                info.hidden = false; //hide info button
-                // hide.style.marginRight = '20px';
-            }
-            
-        }
-    })
 }

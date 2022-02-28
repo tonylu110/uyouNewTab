@@ -4,13 +4,12 @@ window.onload = function (){
             url: 'chrome://newtab'
         });
     }
-
-    var url = 'http://crx.tnyl.xyz/';
-    // getUpade(url)
-
-    document.getElementById('update').onclick = function(){
+    document.getElementById('web').onclick = function(){
         chrome.tabs.create({
-            url: document.getElementById('updateLink').innerHTML.slice(5)
+            url: 'https://newtab.uyou.org.cn/'
         });
+    }
+    if(/Mobi|Android|iPhone/i.test(navigator.userAgent)){
+        document.getElementById('body').style.width = '100vw';
     }
 }

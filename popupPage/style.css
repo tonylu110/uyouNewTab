@@ -3,56 +3,53 @@
 }
 
 body{
-    width: 250px;
+    margin: 0;
+    width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    background-size: cover;
 }
 
 #home{
     background-color: #0078d4;
-    width: 85%;
-    color: white;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 17px;
-    font-weight: bold;
-    text-align: center;
-    cursor:pointer;
-    margin-bottom: 10px;
-}
-#home:active{
-    background-color: #035fa5;
-}
-
-#update{
-    background-color: rgb(30, 194, 44);
-    color: white;
-    width: 85%;
-    border-radius: 5px;
-    padding: 10px;
-    cursor:pointer;
-    margin-bottom: 10px;
-    align-items: center;
-}
-#update:active{
-    background-color: rgb(40, 168, 8);
-}
-#updateTitle{
     width: 100%;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
     font-size: 17px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 5px;
+    cursor:pointer;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
-#updateVersion{
-    font-size: 15px;
-    margin-bottom: 2px;
+#web{
+    background-color: #1EC22C;
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    cursor:pointer;
+    margin-bottom: 10px;
+}
+#web:active{
+    background-color: #0c8015;
+}
+.buttons{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .message{
-    width: 90%;
+    width: 88%;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -66,7 +63,7 @@ body{
 .Title{
     font-size: 17px;
     font-weight: bold;
-    width: 88%;
+    width: 85%;
 }
 .new{
     margin-bottom: 5px;

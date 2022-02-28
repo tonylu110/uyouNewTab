@@ -323,7 +323,7 @@
                 <div class="helpInner">
                     <div class="helpBox">
                         <div class="helpQ">Q：如何切换搜索引擎？</div>
-                        <div class="helpA">A：点击搜索框最左边的的搜索引擎图标可以更换搜索引擎，包括：Google、bing、百度。</div>
+                        <div class="helpA">A：点击搜索框最左边的的搜索引擎图标可以更换搜索引擎，默认包括：Google、bing、百度，也可在设置中添加其他搜索引擎使用。</div>
                     </div>
                     <div class="helpBox">
                         <div class="helpQ">Q：显示“在线图片加载失败，已加载内建图片”是什么原因？</div>
@@ -356,20 +356,20 @@
     </div>
     <!-- This is top-right button -->
     <div class="title" id="title" style="top: 0;">
-        <div class="titleButton" id="hide"><img src="imgs/hide.png"></div><!--hide button-->
-        <div class="titleButton" id="history"><img src="imgs/fy_ic_history.png"></div><!--history button-->
-        <div class="titleButton" id="reload"><img src="imgs/reload.png"></div><!--reload button-->
-        <div class="titleButton" id="cal"><img src="imgs/calculator.png"></div><!--calculator button-->
-        <div class="titleButton" id="clock"><img src="imgs/timer.png"></div><!--clock button-->
+        <div class="titleButton" id="hide" hidden><img src="imgs/hide.png"></div><!--hide button-->
+        <div class="titleButton" id="history" hidden><img src="imgs/fy_ic_history.png"></div><!--history button-->
+        <div class="titleButton" id="reload" hidden><img src="imgs/reload.png"></div><!--reload button-->
+        <div class="titleButton" id="cal" hidden><img src="imgs/calculator.png"></div><!--calculator button-->
+        <div class="titleButton" id="clock" hidden><img src="imgs/timer.png"></div><!--clock button-->
     </div>
     <!-- This is top-left button -->
     <div class="top-left" id="top-right" style="top: 0;">
-        <div class="topButton" id="settings"><img src="imgs/setting.png"></div><!--settings button-->
+        <div class="topButton" id="settings" hidden><img src="imgs/setting.png"></div><!--settings button-->
     </div>
     <!-- This is bottom-right button -->
     <div class="bottom-right" id="bottom-right" style="bottom: 0;">
-        <div class="bottomButton" id="down"><img src="imgs/down.png"></div><!--download button-->
-        <div class="bottomButton" id="info"><img src="imgs/info.png"></div><!--info button-->
+        <div class="bottomButton" id="down" hidden><img src="imgs/down.png"></div><!--download button-->
+        <div class="bottomButton" id="info" hidden><img src="imgs/info.png"></div><!--info button-->
     </div>
     <!-- This is history bar -->
     <div class="bar" id="bar">
@@ -413,8 +413,8 @@
     </div>
     <!-- This is searchmain area -->
     <div class="main" id="main">
-        <div class="searchbar" id="searchbar"><!--search bar-->
-            <img id="searchEngine" src="imgs/google.png">
+        <div class="searchbar" id="searchbar" style="display: none;"><!--search bar-->
+            <img id="searchEngine" hidden>
             <input type="text" id="keywords">
         </div>
         <!-- This is moreSearch area -->
@@ -430,16 +430,16 @@
         </div>
 
         <div class="link" id="mainlink"><!--links-->
-            <a href="https://google.com" id="link1"><div id="link1Padding"><img src="imgs/google.png" id="link1Img"></div></a><!--google link-->
-            <a href="https://youtube.com" id="link2"><div id="link2Padding"><img src="imgs/youtube.png" id="link2Img"></div></a><!--youtube link-->
-            <a href="https://bing.com" id="link3"><div style="padding: 15px; width: 70px; height: 70px;" id="link3Padding"><img src="imgs/bing-logo.png" id="link3Img"></div></a><!--bing link-->
-            <a href="https://baidu.com" id="link4"><div style="padding: 20px; height: 60px; width: 60px;" id="link4Padding"><img src="imgs/baidu.png" id="link4Img"></div></a><!--baidu link-->
-            <a href="https://bilibili.com" id="link5"><div style="padding: 15px; width: 70px; height: 70px;" id="link5Padding"><img src="imgs/icon_bilibili-circle.png" id="link5Img"></div></a><!--bilibili link-->
-            <a href="https://ithome.com" id="ithome"><div style="padding: 10px; width: 80px; height: 80px;" id="link6Padding"><img src="imgs/IThome.png" id="link6Img"></div></a><!--ithome link-->
-            <a href="https://chrome.google.com/webstore/category/extensions" id="chromeStore"><div id="link7Padding"><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" id="link7Img" ></div></a><!--chrome web store link-->
-            <a href="https://www.aliyun.com/" id="aliyun"><div style="padding: 20px; height: 60px; width: 60px;" id="link8Padding"><img src="imgs/aliyun.png" id="link8Img"></div></a><!--aliyun link-->
-            <a href="https://azure.microsoft.com/zh-cn/" id="azure"><div id="link9Padding"><img src="imgs/azure-blue.png" id="link9Img"></div></a><!--azure link-->
-            <a href="https://github.com" id="link10"><div id="link10Padding"><img src="imgs/GitHub.png" id="link10Img"></div></a><!--github link-->
+            <a href="https://google.com" id="link1" style="display: none;"><div id="link1Padding"><img src="imgs/google.png" id="link1Img" hidden></div></a><!--google link-->
+            <a href="https://youtube.com" id="link2" style="display: none;"><div id="link2Padding"><img src="imgs/youtube.png" id="link2Img" hidden></div></a><!--youtube link-->
+            <a href="https://bing.com" id="link3" style="display: none;"><div style="padding: 15px; width: 70px; height: 70px;" id="link3Padding"><img src="imgs/bing-logo.png" id="link3Img" hidden></div></a><!--bing link-->
+            <a href="https://baidu.com" id="link4" style="display: none;"><div style="padding: 20px; height: 60px; width: 60px;" id="link4Padding"><img src="imgs/baidu.png" id="link4Img" hidden></div></a><!--baidu link-->
+            <a href="https://bilibili.com" id="link5" style="display: none;"><div style="padding: 15px; width: 70px; height: 70px;" id="link5Padding"><img src="imgs/icon_bilibili-circle.png" id="link5Img" hidden></div></a><!--bilibili link-->
+            <a href="https://ithome.com" id="ithome" style="display: none;"><div style="padding: 10px; width: 80px; height: 80px;" id="link6Padding"><img src="imgs/IThome.png" id="link6Img" hidden></div></a><!--ithome link-->
+            <a href="https://chrome.google.com/webstore/category/extensions" id="chromeStore" style="display: none;"><div id="link7Padding"><img src="imgs/Chrome_Web_Store_logo_2012-2015.svg.png" id="link7Img" hidden></div></a><!--chrome web store link-->
+            <a href="https://www.aliyun.com/" id="aliyun" style="display: none;"><div style="padding: 20px; height: 60px; width: 60px;" id="link8Padding"><img src="imgs/aliyun.png" id="link8Img" hidden></div></a><!--aliyun link-->
+            <a href="https://azure.microsoft.com/zh-cn/" id="azure" style="display: none;"><div id="link9Padding"><img src="imgs/azure-blue.png" id="link9Img" hidden></div></a><!--azure link-->
+            <a href="https://github.com" id="link10" style="display: none;"><div id="link10Padding"><img src="imgs/GitHub.png" id="link10Img" hidden></div></a><!--github link-->
         </div>
     </div>
     <!-- This is calculator area -->

@@ -138,7 +138,7 @@ function hsFeature(){
 }
 function hsFeatureUse(){
     var screenWidth = body().offsetWidth;//get screen width
-    chrome.storage.local.get(['hideHS','historyHS','reloadHS','calHS','timeHS','downHS','infoHS','oneHS'],function(budget){
+    chrome.storage.local.get(['hideHS','historyHS','reloadHS','calHS','timeHS','downHS','infoHS','oneHS','hs'],function(budget){
         let hideHS = budget.hideHS;
         let historyHS = budget.historyHS;
         let reloadHS = budget.reloadHS;
@@ -147,60 +147,96 @@ function hsFeatureUse(){
         let downHS = budget.downHS;
         let infoHS = budget.infoHS;
         let oneHS = budget.oneHS;
-        if(hideHS == 'hide'){
-            elemenetGetId('hide').hidden = true;
-            elemenetGetId('hideHS').className = 'hsFeatureHides';
-            elemenetGetId('hideHS').innerText = '隐藏';
+        var hide = elemenetGetId('hide');
+        var info = elemenetGetId('info');
+        console.log(budget.hs);
+        if(budget.hs == 'show'){
+            onHide();
+            hide.hidden = false; //show hide button
+            elemenetGetId('searchbar').style.display=""; //show searchBar element
             if(screenWidth <= 813){
-                elemenetGetId('reload').style.marginLeft = '0px'
-                if(elemenetGetId('historyHS').className == 'hsFeatureHides'){
-                    elemenetGetId('cal').style.marginLeft = '0px'
+                hide.style.marginRight = '0px';
+                info.hidden = true; //hide info button
+            }
+        }else{
+            onShow();
+            if(screenWidth <= 813){
+                elemenetGetId('history').hidden = true; //hide history button
+                elemenetGetId('clock').hidden = true; //hide clock button
+                info.hidden = false; //hide info button
+            }
+            if(hideHS == 'hide'){
+                elemenetGetId('hide').hidden = true;
+                elemenetGetId('hideHS').className = 'hsFeatureHides';
+                elemenetGetId('hideHS').innerText = '隐藏';
+                if(screenWidth <= 813){
+                    elemenetGetId('reload').style.marginLeft = '0px'
+                    if(elemenetGetId('historyHS').className == 'hsFeatureHides'){
+                        elemenetGetId('cal').style.marginLeft = '0px'
+                    }
+                }
+            }else{
+                elemenetGetId('hide').hidden = false;
+            }
+            if(historyHS == 'hide'){
+                elemenetGetId('history').hidden = true;
+                elemenetGetId('historyHS').className = 'hsFeatureHides';
+                elemenetGetId('historyHS').innerText = '隐藏';
+            }else{
+                if(screenWidth > 813){
+                    elemenetGetId('history').hidden = false;
                 }
             }
-        }
-        if(historyHS == 'hide'){
-            elemenetGetId('history').hidden = true;
-            elemenetGetId('historyHS').className = 'hsFeatureHides';
-            elemenetGetId('historyHS').innerText = '隐藏';
-        }
-        if(reloadHS == 'hide'){
-            elemenetGetId('reload').hidden = true;
-            elemenetGetId('reloadHS').className = 'hsFeatureHides';
-            elemenetGetId('reloadHS').innerText = '隐藏';
-            if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeatureHides'){
-                elemenetGetId('cal').style.marginLeft = '0px'
+            if(reloadHS == 'hide'){
+                elemenetGetId('reload').hidden = true;
+                elemenetGetId('reloadHS').className = 'hsFeatureHides';
+                elemenetGetId('reloadHS').innerText = '隐藏';
+                if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeatureHides'){
+                    elemenetGetId('cal').style.marginLeft = '0px'
+                }
+            }else{
+                elemenetGetId('reload').hidden = false;
             }
-        }
-        if(calHS == 'hide'){
-            elemenetGetId('cal').hidden = true;
-            elemenetGetId('calHS').className = 'hsFeatureHides';
-            elemenetGetId('calHS').innerText = '隐藏';
-        }else if(calHS == 'show'){
-            elemenetGetId('calHS').className = 'hsFeatures';
-            elemenetGetId('calHS').innerText = '显示';
-            if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeatures'){
-                elemenetGetId('cal').style.marginLeft = '20px'
+            if(calHS == 'hide'){
+                elemenetGetId('cal').hidden = true;
+                elemenetGetId('calHS').className = 'hsFeatureHides';
+                elemenetGetId('calHS').innerText = '隐藏';
+            }else if(calHS == 'show'){
+                elemenetGetId('calHS').className = 'hsFeatures';
+                elemenetGetId('calHS').innerText = '显示';
+                if(screenWidth <= 813 && elemenetGetId('hideHS').className == 'hsFeatures'){
+                    elemenetGetId('cal').style.marginLeft = '20px'
+                }
+                elemenetGetId('cal').hidden = false;
             }
-        }
-        if(timeHS == 'hide'){
-            elemenetGetId('clock').hidden = true;
-            elemenetGetId('timeHS').className = 'hsFeatureHides';
-            elemenetGetId('timeHS').innerText = '隐藏';
-        }
-        if(downHS == 'hide'){
-            elemenetGetId('down').hidden = true;
-            elemenetGetId('downHS').className = 'hsFeatureHides';
-            elemenetGetId('downHS').innerText = '隐藏';
-        }
-        if(infoHS == 'hide'){
-            elemenetGetId('info').hidden = true;
-            elemenetGetId('infoHS').className = 'hsFeatureHides';
-            elemenetGetId('infoHS').innerText = '隐藏';
-        }
-        if(oneHS == 'hide'){
-            elemenetGetId('button').style.marginBottom = '-100px';
-            elemenetGetId('oneHS').className = 'hsFeatureHides';
-            elemenetGetId('oneHS').innerText = '隐藏';
+            if(timeHS == 'hide'){
+                elemenetGetId('clock').hidden = true;
+                elemenetGetId('timeHS').className = 'hsFeatureHides';
+                elemenetGetId('timeHS').innerText = '隐藏';
+            }else{
+                if(screenWidth > 813){
+                    elemenetGetId('clock').hidden = false;
+                }
+            }
+            if(downHS == 'hide'){
+                elemenetGetId('down').hidden = true;
+                elemenetGetId('downHS').className = 'hsFeatureHides';
+                elemenetGetId('downHS').innerText = '隐藏';
+            }else{
+                elemenetGetId('down').hidden = false;
+            }
+            if(infoHS == 'hide'){
+                elemenetGetId('info').hidden = true;
+                elemenetGetId('infoHS').className = 'hsFeatureHides';
+                elemenetGetId('infoHS').innerText = '隐藏';
+            }else{
+                elemenetGetId('info').hidden = false;
+            }
+            if(oneHS == 'hide'){
+                elemenetGetId('button').style.marginBottom = '-100px';
+                elemenetGetId('oneHS').className = 'hsFeatureHides';
+                elemenetGetId('oneHS').innerText = '隐藏';
+            }
         }
     })
 }

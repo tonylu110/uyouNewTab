@@ -250,6 +250,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link2Img','link2Padding','link2Width','link2Height','link2'],function(budget){
@@ -272,6 +275,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link3Img','link3Padding','link3Width','link3Height','link3'],function(budget){
@@ -294,6 +300,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link4Img','link4Padding','link4Width','link4Height','link4'],function(budget){
@@ -316,6 +325,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link5Img','link5Padding','link5Width','link5Height','link5'],function(budget){
@@ -338,6 +350,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link6Img','link6Padding','link6Width','link6Height','link6'],function(budget){
@@ -360,6 +375,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link7Img','link7Padding','link7Width','link7Height','link7'],function(budget){
@@ -382,6 +400,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link8Img','link8Padding','link8Width','link8Height','link8'],function(budget){
@@ -404,6 +425,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link9Img','link9Padding','link9Width','link9Height','link9'],function(budget){
@@ -426,6 +450,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
     chrome.storage.local.get(['link10Img','link10Padding','link10Width','link10Height','link10'],function(budget){
@@ -448,6 +475,9 @@ function useLinkChange(){
             elemenetGetId('link' + num + 'Paddings').style.padding = linkPadding;
             elemenetGetId('link' + num + 'Paddings').style.width = linkWidth;
             elemenetGetId('link' + num + 'Paddings').style.height = linkHeight;
+            elemenetGetId('link' + num + 'Img').hidden = false;
+        }else{
+            elemenetGetId('link' + num + 'Img').hidden = false;
         }
     })
 }

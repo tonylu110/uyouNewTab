@@ -6,20 +6,24 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="update.js"></script>
     <script src="popup.js"></script>
 </head>
-<body>
+<body id="body">
     <h2>欢迎使用 uyou 新标签页</h2>
-    <div id="home">回到主页</div>
-    <div id="update" hidden>
-        <div id="updateTitle"></div>
-        <div id="updateVersion"></div>
-        <div id="updateMain"></div>
-        <div>点击下载</div>
-        <div id="updateLink" hidden></div>
+    <div class="buttons">
+        <div id="home">回到主页</div>
+        <div id="web">前往官网</div>
     </div>
     <div class="Title new">当前版本：</div>
+    <div class="message">
+        <div class="v">版本：1.1.3</div>
+        <div class="info">优化了移动端扩展菜单样式</div>
+        <div class="info">修复隐藏功能后加载开始时会显示原布局的bug</div>
+        <div class="info">修复隐藏书签后加载开始时会显示原布局的bug</div>
+        <div class="info">修复修改书签后加载开始时会显示原布局的bug</div>
+        <div class="info">修复了其他类似的bug</div>
+    </div>
+    <div class="Title old">历史版本：</div>
     <div class="message">
         <div class="v">版本：1.1.2</div>
         <div class="info">重新设计的移动端设置二级菜单</div>
@@ -27,7 +31,6 @@
         <div class="info">新增加载动画时间设置</div>
         <div class="info">修复了部分移动端浏览器搜索引擎栏显示 bug</div>
     </div>
-    <div class="Title old">历史版本：</div>
     <div class="message">
         <div class="v">版本：1.1.1</div>
         <div class="info">移动端可选择本地离线图片为背景</div>

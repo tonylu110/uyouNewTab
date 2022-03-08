@@ -1,4 +1,4 @@
-function calUse(){
+function calUse() {
     function isOperator(value) {
         var operatorString = "+-*/()";
         return operatorString.indexOf(value) > -1
@@ -19,29 +19,29 @@ function calUse(){
         return getPrioraty(o1) <= getPrioraty(o2);
     }
     function dal2Rpn(exp) {
-      var inputStack = [];
+        var inputStack = [];
         var outputStack = [];
         var outputQueue = [];
         let res = '';
         for (var i = 0, len = exp.length; i < len; i++) {
-          var cur = exp[i];
-          if (cur != ' ') {
-            res = res + cur;
-            if (i + 1 < exp.length) {
-              if (isOperator(exp[i])) {
-                inputStack.push(res);
-                res = ''
-              } else {
-                if (isOperator(exp[i + 1])) {
-                  inputStack.push(res);
-                  res = ''
+            var cur = exp[i];
+            if (cur != ' ') {
+                res = res + cur;
+                if (i + 1 < exp.length) {
+                    if (isOperator(exp[i])) {
+                        inputStack.push(res);
+                        res = ''
+                    } else {
+                        if (isOperator(exp[i + 1])) {
+                            inputStack.push(res);
+                            res = ''
+                        }
+                    }
+                } else {
+                    inputStack.push(res);
+                    res = ''
                 }
-              }
-            } else {
-              inputStack.push(res);
-              res = ''
             }
-          }
         }
         while (inputStack.length > 0) {
             var cur = inputStack.shift();
@@ -81,7 +81,7 @@ function calUse(){
         var outputStack = [];
         while (rpnQueue.length > 0) {
             var cur = rpnQueue.shift();
-     
+
             if (!isOperator(cur)) {
                 outputStack.push(cur);
             } else {
@@ -123,75 +123,75 @@ function calUse(){
         }
         return (formatFloat(result, 2));
     }
-    elemenetGetId('clear').onclick = function() {
+    elemenetGetId('clear').onclick = function () {
         document.cal.txt.value = '';
     }
-    
-    elemenetGetId('/').onclick = function() {
+
+    elemenetGetId('/').onclick = function () {
         document.cal.txt.value += '/';
     }
-    
-    elemenetGetId('*').onclick = function() {
+
+    elemenetGetId('*').onclick = function () {
         document.cal.txt.value += '*';
     }
-    
-    elemenetGetId('7').onclick = function() {
+
+    elemenetGetId('7').onclick = function () {
         document.cal.txt.value += '7';
     }
-    
-    elemenetGetId('8').onclick = function() {
+
+    elemenetGetId('8').onclick = function () {
         document.cal.txt.value += '8';
     }
-    
-    elemenetGetId('9').onclick = function() {
+
+    elemenetGetId('9').onclick = function () {
         document.cal.txt.value += '9';
     }
-    
-    elemenetGetId('-').onclick = function() {
+
+    elemenetGetId('-').onclick = function () {
         document.cal.txt.value += '-';
     }
-    
-    elemenetGetId('4').onclick = function() {
+
+    elemenetGetId('4').onclick = function () {
         document.cal.txt.value += '4';
     }
-    
-    elemenetGetId('5').onclick = function() {
+
+    elemenetGetId('5').onclick = function () {
         document.cal.txt.value += '5';
     }
-    
-    elemenetGetId('6').onclick = function() {
+
+    elemenetGetId('6').onclick = function () {
         document.cal.txt.value += '6';
     }
-    
-    elemenetGetId('+').onclick = function() {
+
+    elemenetGetId('+').onclick = function () {
         document.cal.txt.value += '+';
     }
-    
-    elemenetGetId('1').onclick = function() {
+
+    elemenetGetId('1').onclick = function () {
         document.cal.txt.value += '1';
     }
-    
-    elemenetGetId('2').onclick = function() {
+
+    elemenetGetId('2').onclick = function () {
         document.cal.txt.value += '2';
     }
-    
-    elemenetGetId('3').onclick = function() {
+
+    elemenetGetId('3').onclick = function () {
         document.cal.txt.value += '3';
     }
-    
-    elemenetGetId('0').onclick = function() {
+
+    elemenetGetId('0').onclick = function () {
         document.cal.txt.value += '0';
     }
-    
-    elemenetGetId('00').onclick = function() {
+
+    elemenetGetId('00').onclick = function () {
         document.cal.txt.value += '00';
     }
-    
-    elemenetGetId('.').onclick = function() {
+
+    elemenetGetId('.').onclick = function () {
         document.cal.txt.value += '.';
     }
-    
-    elemenetGetId('result').onclick = function() {
+
+    elemenetGetId('result').onclick = function () {
         document.cal.txt.value = evalRpn(dal2Rpn(document.cal.txt.value));
     }
 }

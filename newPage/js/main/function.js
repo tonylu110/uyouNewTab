@@ -1,14 +1,13 @@
 //set function
-function elemenetGetId(id){
+function elemenetGetId(id) {
     return document.getElementById(id);
 }
-function elemenetGetClass(name){
+function elemenetGetClass(name) {
     return document.getElementsByClassName(name);
 }
-function body(){
+function body() {
     return document.body;
 }
-function print(str){
+function print(str) {
     return console.log(str);
 }
-  

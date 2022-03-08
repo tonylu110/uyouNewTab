@@ -26,6 +26,7 @@
     <script src="js/features/changeLink.js"></script>
     <script src="js/features/settingMenu.js"></script>
     <script src="js/features/otherSetting.js"></script>
+    <script src="js/features/weather.js"></script>
     <script src="js/features/settings.js"></script>
     <script src="js/main/load.js"></script>
 </head>
@@ -34,6 +35,7 @@
         <div>加载中...</div>
     </div>
     <div id="blackBack"></div>
+    <div id="click"></div>
     <div id="picurl"></div>
     <div id="oneMain" class="oneMainBefore" >
         <div id="closeButton"><img src="imgs/close.png"></div>
@@ -168,6 +170,13 @@
                                 <div class="featureNames">时钟</div>
                             </div>
                             <div class="hsFeatures" id="timeHS">显示</div>
+                        </div>
+                        <div class="featureBtns" id="clockFeatureBtn">
+                            <div class="featuresTitle">
+                                <div class="featuresBtn"><img src="imgs/weather/01.png"></div>
+                                <div class="featureNames">天气</div>
+                            </div>
+                            <div class="hsFeatures" id="weatherHS">显示</div>
                         </div>
                         <div class="featureBtns">
                             <div class="featuresTitle">
@@ -365,6 +374,39 @@
     <!-- This is top-left button -->
     <div class="top-left" id="top-right" style="top: 0;">
         <div class="topButton" id="settings" hidden><img src="imgs/setting.png"></div><!--settings button-->
+        <div class="topButton" id="weather" style="display: none;">
+            <img id="weatherImg" hidden>
+            <div id="weatherMain" style="display: none;">
+                <div class="weatherCity">
+                    <input type="text" id="weatherCityIn" placeholder="当前城市：">
+                    <div id="weatherCityUp">确定</div>
+                </div>
+                <div class="dayWeather" id="dayWeather">
+                    <div id="todayWeather"></div>
+                    <div id="todayWeathertemp"></div>
+                    <div class="feaWeather">
+                        <div class="feaWeatherbox">
+                            <div id="time2"></div>
+                            <div id="day2Weather"></div>
+                            <img src="" id="day2Img" style="width: 30px; height: 30px;">
+                            <div id="day2Temp"></div>
+                        </div>
+                        <div class="feaWeatherbox">
+                            <div id="time3"></div>
+                            <div id="day3Weather"></div>
+                            <img src="" id="day3Img" style="width: 30px; height: 30px;">
+                            <div id="day3Temp"></div>
+                        </div>
+                        <div class="feaWeatherbox">
+                            <div id="time4"></div>
+                            <div id="day4Weather"></div>
+                            <img src="" id="day4Img" style="width: 30px; height: 30px;">
+                            <div id="day4Temp"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- This is bottom-right button -->
     <div class="bottom-right" id="bottom-right" style="bottom: 0;">

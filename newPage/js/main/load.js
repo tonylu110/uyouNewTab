@@ -1,6 +1,7 @@
-window.onload = function (){
+window.onload = function () {
     settingUse();
     mainUse();
+    weatherUse();
     hideUse();
     hsFeatureUse();
     hsLinkUse();

@@ -58,6 +58,8 @@ function settingMenus() {
             elemenetGetId('uploadBtn').style.width = settingWidth - 62 + 'px';
             elemenetGetId('onlinePicUrl').style.width = settingWidth - 97 + 'px';
             elemenetGetId('review').style.width = '70px';
+            elemenetGetClass('apiImgButton')[2].style.width = settingWidth / 2 - 46.5 + 'px';
+            elemenetGetClass('apiImgButton')[3].style.width = settingWidth / 2 - 46.5 + 'px';
         }
     }
     elemenetGetId('festuresSettings').onclick = function () {
@@ -172,5 +174,24 @@ function loaclImgChange() {
     elemenetGetId('mbackground5').onclick = function () {
         chrome.storage.local.set({ 'picUrl': "'imgs/mobile/background - 5.jpg'" });
         elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 5.jpg")';
+    }
+}
+
+function apiImg() {
+    elemenetGetId('bingImg').onclick = function () {
+        chrome.storage.local.set({ 'picUrl': "https://api.dujin.org/bing/1920.php" });
+        elemenetGetId('background').style.backgroundImage = 'url("https://api.dujin.org/bing/1920.php")';
+    }
+    elemenetGetId('cwImg').onclick = function () {
+        chrome.storage.local.set({ 'picUrl': "https://img.paulzzh.com/touhou/random" });
+        elemenetGetId('background').style.backgroundImage = 'url("https://img.paulzzh.com/touhou/random")';
+    }
+    elemenetGetId('bingImgMobile').onclick = function () {
+        chrome.storage.local.set({ 'picUrl': "https://api.dujin.org/bing/m.php" });
+        elemenetGetId('background').style.backgroundImage = 'url("https://api.dujin.org/bing/m.php")';
+    }
+    elemenetGetId('cwImgMobile').onclick = function () {
+        chrome.storage.local.set({ 'picUrl': "https://img.paulzzh.com/touhou/random?size=wap" });
+        elemenetGetId('background').style.backgroundImage = 'url("https://img.paulzzh.com/touhou/random?size=wap")';
     }
 }

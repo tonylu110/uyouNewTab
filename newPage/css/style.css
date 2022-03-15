@@ -96,11 +96,20 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 73px;
-    padding: 3px;
+    width: 72px;
+    padding: 4px;
     background-color: #ffffff70;
     border-radius: 8px;
     height: 100%;
+    text-align: center;
+}
+.weatherTime{
+    background-color: #ffffff70;
+    padding: 3px;
+    margin-bottom: 2px;
+    width: 40px;
+    text-align: center;
+    border-radius: 20px;
 }
 
 #click{
@@ -148,13 +157,12 @@ body{
     outline: 0px;
 }
 .searchbar img{
-    height: 30px;
-    width: 30px;
+    padding: 5px;
+    height: 20px;
+    width: 20px;
     margin-right: 10px;
     border-radius: 50%;
-}
-.searchbar img:hover{
-    background-color: #00000010;
+    background-color: white;
 }
 
 /* This is favourite link style */

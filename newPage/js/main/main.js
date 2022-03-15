@@ -33,7 +33,7 @@ function changeStyle() {
     elemenetGetClass('backgroundTitile')[num].style.backgroundColor = '#ffffff70';
     elemenetGetClass('backgroundTitile')[num].style.borderRadius = '10px';
     elemenetGetClass('backgroundTitile')[num].style.padding = '10px';
-    if (num == 0 || num == 1 || num == 2) {
+    if (num == 0 || num == 1 || num == 2 || num == 3) {
       elemenetGetClass('backgroundTitile')[num].style.width = 'fit-content';
     }
     if (num == 1) {
@@ -99,6 +99,8 @@ function changeStyle() {
     elemenetGetId('weather').style.transition = '0s';
     elemenetGetId('top-right').style.zIndex = 102;
     elemenetGetId('weatherImg').style.transition = '0s';
+    elemenetGetId('apiImgs').style.display = 'none';
+    elemenetGetId('mobileApiImgs').style.display = '';
     elemenetGetClass('mobileExImgs')[0].style.display = '';
     elemenetGetClass('donateMsg')[0].style.backgroundColor = '#ffffff70'
     elemenetGetClass('donateMsg')[0].style.borderRadius = '10px';
@@ -109,6 +111,7 @@ function changeStyle() {
     titleBack(3);
     titleBack(4);
     titleBack(5);
+    titleBack(6);
     window.onresize = function () {
       var nowHeight = document.documentElement.clientHeight;
       if (screenHeight - nowHeight > 50) {

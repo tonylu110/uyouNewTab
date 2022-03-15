@@ -1,6 +1,16 @@
 function weatherGet(city, day) {
     var httpRequest = new XMLHttpRequest();
     day = day - 1;
+
+    function dayTo(str) {
+        return str.match(/\（([^)]*)\）/);
+    }
+    function dayTo2(str) {
+        return str.split(/\（.*?\）/);
+    }
+
+    var weatherTime = '';
+
     httpRequest.open('GET', 'https://query.asilu.com/weather/baidu/?city=' + city, true);
     httpRequest.send();
 
@@ -40,7 +50,14 @@ function weatherGet(city, day) {
                 } else {
                     weatherImg = 'imgs/dLinkIcon.png';
                 }
-                elemenetGetId('time' + dayfea).innerText = obj.weather[dayfea - 1].date;
+
+                if (dayfea < 4) {
+                    weatherTime = dayTo(obj.weather[dayfea - 1].date)[1];
+                } else {
+                    weatherTime = dayTo2(obj.weather[dayfea - 1].date)[0]
+                }
+
+                elemenetGetId('time' + dayfea).innerText = weatherTime;
                 elemenetGetId('day' + dayfea + 'Weather').innerText = obj.weather[dayfea - 1].weather;
                 elemenetGetId('day' + dayfea + 'Img').src = weatherImg;
                 elemenetGetId('day' + dayfea + 'Temp').innerText = obj.weather[dayfea - 1].temp;
@@ -127,6 +144,13 @@ function weatherUse() {
                     weatherHide = !weatherHide;
                 }
             } else {
+                elemenetGetClass('feaWeatherbox')[0].style.marginLeft = '-3px';
+                elemenetGetClass('feaWeatherbox')[2].style.marginRight = '-3px';
+                elemenetGetClass('feaWeatherbox')[0].style.width = '74px';
+                elemenetGetClass('feaWeatherbox')[1].style.width = '74px';
+                elemenetGetClass('feaWeatherbox')[2].style.width = '74px';
+                elemenetGetClass('feaWeather')[0].style.marginBottom = '4px';
+                elemenetGetId('weather').style.height = '250px'
                 setTimeout(function () {
                     elemenetGetId('weatherMain').style.display = '';
                     if (elemenetGetId('button').innerText == '暂时没有有连接到可以访问互联网的网络哦~') {

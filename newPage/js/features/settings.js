@@ -128,4 +128,5 @@ function settingUse() {
     loaclImgChange();
     otherFeatures();
     moreSearch();
+    apiImg();
 }

@@ -397,6 +397,34 @@
     background-color: #035fa5;
 }
 
+.apiImgButton{
+    background-color: #0078d4;
+    border-radius: 8px;
+    padding: 10px;
+    width: 130px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    margin: 5px;
+}
+.apiImgButton:active{
+    background-color: #035fa5
+}
+#apiImgs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px -5px 0px -5px;
+}
+#mobileApiImgs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px -5px 0px -5px;
+}
+
 .hsFeatureHides{
     background-color: #e6e6e6;
     border-radius: 8px;

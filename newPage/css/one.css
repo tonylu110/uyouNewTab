@@ -1,7 +1,23 @@
+:root{
+    --color90: #ffffff90;
+    --color70: #ffffff70;
+    --color50: #ffffff50;
+    --borderColor: #ffffff70;
+    --textColor: black;
+}
+
+:root.dark{
+    --color90: #11111190;
+    --color70: #00000070;
+    --color50: #00000050;
+    --borderColor: #00000010;
+    --textColor: #999999;
+}
+
 .button{
     position: fixed;
     bottom: 0px;
-    background-color: #ffffff90;
+    background-color: var(--color90);
     border-radius: 50px;
     box-shadow: 0px 0px 20px #00000070;
     backdrop-filter: blur(40px);
@@ -14,12 +30,13 @@
     padding-right: 20px;
     max-width: 500px;
     transition: margin 0.7s;
+    color: var(--textColor);
 }
 .button:hover{
-    background-color: #ffffff70;
+    background-color: var(--color70);
 }
 .button:active{
-    background-color: #ffffff50;
+    background-color: var(--color50);
 }
 a{
     color: black;
@@ -36,7 +53,7 @@ a{
     z-index: 200;
     width: 550px;
     height: 300px;
-    background-color: #ffffff90;
+    background-color: var(--color90);
     box-shadow: 0px 0px 70px #00000070;
     backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -44,8 +61,8 @@ a{
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
-    border-top: 2px solid #ffffff70;
-    border-left: 2px solid #ffffff70;
+    border-top: 2px solid var(--borderColor);
+    border-left: 2px solid var(--borderColor);
     transition: 0.5s;
 }
 .oneMainBefore{
@@ -92,7 +109,7 @@ a{
     padding: 0px;
     width: 0px;
     height: 0px;
-    background-color: #ffffff90;
+    background-color: var(--color90);
     position: absolute;
     right: 30px;
     top: 30px;

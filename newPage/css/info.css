@@ -1,3 +1,15 @@
+:root{
+    --barColor: #ffffff90;
+    --textColor: black;
+    --inColor: #ffffff90;
+}
+
+:root.dark{
+    --barColor: #11111190;
+    --textColor: white;
+    --inColor: #44444470;
+}
+
 .bottom-right{
     position: fixed;
     right: 0;
@@ -9,7 +21,7 @@
     padding: 10px;
     margin-bottom: 20px;
     margin-right: 20px;
-    background-color: #ffffff90;
+    background-color: var(--barColor);
     box-shadow: 5px 5px 30px #00000050;
     border-radius: 50%;
     backdrop-filter: blur(20px);
@@ -31,9 +43,10 @@
     right: 0;
     transition: width 0.5s;
     backdrop-filter: blur(20px);
-    background-color: #ffffff90;
+    background-color: var(--barColor);
     box-shadow: -10px 0px 20px #00000050;
     z-index: 110;
+    color: var(--textColor);
 }
 .barSel{
     height: 100vh;
@@ -43,12 +56,13 @@
     top: 0;
     right: 0;
     transition: width 0.5s;
-    background-color: #ffffff90;
+    background-color: var(--barColor);
     backdrop-filter: blur(20px);
     z-index: 110;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--textColor);
 }
 .barSelMobile{
     height: 100vh;
@@ -58,12 +72,13 @@
     top: 0;
     right: 0;
     transition: width 0.5s;
-    background-color: #ffffff90;
+    background-color: var(--barColor);
     backdrop-filter: blur(20px);
     z-index: 110;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--textColor);
 }
 .infoButton{
     width: 100%;
@@ -74,7 +89,7 @@
     padding: 5px;
     margin-top: 20px;
     margin-left: 20px;
-    background-color: #ffffff90;
+    background-color: var(--inColor);
     box-shadow: 0px 0px 20px #00000050;
     border-radius: 50%;
     cursor: pointer;
@@ -111,7 +126,7 @@
     margin-top: -15px;
 }
 .infoTxt{
-    background-color: #ffffff90;
+    background-color: var(--inColor);
     padding: 15px;
     font-size: 15px;
     border-radius: 15px;

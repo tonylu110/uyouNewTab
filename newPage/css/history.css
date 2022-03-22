@@ -7,7 +7,7 @@
     right: 0;
     transition: width 0.5s;
     backdrop-filter: blur(20px);
-    background-color: #ffffff90;
+    background-color: var(--color90);
     box-shadow: -10px 0px 20px #00000050;
     z-index: 110;
 }
@@ -19,7 +19,7 @@
     top: 0;
     right: 0;
     transition: width 0.5s;
-    background-color: #ffffff90;
+    background-color: var(--color90);
     backdrop-filter: blur(20px);
     z-index: 110;
     display: flex;
@@ -35,7 +35,7 @@
     padding: 5px;
     margin-top: 20px;
     margin-left: 20px;
-    background-color: #ffffff90;
+    background-color: var(--inColor);
     box-shadow: 0px 0px 20px #00000050;
     border-radius: 50%;
     cursor: pointer;
@@ -56,7 +56,7 @@
 }
 
 .historyInfo{
-    background-color: #ffffff90;
+    background-color: var(--inColor);
     width: 85%;
     border-radius: 10px;
     box-shadow: 0px 0px 8px #00000050;
@@ -66,7 +66,7 @@
     cursor: pointer;
 }
 .historyInfo:hover{
-    background-color: #ffffff30
+    background-color: var(--color50)
 }
 .historyInfo:active{
     background-color: #00000010;

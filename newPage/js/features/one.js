@@ -46,9 +46,15 @@ function oneUse() {
             oneTxt.style.fontSize = '40px';
             oneFrom.style.fontSize = '30px';
         }
-        oneNum.style.color = 'black';
-        oneTxt.style.color = 'black';
-        oneFrom.style.color = 'black';
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            oneNum.style.color = '#999';
+            oneTxt.style.color = '#999';
+            oneFrom.style.color = '#999';
+        } else {
+            oneNum.style.color = 'black';
+            oneTxt.style.color = 'black';
+            oneFrom.style.color = 'black';
+        }
         oneNum.style.transition = '0.5s';
         oneTxt.style.transition = '0.5s';
         oneFrom.style.transition = '0.5s';

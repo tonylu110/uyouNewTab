@@ -1,3 +1,26 @@
+:root{
+    --buttonMainColor: #ffffff90;
+    --mainBorder: #ffffff70;
+    --fontColor: black;
+    --buttonColor: #e6e6e6;
+    --buttonColorActive: #9e9e9e;
+    --color50: #ffffff50;
+    --featureColor: #ffffffee;
+    --linkChangeColor: #ffffff90;
+    --selColor: #ffffff70;
+}
+:root.dark{
+    --buttonMainColor: #11111190;
+    --mainBorder: #00000030;
+    --fontColor: #999;
+    --buttonColor: #4e4e4e;
+    --buttonColorActive: #2e2e2e;
+    --color50: #44444450;
+    --featureColor: #444444ee;
+    --linkChangeColor: #44444430;
+    --selColor: #44444470;
+}
+
 .top-left{
     position: fixed;
     left: 0;
@@ -9,11 +32,11 @@
     padding: 10px;
     margin-top: 20px;
     margin-left: 20px;
-    background-color: #ffffff90;
+    background-color: var(--buttonMainColor);
     box-shadow: 5px 5px 30px #00000050;
     border-radius: 50%;
     backdrop-filter: blur(20px);
-    cursor: pointer
+    cursor: pointer;
 }
 .topButton:active{
     background-color: #00000010;
@@ -28,7 +51,7 @@
     z-index: 200;
     width: 750px;
     height: 500px;
-    background-color: #ffffff90;
+    background-color: var(--buttonMainColor);
     box-shadow: 0px 0px 70px #00000070;
     backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -37,9 +60,10 @@
     flex-direction: row;
     margin-bottom: 10px;
     margin-right: 0px;
-    border-top: 2px solid #ffffff70;
-    border-left: 2px solid #ffffff70;
+    border-top: 2px solid var(--mainBorder);
+    border-left: 2px solid var(--mainBorder);
     transition: 0.5s;
+    color: var(--fontColor);
 }
 .settingMainBefore{
     position: fixed;
@@ -65,7 +89,7 @@
 }
 .mainSettings{
     margin-top: 20px;
-    background-color: #ffffff50;
+    background-color: var(--color50);
     border-radius: 10px;
     margin-right: 20px;
     padding: 1px;
@@ -117,7 +141,7 @@
     padding: 8px;
     width: 14px;
     height: 14px;
-    background-color: #ffffff90;
+    background-color: var(--buttonMainColor);
     position: absolute;
     right: 30px;
     top: 30px;
@@ -186,7 +210,7 @@
     width: 100px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #e6e6e6;
+    background-color: var(--buttonColor);
     text-align: center;
     border: 0px;
     font-size: 13px;
@@ -194,12 +218,12 @@
     cursor: pointer
 }
 #backgroundBefore:active{
-    background-color: #9e9e9e;
+    background-color: var(--buttonColorActive);
 }
 .backgroundTitile{
     font-size: 15px;
     font-weight: bold;
-    color: black;
+    color: var(--fontColor);
     margin-top: 5px;
 }
 #viewImg{
@@ -252,7 +276,7 @@
 }
 
 .helpBox{
-    background-color: #ffffff50;
+    background-color: var(--color50);
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 10px;
@@ -320,7 +344,7 @@
     width: 30px;
     height: 30px;
     padding: 10px;
-    background-color: #ffffffee;
+    background-color: var(--featureColor);
     box-shadow: 0px 0px 2px #00000050;
     border-radius: 50%;
     backdrop-filter: blur(20px);
@@ -356,7 +380,7 @@
     align-items: center;
     margin: 0px 3px 10px 3px;
     padding: 10px;
-    background-color: #ffffff50;
+    background-color: var(--color50);
     border-radius: 10px;
     width: 100%;
     justify-content: space-between;
@@ -426,7 +450,7 @@
 }
 
 .hsFeatureHides{
-    background-color: #e6e6e6;
+    background-color: var(--buttonColor);
     border-radius: 8px;
     padding: 10px;
     width: 80px;
@@ -437,10 +461,10 @@
     user-select: none;
 }
 .hsFeatureHides:active{
-    background-color: #9e9e9e;
+    background-color: var(--buttonColorActive);
 }
 .hsFeatureHide{
-    background-color: #e6e6e6;
+    background-color: var(--buttonColor);
     border-radius: 10px;
     padding: 10px;
     width: 80px;
@@ -450,13 +474,13 @@
     user-select: none;
 }
 .hsFeatureHide:active{
-    background-color: #9e9e9e;
+    background-color: var(--buttonColorActive);
 }
 
 .otherBtn{
     display: flex;
     flex-direction: row;
-    background-color: #ffffff50;
+    background-color: var(--color50);
     padding: 10px;
     border-radius: 10px;
     justify-content: space-between;
@@ -483,7 +507,7 @@
     background-color: #035fa5;
 }
 .otherFeaturesBefore{
-    background-color: #e6e6e6;
+    background-color: var(--buttonColor);
     border-radius: 8px;
     padding: 10px;
     width: 80px;
@@ -493,14 +517,14 @@
     user-select: none;
 }
 .otherFeaturesBefore:active{
-    background-color: #9e9e9e;
+    background-color: var(--buttonColorActive);
 }
 #backSettingMenu{
     width: 20px;
     height: 20px;
     padding: 5px;
     border-radius: 50%;
-    background-color: #ffffff90;
+    background-color: var(--buttonMainColor);
     box-shadow: 0px 0px 5px #00000070;
     margin-right: 10px;
 }
@@ -571,7 +595,7 @@
 .seaBtn{
     display: flex;
     flex-direction: row;
-    background-color: #ffffff50;
+    background-color: var(--color50);
     padding: 10px;
     border-radius: 10px;
     justify-content: space-between;
@@ -647,7 +671,7 @@
     position: fixed;
     z-index: 250;
     width: 200px;
-    background-color: #ffffff90;
+    background-color: var(--linkChangeColor);
     box-shadow: 0px 0px 70px #00000070;
     backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -655,8 +679,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 2px solid #ffffff70;
-    border-left: 2px solid #ffffff70;
+    border-top: 2px solid var(--mainBorder);
+    border-left: 2px solid var(--mainBorder);
     transition: 0.5s;
 }
 .linkPadding{
@@ -690,10 +714,12 @@
     border-radius: 10px;
     line-height: 10px;
     user-select: none;
+    background-color: var(--inputBackground);
+    color: var(--fontColor);
 }
 
 .linkBtn{
-    background-color: #ffffffbb;
+    background-color: var(--featureColor);
     width: 50px;
     height: 50px;
     padding: 25px;
@@ -766,7 +792,7 @@
 }
 
 #closeChangeLink{
-    background-color: #e6e6e6;
+    background-color: var(--buttonColor);
     height: 30px;
     width: 140px;
     padding: 5px;
@@ -774,7 +800,12 @@
     text-align: center;
     line-height: 30px;
     cursor: pointer;
+    color: var(--fontColor);
 }
 #closeChangeLink:active{
-    background-color: #9e9e9e;
+    background-color: var(--buttonColorActive);
+}
+
+#backgroundSettings{
+    background-color: var(--selColor);
 }

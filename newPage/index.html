@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/one.css">
     <link rel="stylesheet" href="css/setting.css">
     <script src="js/main/function.js"></script>
+    <script src="js/main/dark2light.js"></script>
     <script src="js/main/main.js"></script>
     <script src="js/features/hide.js"></script>
     <script src="js/features/info.js"></script>
@@ -38,7 +39,7 @@
     <div id="click"></div>
     <div id="picurl"></div>
     <div id="oneMain" class="oneMainBefore" >
-        <div id="closeButton"><img src="imgs/close.png"></div>
+        <div id="closeButton"><img src="imgs/close.png" id="oneCloseImg"></div>
         <div id="innerMain">
             <div id="oneNum" style="font-size: 0px;"></div>
             <div id="oneTxt" style="font-size: 0px;"></div>
@@ -72,11 +73,11 @@
             </div>
             <div id="backSettingMenuName"></div>
         </div>
-        <div id="settingCloseButton" style="display: none;"><img src="imgs/close.png"></div>
+        <div id="settingCloseButton" style="display: none;"><img src="imgs/close.png" id="settingCloseImg"></div>
         <div id="settingMenu" style="display: none;">
             <div class="settingTitle">设置</div>
             <div class="mainSettings">
-                <div class="settingBtn" id="backgroundSettings" style="background-color: #ffffff70;">背景<img src="imgs/to.png"></div>
+                <div class="settingBtn" id="backgroundSettings"">背景<img src="imgs/to.png"></div>
                 <div class="settingBtn" id="festuresSettings">功能<img src="imgs/to.png"></div>
                 <div class="settingBtn" id="linkSettings">书签<img src="imgs/to.png"></div>
                 <div class="settingBtn" id="searchSettings">搜索引擎<img src="imgs/to.png"></div>
@@ -149,35 +150,35 @@
                     <div class="featureSetting">
                         <div class="featureBtns">
                             <div class="featuresTitle">
-                                <div class="featuresBtn"><img src="imgs/hide.png"></div>
+                                <div class="featuresBtn"><img src="imgs/hide.png" class="feaImg"></div>
                                 <div class="featureNames">隐藏全部</div>
                             </div>
                             <div class="hsFeatures" id="hideHS">显示</div>
                         </div>
                         <div class="featureBtns" id="historyFeatureBtn">
                             <div class="featuresTitle">
-                                <div class="featuresBtn"><img src="imgs/fy_ic_history.png"></div>
+                                <div class="featuresBtn"><img src="imgs/fy_ic_history.png" class="feaImg"></div>
                                 <div class="featureNames">历史记录</div>
                             </div>
                             <div class="hsFeatures" id="historyHS">显示</div>
                         </div>
                         <div class="featureBtns">
                             <div class="featuresTitle">
-                                <div class="featuresBtn"><img src="imgs/reload.png"></div>
+                                <div class="featuresBtn"><img src="imgs/reload.png" class="feaImg"></div>
                                 <div class="featureNames">刷新</div>
                             </div>
                             <div class="hsFeatures" id="reloadHS">显示</div>
                         </div>
                         <div class="featureBtns">
                             <div class="featuresTitle">
-                                <div class="featuresBtn"><img src="imgs/calculator.png"></div>
+                                <div class="featuresBtn"><img src="imgs/calculator.png" class="feaImg"></div>
                                 <div class="featureNames">计算器</div>
                             </div>
                             <div class="hsFeatures" id="calHS">显示</div>
                         </div>
                         <div class="featureBtns" id="clockFeatureBtn">
                             <div class="featuresTitle">
-                                <div class="featuresBtn"><img src="imgs/timer.png"></div>
+                                <div class="featuresBtn"><img src="imgs/timer.png" class="feaImg"></div>
                                 <div class="featureNames">时钟</div>
                             </div>
                             <div class="hsFeatures" id="timeHS">显示</div>
@@ -191,14 +192,14 @@
                         </div>
                         <div class="featureBtns">
                             <div class="featuresTitle">
-                                <div class="featuresBtn"><img src="imgs/down.png"></div>
+                                <div class="featuresBtn"><img src="imgs/down.png" class="feaImg"></div>
                                 <div class="featureNames">下载背景</div>
                             </div>
                             <div class="hsFeatures" id="downHS">显示</div>
                         </div>
                         <div class="featureBtns">
                             <div class="featuresTitle">
-                                <div class="featuresBtn"><img src="imgs/info.png"></div>
+                                <div class="featuresBtn"><img src="imgs/info.png" class="feaImg"></div>
                                 <div class="featureNames">关于</div>
                             </div>
                             <div class="hsFeatures" id="infoHS">显示</div>
@@ -376,15 +377,15 @@
     </div>
     <!-- This is top-right button -->
     <div class="title" id="title" style="top: 0;">
-        <div class="titleButton" id="hide" hidden><img src="imgs/hide.png"></div><!--hide button-->
-        <div class="titleButton" id="history" hidden><img src="imgs/fy_ic_history.png"></div><!--history button-->
-        <div class="titleButton" id="reload" hidden><img src="imgs/reload.png"></div><!--reload button-->
-        <div class="titleButton" id="cal" hidden><img src="imgs/calculator.png"></div><!--calculator button-->
-        <div class="titleButton" id="clock" hidden><img src="imgs/timer.png"></div><!--clock button-->
+        <div class="titleButton" id="hide" hidden><img src="imgs/hide.png" id="hideImg"></div><!--hide button-->
+        <div class="titleButton" id="history" hidden><img src="imgs/fy_ic_history.png" id="historyImg"></div><!--history button-->
+        <div class="titleButton" id="reload" hidden><img src="imgs/reload.png" id="reloadImg"></div><!--reload button-->
+        <div class="titleButton" id="cal" hidden><img src="imgs/calculator.png" id="calImg"></div><!--calculator button-->
+        <div class="titleButton" id="clock" hidden><img src="imgs/timer.png" id="clockImg"></div><!--clock button-->
     </div>
     <!-- This is top-left button -->
     <div class="top-left" id="top-right" style="top: 0;">
-        <div class="topButton" id="settings" hidden><img src="imgs/setting.png"></div><!--settings button-->
+        <div class="topButton" id="settings" hidden><img src="imgs/setting.png" id="settingImg"></div><!--settings button-->
         <div class="topButton" id="weather" style="display: none;">
             <img id="weatherImg" hidden>
             <div id="weatherMain" style="display: none;">
@@ -421,8 +422,8 @@
     </div>
     <!-- This is bottom-right button -->
     <div class="bottom-right" id="bottom-right" style="bottom: 0;">
-        <div class="bottomButton" id="down" hidden><img src="imgs/down.png"></div><!--download button-->
-        <div class="bottomButton" id="info" hidden><img src="imgs/info.png"></div><!--info button-->
+        <div class="bottomButton" id="down" hidden><img src="imgs/down.png" id="downImg"></div><!--download button-->
+        <div class="bottomButton" id="info" hidden><img src="imgs/info.png" id="infoImg"></div><!--info button-->
     </div>
     <!-- This is history bar -->
     <div class="bar" id="bar">

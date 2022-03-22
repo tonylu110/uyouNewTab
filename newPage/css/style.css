@@ -1,3 +1,29 @@
+:root{
+    --searchBarColor: #ffffff90;
+    --searchBarColorHover: #ffffff70;
+    --searchBarBorderColor: #ffffff70;
+    --searchBarBorderColorHover: #ffffff50;
+    --linkColorActive: #aaaaaa50;
+    --linkBorderColorActive: #ffffff30;
+    --clickColor: #00000000;
+    --weatherColor: #ffffff70;
+    --fontColor: black;
+    --inputBackground: white;
+}
+
+:root.dark{
+    --searchBarColor: #11111190;
+    --searchBarColorHover: #00000070;
+    --searchBarBorderColor: #00000010;
+    --searchBarBorderColorHover: #00000010;
+    --linkColorActive: #00000050;
+    --linkBorderColorActive: #00000010;
+    --clickColor: #00000050;
+    --weatherColor: #44444470;
+    --fontColor: #999;
+    --inputBackground: #44444490;
+}
+
 ::-webkit-scrollbar {
     display: none; /* Chrome Safari */
 }
@@ -14,6 +40,10 @@ body{
     flex-direction: column;
     background-size: cover;
 }
+input{
+    background-color: var(--inputBackground);
+    color: var(--fontColor);
+}
 
 #weatherImg{
     filter: drop-shadow(0px 0px 1px #00000050);
@@ -28,7 +58,7 @@ body{
     transition: width 0.3s,height 0.3s,padding 0.3s;
 }
 #weather:active{
-    background-color: #ffffff90;
+    background-color: var(--searchBarColor);
 }
 .weatherCity{
     display: flex;
@@ -61,7 +91,7 @@ body{
 }
 .dayWeather{
     position: absolute;
-    background-color: #ffffff70;
+    background-color: var(--weatherColor);
     border-radius: 10px;
     width: 250px;
     padding: 10px;
@@ -70,14 +100,16 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: var(--fontColor);
 }
 #todayWeather{
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 5px;
-    background-color: #ffffff70;
+    background-color: var(--weatherColor);
     padding: 5px 20px 5px 20px;
     border-radius: 20px;
+    color: var(--fontColor);
 }
 .feaWeather{
     position: relative;
@@ -98,13 +130,14 @@ body{
     align-items: center;
     width: 72px;
     padding: 4px;
-    background-color: #ffffff70;
+    background-color: var(--weatherColor);
     border-radius: 8px;
     height: 100%;
     text-align: center;
+    color: var(--fontColor);
 }
 .weatherTime{
-    background-color: #ffffff70;
+    background-color: var(--weatherColor);
     padding: 3px;
     margin-bottom: 2px;
     width: 40px;
@@ -116,6 +149,7 @@ body{
     position: fixed;
     width: 200vw;
     height: 200vh;
+    background-color: var(--clickColor);
 }
 
 /* This is searchMain style */
@@ -129,7 +163,7 @@ body{
 .searchbar{
     width: 570px;
     height: 30px;
-    background-color: #ffffff90;
+    background-color: var(--searchBarColor);
     box-shadow: 3px 3px 10px #00000050;
     backdrop-filter: blur(20px);
     border-radius: 10px;
@@ -137,14 +171,14 @@ body{
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    border-top: 2px solid #ffffff70;
-    border-left: 2px solid #ffffff70;
+    border-top: 2px solid var(--searchBarBorderColor);
+    border-left: 2px solid var(--searchBarBorderColor);
     transition: 0.25s;
 }
 .searchbar:hover{
-    background-color: #dddddd70;
-    border-top: 2px solid #ffffff50;
-    border-left: 2px solid #ffffff50;
+    background-color: var(--searchBarColorHover);
+    border-top: 2px solid var(--searchBarBorderColorHover);
+    border-left: 2px solid var(--searchBarBorderColorHover);
 }
 .searchbar input{
     border: 0px;
@@ -175,27 +209,27 @@ body{
 .link a div{
     width: 50px;
     height: 50px;
-    background-color: #ffffff90;
+    background-color: var(--searchBarColor);
     backdrop-filter: blur(20px);
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #00000050;
-    border-top: 2px solid #ffffff70;
-    border-left: 2px solid #ffffff70;
+    border-top: 2px solid var(--searchBarBorderColor);
+    border-left: 2px solid var(--searchBarBorderColor);
     display: flex;
     align-items: center;
     text-align: center;
     padding: 25px;
 }
 .link div:hover{
-    background-color: #aaaaaa70;
-    border-top: 2px solid #ffffff50;
-    border-left: 2px solid #ffffff50;
+    background-color: var(--searchBarColorHover);
+    border-top: 2px solid var(--searchBarBorderColorHover);
+    border-left: 2px solid var(--searchBarBorderColorHover);
 }
 .link div:active{
-    background-color: #aaaaaa50;
-    border-top: 2px solid #ffffff30;
-    border-left: 2px solid #ffffff30;
+    background-color: var(--linkColorActive);
+    border-top: 2px solid var(--linkBorderColorActive);
+    border-left: 2px solid var(--linkBorderColorActive);
 }
 
 .link a div img{
@@ -215,14 +249,14 @@ body{
     padding: 10px;
     margin-top: 20px;
     margin-right: 20px;
-    background-color: #ffffff90;
+    background-color: var(--searchBarColor);
     box-shadow: 5px 5px 30px #00000050;
     border-radius: 50%;
     backdrop-filter: blur(20px);
     cursor: pointer
 }
 .titleButton:active{
-    background-color: #00000010;
+    background-color: var(--linkBorderColorActive);
 }
 .titleButton img{
     width: 100%;
@@ -233,11 +267,11 @@ body{
 .mainClock{
     width: 750px;
     height: 400px;
-    background-color: #ffffff30;
+    background-color: var(--searchBarColor);
     border-radius: 40px;
     backdrop-filter: blur(40px);
-    border-top:2px solid #ffffff60;
-    border-left:2px solid #ffffff60;
+    border-top:2px solid var(--searchBarBorderColor);
+    border-left:2px solid var(--searchBarBorderColor);
     box-shadow: 10px 5px 50px #00000050;
     display: flex;
     flex-direction: row;
@@ -248,19 +282,20 @@ body{
 #time{
     font-weight: bold;
     font-size: 150px;
+    color: var(--fontColor);
 }
 
 /* searchengins css */
 
 .moreSearch{
     position: fixed;
-    background-color: #ffffff90;
+    background-color: var(--searchBarColor);
     backdrop-filter: blur(20px);
     margin-top: 70px;
     border-radius: 20px;
     box-shadow: 5px 5px 30px #00000050;
-    border-top: 2px solid #ffffff70;
-    border-left: 2px solid #ffffff70;
+    border-top: 2px solid var(--searchBarBorderColor);
+    border-left: 2px solid var(--searchBarBorderColor);
     z-index: 100;
 }
 .searchEngines{
@@ -292,7 +327,7 @@ body{
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff10;
+    background-color: var(--linkBorderColorActive);
     backdrop-filter: blur(20px);
     z-index: -2;
     display: flex;

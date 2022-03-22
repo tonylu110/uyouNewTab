@@ -1,12 +1,28 @@
+:root{
+    --color90: #ffffff90;
+    --color70: #ffffff70;
+    --color50: #ffffff50;
+    --borderColor: #ffffff70;
+    --textColor: black;
+}
+
+:root.dark{
+    --color90: #11111190;
+    --color70: #00000070;
+    --color50: #00000050;
+    --borderColor: #00000010;
+    --textColor: #999999;
+}
+
 /* cal css */
 .mainCal{
     position: relative;
-    background: #ffffff50;
+    background: var(--color90);
     border-radius: 20px;
     overflow: hidden;
     z-index: 100;
-    border-top: 2px solid #ffffff70;
-    border-left: 2px solid #ffffff70;
+    border-top: 2px solid var(--borderColor);
+    border-left: 2px solid var(--borderColor);
     box-shadow: 5px 5px 30px #00000050;
 }
 .mainCal .card{
@@ -40,14 +56,14 @@
     user-select: none;
     border-radius: 10px;
     transition: 0.5s;
-    color: black;
+    color: var(--textColor);
 }
 .card span:hover{
-    background-color: #ffffff60;
+    background-color: var(--color70);
     transition: 0.5s;
 }
 .card span:active{
-    background: #00bcd450;
+    background: var(--color50);
     font-size: 70px;
 }
 .card .clear{
@@ -58,4 +74,8 @@
     grid-column: 2 span;
     width: 180px;
     margin-bottom: 10px;
+}
+
+#txt{
+    color: var(--textColor);
 }

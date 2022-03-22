@@ -1,3 +1,15 @@
+:root{
+    --backgroundColor: white;
+    --fontColor: black;
+    --messageColor: #eee
+}
+
+:root.dark{
+    --backgroundColor: #111;
+    --fontColor: #999;
+    --messageColor: #444;
+}
+
 ::-webkit-scrollbar {
     display: none; /* Chrome Safari */
 }
@@ -10,6 +22,8 @@ body{
     align-items: center;
     height: 100vh;
     background-size: cover;
+    background-color: var(--backgroundColor);
+    color: var(--fontColor);
 }
 
 #home{
@@ -54,7 +68,7 @@ body{
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 20px;
-    background-color: #eee;
+    background-color: var(--messageColor);
     border-radius: 10px;
     display: flex;
     flex-direction: column;

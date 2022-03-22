@@ -1,5 +1,6 @@
 window.onload = function () {
     settingUse();
+    loadTheme();
     mainUse();
     weatherUse();
     hideUse();

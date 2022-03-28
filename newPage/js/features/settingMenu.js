@@ -43,11 +43,23 @@ function settingMenus() {
     }
     elemenetGetId('backgroundSettings').onclick = function () {
         menuStyle();
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            elemenetGetId('backgroundSettings').style.backgroundColor = '#44444470';
-        } else {
-            elemenetGetId('backgroundSettings').style.backgroundColor = '#ffffff70';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    elemenetGetId('backgroundSettings').style.backgroundColor = '#44444470';
+                } else {
+                    elemenetGetId('backgroundSettings').style.backgroundColor = '#ffffff70';
+                }
+            } else if (dlMode == 'dark') {
+                elemenetGetId('backgroundSettings').style.backgroundColor = '#44444470';
+            } else if (dlMode == 'light') {
+                elemenetGetId('backgroundSettings').style.backgroundColor = '#ffffff70';
+            }
+        })
         hideMenu();
         elemenetGetId('backgroundSetting').style.display = '';
         var settingWidth = elemenetGetId('settingMain').offsetWidth;
@@ -68,11 +80,23 @@ function settingMenus() {
     }
     elemenetGetId('festuresSettings').onclick = function () {
         menuStyle();
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            elemenetGetId('festuresSettings').style.backgroundColor = '#44444470';
-        } else {
-            elemenetGetId('festuresSettings').style.backgroundColor = '#ffffff70';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    elemenetGetId('festuresSettings').style.backgroundColor = '#44444470';
+                } else {
+                    elemenetGetId('festuresSettings').style.backgroundColor = '#ffffff70';
+                }
+            } else if (dlMode == 'dark') {
+                elemenetGetId('festuresSettings').style.backgroundColor = '#44444470';
+            } else if (dlMode == 'light') {
+                elemenetGetId('festuresSettings').style.backgroundColor = '#ffffff70';
+            }
+        })
         hideMenu();
         elemenetGetId('festuresSetting').style.display = '';
         if (screenWidth <= 813) {
@@ -81,11 +105,23 @@ function settingMenus() {
     }
     elemenetGetId('linkSettings').onclick = function () {
         menuStyle();
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            elemenetGetId('linkSettings').style.backgroundColor = '#44444470';
-        } else {
-            elemenetGetId('linkSettings').style.backgroundColor = '#ffffff70';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    elemenetGetId('linkSettings').style.backgroundColor = '#44444470';
+                } else {
+                    elemenetGetId('linkSettings').style.backgroundColor = '#ffffff70';
+                }
+            } else if (dlMode == 'dark') {
+                elemenetGetId('linkSettings').style.backgroundColor = '#44444470';
+            } else if (dlMode == 'light') {
+                elemenetGetId('linkSettings').style.backgroundColor = '#ffffff70';
+            }
+        })
         hideMenu();
         elemenetGetId('linkSetting').style.display = '';
         if (screenWidth <= 813) {
@@ -94,11 +130,23 @@ function settingMenus() {
     }
     elemenetGetId('searchSettings').onclick = function () {
         menuStyle();
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            elemenetGetId('searchSettings').style.backgroundColor = '#44444470';
-        } else {
-            elemenetGetId('searchSettings').style.backgroundColor = '#ffffff70';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    elemenetGetId('searchSettings').style.backgroundColor = '#44444470';
+                } else {
+                    elemenetGetId('searchSettings').style.backgroundColor = '#ffffff70';
+                }
+            } else if (dlMode == 'dark') {
+                elemenetGetId('searchSettings').style.backgroundColor = '#44444470';
+            } else if (dlMode == 'light') {
+                elemenetGetId('searchSettings').style.backgroundColor = '#ffffff70';
+            }
+        })
         hideMenu();
         elemenetGetId('searchSetting').style.display = '';
         if (screenWidth <= 813) {
@@ -107,11 +155,23 @@ function settingMenus() {
     }
     elemenetGetId('otherSettings').onclick = function () {
         menuStyle();
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            elemenetGetId('otherSettings').style.backgroundColor = '#44444470';
-        } else {
-            elemenetGetId('otherSettings').style.backgroundColor = '#ffffff70';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    elemenetGetId('otherSettings').style.backgroundColor = '#44444470';
+                } else {
+                    elemenetGetId('otherSettings').style.backgroundColor = '#ffffff70';
+                }
+            } else if (dlMode == 'dark') {
+                elemenetGetId('otherSettings').style.backgroundColor = '#44444470';
+            } else if (dlMode == 'light') {
+                elemenetGetId('otherSettings').style.backgroundColor = '#ffffff70';
+            }
+        })
         hideMenu();
         elemenetGetId('otherSetting').style.display = '';
         if (screenWidth <= 813) {
@@ -127,11 +187,23 @@ function settingMenus() {
     }
     elemenetGetId('helpInfo').onclick = function () {
         menuStyle();
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            elemenetGetId('helpInfo').style.backgroundColor = '#44444470';
-        } else {
-            elemenetGetId('helpInfo').style.backgroundColor = '#ffffff70';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    elemenetGetId('helpInfo').style.backgroundColor = '#44444470';
+                } else {
+                    elemenetGetId('helpInfo').style.backgroundColor = '#ffffff70';
+                }
+            } else if (dlMode == 'dark') {
+                elemenetGetId('helpInfo').style.backgroundColor = '#44444470';
+            } else if (dlMode == 'light') {
+                elemenetGetId('helpInfo').style.backgroundColor = '#ffffff70';
+            }
+        })
         hideMenu();
         elemenetGetId('helpMain').style.display = '';
         if (screenWidth <= 813) {
@@ -140,11 +212,23 @@ function settingMenus() {
     }
     elemenetGetId('donateInfo').onclick = function () {
         menuStyle();
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            elemenetGetId('donateInfo').style.backgroundColor = '#44444470';
-        } else {
-            elemenetGetId('donateInfo').style.backgroundColor = '#ffffff70';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    elemenetGetId('donateInfo').style.backgroundColor = '#44444470';
+                } else {
+                    elemenetGetId('donateInfo').style.backgroundColor = '#ffffff70';
+                }
+            } else if (dlMode == 'dark') {
+                elemenetGetId('donateInfo').style.backgroundColor = '#44444470';
+            } else if (dlMode == 'light') {
+                elemenetGetId('donateInfo').style.backgroundColor = '#ffffff70';
+            }
+        })
         hideMenu();
         elemenetGetId('donateMain').style.display = '';
         var settingWidth = elemenetGetId('settingMain').offsetWidth;

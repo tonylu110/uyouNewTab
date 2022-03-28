@@ -55,7 +55,7 @@ input{
     display: flex;
     flex-direction: row;
     border-radius: 25px;
-    transition: width 0.3s,height 0.3s,padding 0.3s;
+    transition: width 0.3s,height 0.3s,padding 0.3s,transform 0.3s;
 }
 #weather:active{
     background-color: var(--searchBarColor);
@@ -333,6 +333,7 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--fontColor);
 }
 #loading{
     font-size: 50px;

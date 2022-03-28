@@ -2,6 +2,7 @@ window.onload = function () {
     settingUse();
     loadTheme();
     mainUse();
+    dlUse();
     weatherUse();
     hideUse();
     hsFeatureUse();
@@ -15,5 +16,6 @@ window.onload = function () {
     infoUse();
     historyUse();
     searchUse();
+    searchChangeUse();
     searchOnload();
 }

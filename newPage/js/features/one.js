@@ -46,15 +46,31 @@ function oneUse() {
             oneTxt.style.fontSize = '40px';
             oneFrom.style.fontSize = '30px';
         }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            oneNum.style.color = '#999';
-            oneTxt.style.color = '#999';
-            oneFrom.style.color = '#999';
-        } else {
-            oneNum.style.color = 'black';
-            oneTxt.style.color = 'black';
-            oneFrom.style.color = 'black';
-        }
+        chrome.storage.sync.get(['dlMode'], function (budget) {
+            let dlMode = budget.dlMode;
+            if (typeof (dlMode) == 'undefined') {
+                dlMode = '';
+            }
+            if (dlMode == '') {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    oneNum.style.color = '#999';
+                    oneTxt.style.color = '#999';
+                    oneFrom.style.color = '#999';
+                } else {
+                    oneNum.style.color = 'black';
+                    oneTxt.style.color = 'black';
+                    oneFrom.style.color = 'black';
+                }
+            } else if (dlMode == 'dark') {
+                oneNum.style.color = '#999';
+                oneTxt.style.color = '#999';
+                oneFrom.style.color = '#999';
+            } else if (dlMode == 'light') {
+                oneNum.style.color = 'black';
+                oneTxt.style.color = 'black';
+                oneFrom.style.color = 'black';
+            }
+        })
         oneNum.style.transition = '0.5s';
         oneTxt.style.transition = '0.5s';
         oneFrom.style.transition = '0.5s';

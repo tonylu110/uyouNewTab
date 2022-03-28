@@ -69,7 +69,7 @@
     <div id="settingMain" class="settingMainBefore" >
         <div id="backSettingMenus"  style="display: none;">
             <div id="backSettingMenu">
-                <img src="imgs/to.png">
+                <img src="imgs/to.png" id="backSettingImg">
             </div>
             <div id="backSettingMenuName"></div>
         </div>
@@ -275,6 +275,19 @@
                     <div class="backgroundTitile">设置搜索引擎的显示/隐藏</div>
                     <div class="seaBtn" style="margin-top: 10px;">
                         <div class="seaName">
+                            <div id="cusImg">
+                                <img src="imgs/search.png" class="seaImg searchImg">
+                            </div>
+                            <div class="seaTitle">自定义搜索引擎</div>
+                        </div>
+                        <div class="otherFeaturesBefore" id="cusAn">禁用</div>
+                    </div>
+                    <div class="seaBtn seaIn" id="seaIn" style="display: none;">
+                        <input type="text" id="cusSeaIn" placeholder="请输入自定义搜索链接">
+                        <div class="otherFeatures" id="setCus">确定</div>
+                    </div>
+                    <div class="seaBtn" style="margin-top: 10px;">
+                        <div class="seaName">
                             <img src="imgs/google.png" class="seaImg">
                             <div class="seaTitle">Google</div>
                         </div>
@@ -333,6 +346,13 @@
                             <input type="text" id="loadingTimeNum" placeholder="注：单位为毫秒">
                             <div class="ms">ms</div>
                             <div class="otherFeatures" id="setLoadingTime">设置时间</div>
+                        </div>
+                    </div>
+                    <div class="otherBtn">
+                        <div class="otherName" id="colorMode">颜色模式</div>
+                        <div class="setDl">
+                            <div class="otherFeatures" id="reDlAn">跟随系统</div>
+                            <div class="otherFeaturesBefore" id="dlAn">亮色</div>
                         </div>
                     </div>
                 </div>
@@ -474,6 +494,7 @@
         <!-- This is moreSearch area -->
         <div class="moreSearch" id="moreSearch" hidden>
             <div class="searchEngines" id="searchEngines"><!--set search engine-->
+                <div id="cus" style="display: none;"><img src="imgs/search.png"></div>
                 <div id="google"><img src="imgs/google.png"></div><!--google-->
                 <div id="bing" style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png" style="width: 70px; height: 70px;"></div><!--bing-->
                 <div id="baidu" style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png" style="width: 60px; height: 60px;"></div><!--baidu-->

@@ -552,7 +552,7 @@
 .loadingTimeBtn{
     display: flex;
     flex-direction: column;
-    background-color: #ffffff50;
+    background-color: var(--color50);
     padding: 10px;
     border-radius: 0px 0px 10px 10px;
     justify-content: space-between;
@@ -569,7 +569,7 @@
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 8px;
-    background-color: #ffffff70;
+    background-color: var(--mainBorder);
 }
 .loadingTimeSetting{
     display: flex;
@@ -583,7 +583,7 @@
     padding: 7px;
 }
 .ms{
-    background-color: #ffffff70;
+    background-color: var(--mainBorder);
     margin-right: 10px;
     border-radius: 8px;
     padding: 10px;
@@ -808,4 +808,58 @@
 
 #backgroundSettings{
     background-color: var(--selColor);
+}
+
+#couSearch{
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+    font-size: 15px;
+}
+#cusImg{
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.searchImg{
+    width: 30px;
+    margin-right: 0px;
+}
+#cus img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+}
+.seaIn{
+    margin-top: -10px;
+    border-radius: 0px 0px 10px 10px;
+    justify-content: flex-start;
+}
+#cusSeaIn{
+    padding: 11px;
+    border-radius: 8px;
+    border: 0px;
+    outline: none;
+    flex: 1;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.setDl{
+    display: flex;
+    flex-direction: row;
+}
+.setDl div{
+    width: 40px;
+}
+#reDlAn{
+    margin-right: 10px;
+    margin-left: 10px;
+    width: auto;
 }

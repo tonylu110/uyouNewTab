@@ -114,18 +114,16 @@ function weatherUse() {
             elemenetGetId('weatherImg').style.height = '60px';
             elemenetGetId('weather').style.padding = '20px';
             if (screenWidth <= 813) {
+                let weatherLeft = -(90 - (screenWidth - 310) / 2);
                 elemenetGetId('weather').style.width = '270px';
                 elemenetGetId('weather').style.height = '310px';
-                elemenetGetId('weather').style.position = 'fixed';
-                elemenetGetId('weather').style.marginTop = '100px';
-                elemenetGetId('weather').style.marginLeft = (screenWidth - 310) / 2 + 'px';
+                elemenetGetId('weather').style.transform = 'translateX(' + weatherLeft + 'px) translateY(100px)';
                 elemenetGetId('blackBack').style.zIndex = 101;
                 elemenetGetId('blackBack').style.backgroundColor = '#00000050';
                 elemenetGetId('weather').style.flexDirection = 'column';
                 elemenetGetId('weatherMain').style.marginTop = '10px';
                 elemenetGetId('weatherMain').style.marginLeft = '0px';
                 elemenetGetId('dayWeather').style.top = '137px';
-                elemenetGetId('weatherMain').style.display = '';
                 if (elemenetGetId('button').innerText == '暂时没有有连接到可以访问互联网的网络哦~') {
                     elemenetGetId('weatherMain').style.display = 'flex';
                 }
@@ -141,6 +139,7 @@ function weatherUse() {
                     elemenetGetId('weather').style.marginLeft = '20px';
                     elemenetGetId('blackBack').style.zIndex = -1;
                     elemenetGetId('blackBack').style.backgroundColor = '#00000010';
+                    elemenetGetId('weather').style.transform = '';
                     weatherHide = !weatherHide;
                 }
             } else {
@@ -151,13 +150,14 @@ function weatherUse() {
                 elemenetGetClass('feaWeatherbox')[2].style.width = '74px';
                 elemenetGetClass('feaWeather')[0].style.marginBottom = '4px';
                 elemenetGetId('weather').style.height = '250px'
-                setTimeout(function () {
-                    elemenetGetId('weatherMain').style.display = '';
-                    if (elemenetGetId('button').innerText == '暂时没有有连接到可以访问互联网的网络哦~') {
-                        elemenetGetId('weatherMain').style.display = 'flex';
-                    }
-                }, 300)
+                
             }
+            setTimeout(function () {
+                elemenetGetId('weatherMain').style.display = '';
+                if (elemenetGetId('button').innerText == '暂时没有有连接到可以访问互联网的网络哦~') {
+                    elemenetGetId('weatherMain').style.display = 'flex';
+                }
+            }, 300)
             elemenetGetId('click').onclick = function () {
                 elemenetGetId('weather').style.width = '30px';
                 elemenetGetId('weather').style.height = '30px';
@@ -175,9 +175,7 @@ function weatherUse() {
             elemenetGetId('weather').style.padding = '10px';
             elemenetGetId('weatherMain').style.display = 'none';
             if (screenWidth <= 813) {
-                elemenetGetId('weather').style.position = '';
-                elemenetGetId('weather').style.marginTop = '15px';
-                elemenetGetId('weather').style.marginLeft = '20px';
+                elemenetGetId('weather').style.transform = '';
                 elemenetGetId('blackBack').style.zIndex = -1;
                 elemenetGetId('blackBack').style.backgroundColor = '#00000010';
             }

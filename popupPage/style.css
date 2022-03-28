@@ -7,7 +7,7 @@
 :root.dark{
     --backgroundColor: #111;
     --fontColor: #999;
-    --messageColor: #444;
+    --messageColor: #222;
 }
 
 ::-webkit-scrollbar {

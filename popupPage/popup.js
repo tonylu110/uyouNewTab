@@ -1,5 +1,4 @@
 window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-    console.log('dark mode change，已' + (event.matches ? '进入' : '退出') + 'dark mode')
     if (event.matches) {
         document.getElementsByTagName('html')[0].className = 'dark';
     } else {

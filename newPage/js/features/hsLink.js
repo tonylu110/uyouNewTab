@@ -1,4 +1,6 @@
-function hsLink() {
+import { elemenetGetId } from "../main/function.js";
+
+export function hsLink() {
     var link1HS = elemenetGetId('link1HS');
     var link2HS = elemenetGetId('link2HS');
     var link3HS = elemenetGetId('link3HS');
@@ -140,7 +142,7 @@ function hsLink() {
         }
     }
 }
-function hsLinkUse() {
+export function hsLinkUse() {
     chrome.storage.local.get(['link1HS', 'link2HS', 'link3HS', 'link4HS', 'link5HS', 'link6HS', 'link7HS', 'link8HS', 'link9HS', 'link10HS'], function (budget) {
         let link1HS = budget.link1HS;
         let link2HS = budget.link2HS;

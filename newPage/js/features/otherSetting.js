@@ -1,4 +1,6 @@
-function otherFeatures() {
+import { elemenetGetId, elemenetGetClass } from "../main/function.js";
+
+export default function otherFeatures() {
     elemenetGetId('loadingAn').onclick = function () {
         if (elemenetGetId('loadingAn').className == 'otherFeaturesBefore') {
             elemenetGetId('loadingAn').className = 'otherFeatures';

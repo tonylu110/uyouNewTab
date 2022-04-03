@@ -1,4 +1,7 @@
-function dark() {
+import { elemenetGetId, elemenetGetClass } from './function.js'
+
+function dark(alpha) {
+    elemenetGetId('click').style.background = '#000000' + alpha;
     document.getElementsByTagName('html')[0].className = 'dark';
     elemenetGetId('hideImg').src = 'imgs/dark/hide.png';
     elemenetGetId('historyImg').src = 'imgs/dark/fy_ic_history.png';
@@ -21,9 +24,13 @@ function dark() {
     elemenetGetClass('feaImg')[5].src = 'imgs/dark/down.png';
     elemenetGetClass('feaImg')[6].src = 'imgs/dark/info.png';
     elemenetGetId('dlAn').innerText = '暗色';
+    elemenetGetClass('otherBtn')[1].style.background = '#44444470';
+    elemenetGetClass('otherBtn')[1].style.borderRadius = '10px 10px 0px 0px';
+    elemenetGetClass('otherBtn')[2].style.display = '';
 }
 
 function light() {
+    elemenetGetId('click').style.background = '';
     document.getElementsByTagName('html')[0].className = '';
     elemenetGetId('hideImg').src = 'imgs/hide.png';
     elemenetGetId('historyImg').src = 'imgs/fy_ic_history.png';
@@ -46,35 +53,61 @@ function light() {
     elemenetGetClass('feaImg')[5].src = 'imgs/down.png';
     elemenetGetClass('feaImg')[6].src = 'imgs/info.png';
     elemenetGetId('dlAn').innerText = '亮色'
+    elemenetGetClass('otherBtn')[1].style.background = '';
+    elemenetGetClass('otherBtn')[1].style.borderRadius = '';
+    elemenetGetClass('otherBtn')[2].style.display = 'none';
+
 }
 
-function loadTheme() {
-    chrome.storage.sync.get(['dlMode'], function (budget) {
+export function loadTheme() {
+    chrome.storage.sync.get(['dlMode', 'alphaColor', 'dlAlpha'], function (budget) {
         let dlMode = budget.dlMode;
+        let alphaColor = budget.alphaColor;
+        let dlAlpha = budget.dlAlpha;
         if (typeof (dlMode) == 'undefined') {
             dlMode = '';
         }
+        if (typeof (alphaColor) == 'undefined') {
+            alphaColor = '50';
+        }
+        if (typeof (dlAlpha) == 'undefined') {
+            dlAlpha = 'show';
+        }
+        elemenetGetId('click').className = alphaColor;
+        if (dlAlpha == 'hide') {
+            alphaColor = '00';
+            elemenetGetId('blackBackShow').innerText = '隐藏';
+            elemenetGetId('blackBackShow').className = 'otherFeaturesBefore';
+            elemenetGetId('backAlpha').style.display = 'none';
+            elemenetGetClass('dlMore')[1].style.display = 'none';
+            elemenetGetClass('dlMore')[0].style.marginBottom = '';
+            elemenetGetId('click').style.background = '#00000000';
+        }
         if (dlMode == '') {
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                dark();
+                dark(alphaColor);
             }
             window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
                 if (event.matches) {
-                    dark();
+                    dark(alphaColor);
                 } else {
                     light();
                 }
             })
         } else if (dlMode == 'dark') {
-            dark();
+            dark(alphaColor);
+            elemenetGetId('click').className = alphaColor;
             elemenetGetId('colorMode').innerText = '深色模式'
+            elemenetGetId('reDlAn').className = 'otherFeaturesBefore'
         } else {
             elemenetGetId('colorMode').innerText = '亮色模式'
+            elemenetGetId('reDlAn').className = 'otherFeaturesBefore'
         }
+        elemenetGetId('backAlpha').innerText = '当前背景暗色遮罩深度为：' + alphaColor;
     })
 }
 
-function dlUse() {
+export function dlUse() {
     elemenetGetId('dlAn').onclick = function () {
         if (elemenetGetId('dlAn').innerText == '暗色') {
             light();
@@ -85,9 +118,9 @@ function dlUse() {
             } else {
                 elemenetGetClass('otherBtn')[0].style.background = '#ffffff90';
             }
-            elemenetGetId('colorMode').innerText = '亮色模式'
+            elemenetGetId('colorMode').innerText = '亮色模式';
         } else {
-            dark();
+            dark(elemenetGetId('click').className);
             elemenetGetId('otherSettings').style.background = '#44444470';
             chrome.storage.sync.set({ 'dlMode': 'dark' });
             if (elemenetGetId('loadingAn').innerText == '隐藏') {
@@ -97,9 +130,41 @@ function dlUse() {
             }
             elemenetGetId('colorMode').innerText = '深色模式'
         }
+        elemenetGetId('reDlAn').className = 'otherFeaturesBefore'
     }
     elemenetGetId('reDlAn').onclick = function () {
         chrome.storage.sync.set({ 'dlMode': '' });
         location.reload();
+    }
+    elemenetGetId('setBackAlpha').onclick = function () {
+        let alphaColor = elemenetGetId('blackBackColor').value;
+        if (Number(alphaColor) < 10) {
+            alphaColor = '0' + alphaColor;
+        }
+        chrome.storage.sync.set({ 'alphaColor': alphaColor });
+        dark(alphaColor);
+        elemenetGetId('click').className = alphaColor;
+        elemenetGetId('backAlpha').innerText = '当前背景暗色遮罩深度为：' + alphaColor;
+    }
+    elemenetGetId('blackBackShow').onclick = function () {
+        let isHide = elemenetGetId('blackBackShow').innerText;
+        let alphaColor = elemenetGetId('click').className;
+        if (isHide == '显示') {
+            elemenetGetId('blackBackShow').innerText = '隐藏';
+            elemenetGetId('blackBackShow').className = 'otherFeaturesBefore';
+            elemenetGetId('backAlpha').style.display = 'none';
+            elemenetGetClass('dlMore')[1].style.display = 'none';
+            elemenetGetClass('dlMore')[0].style.marginBottom = '';
+            elemenetGetId('click').style.background = '#00000000';
+            chrome.storage.sync.set({ 'dlAlpha': 'hide' });
+        } else {
+            elemenetGetId('blackBackShow').innerText = '显示';
+            elemenetGetId('blackBackShow').className = 'otherFeatures';
+            elemenetGetId('backAlpha').style.display = '';
+            elemenetGetClass('dlMore')[1].style.display = '';
+            elemenetGetClass('dlMore')[0].style.marginBottom = '10px';
+            elemenetGetId('click').style.background = '#000000' + alphaColor;
+            chrome.storage.sync.set({ 'dlAlpha': 'show' });
+        }
     }
 }

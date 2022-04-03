@@ -7,29 +7,7 @@
     <title>Home</title>
     <link rel="shortcut icon" href="imgs/favicon.ico" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/history.css">
-    <link rel="stylesheet" href="css/cal.css">
-    <link rel="stylesheet" href="css/info.css">
-    <link rel="stylesheet" href="css/one.css">
-    <link rel="stylesheet" href="css/setting.css">
-    <script src="js/main/function.js"></script>
-    <script src="js/main/dark2light.js"></script>
-    <script src="js/main/main.js"></script>
-    <script src="js/features/hide.js"></script>
-    <script src="js/features/info.js"></script>
-    <script src="js/features/search.js"></script>
-    <script src="js/main/print.js"></script>
-    <script src="js/features/cal.js"></script>
-    <script src="js/features/history.js"></script>
-    <script src="js/features/one.js"></script>
-    <script src="js/features/hsFeature.js"></script>
-    <script src="js/features/hsLink.js"></script>
-    <script src="js/features/changeLink.js"></script>
-    <script src="js/features/settingMenu.js"></script>
-    <script src="js/features/otherSetting.js"></script>
-    <script src="js/features/weather.js"></script>
-    <script src="js/features/settings.js"></script>
-    <script src="js/main/load.js"></script>
+    <script type="module" src="js/main/load.js"></script>
 </head>
 <body id="background">
     <div id="loading" style="display: none;">
@@ -64,7 +42,7 @@
     </div>
     <div id="toast" style="display: none;">
         <div id="Msg"></div>
-        <div id="toastButton"></div>
+        <div id="toastButton">确认</div>
     </div>
     <div id="settingMain" class="settingMainBefore" >
         <div id="backSettingMenus"  style="display: none;">
@@ -355,6 +333,17 @@
                             <div class="otherFeaturesBefore" id="dlAn">亮色</div>
                         </div>
                     </div>
+                    <div class="otherBtn blackBackShowBack" style="display: none;">
+                        <div class="dlMore" style="margin-bottom: 10px;">
+                            <div class="otherName" id="colorMode">是否显示暗色壁纸遮罩</div>
+                            <div class="otherFeatures" id="blackBackShow">显示</div>
+                        </div>
+                        <div id="backAlpha">当前背景暗色遮罩深度为：</div>
+                        <div class="dlMore">
+                            <input type="text" placeholder="请输入暗色遮罩程度：00-FF" id="blackBackColor">
+                            <div class="otherFeatures" id="setBackAlpha">确定</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="helpMain" class="otherInfo" style="display: none;">
@@ -490,6 +479,8 @@
         <div class="searchbar" id="searchbar" style="display: none;"><!--search bar-->
             <img id="searchEngine" hidden>
             <input type="text" id="keywords">
+            <div class="keywordsRight" style="display: none;"></div>
+            <div id="searchBtn" style="color: transparent;">搜索</div>
         </div>
         <!-- This is moreSearch area -->
         <div class="moreSearch" id="moreSearch" hidden>

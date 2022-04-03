@@ -1,18 +1,4 @@
-:root{
-    --color90: #ffffff90;
-    --color70: #ffffff70;
-    --color50: #ffffff50;
-    --borderColor: #ffffff70;
-    --textColor: black;
-}
-
-:root.dark{
-    --color90: #11111190;
-    --color70: #00000070;
-    --color50: #00000050;
-    --borderColor: #00000010;
-    --textColor: #999999;
-}
+@import url(./color.css);
 
 /* cal css */
 .mainCal{

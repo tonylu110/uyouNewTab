@@ -1,0 +1,55 @@
+:root{
+    --searchBarColor: #ffffff90;
+    --searchBarColorHover: #ffffff70;
+    --searchBarBorderColor: #ffffff70;
+    --searchBarBorderColorHover: #ffffff50;
+    --linkColorActive: #aaaaaa50;
+    --linkBorderColorActive: #ffffff30;
+    --clickColor: #00000000;
+    --weatherColor: #ffffff70;
+    --fontColor: black;
+    --inputBackground: white;
+    --buttonMainColor: #ffffff90;
+    --mainBorder: #ffffff70;
+    --buttonColor: #e6e6e6;
+    --buttonColorActive: #9e9e9e;
+    --color50: #ffffff50;
+    --featureColor: #ffffffee;
+    --linkChangeColor: #ffffff90;
+    --selColor: #ffffff70;
+    --color90: #ffffff90;
+    --color70: #ffffff70;
+    --borderColor: #ffffff70;
+    --textColor: black;
+    --barColor: #ffffff90;
+    --inColor: #ffffff90;
+    --seaRight: #44444450;
+}
+
+:root.dark{
+    --searchBarColor: #11111190;
+    --searchBarColorHover: #00000070;
+    --searchBarBorderColor: #00000010;
+    --searchBarBorderColorHover: #00000010;
+    --linkColorActive: #00000050;
+    --linkBorderColorActive: #00000010;
+    --clickColor: #00000050;
+    --weatherColor: #44444470;
+    --fontColor: #999;
+    --inputBackground: #44444490;
+    --buttonMainColor: #11111190;
+    --mainBorder: #00000030;
+    --buttonColor: #4e4e4e;
+    --buttonColorActive: #2e2e2e;
+    --color50: #44444450;
+    --featureColor: #444444ee;
+    --linkChangeColor: #44444430;
+    --selColor: #44444470;
+    --color90: #11111190;
+    --color70: #00000070;
+    --borderColor: #00000010;
+    --textColor: #999999;
+    --barColor: #11111190;
+    --inColor: #44444470;
+    --seaRight: #cccccc70;
+}

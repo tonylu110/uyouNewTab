@@ -1,4 +1,7 @@
-function hideUse() {
+import { elemenetGetId, body } from '../main/function.js';
+import { onShow, onHide } from '../main/main.js'
+
+export default function hideUse() {
     //This is hide all element function
     //if bottemButton is hide all element will hide
     //else show all element

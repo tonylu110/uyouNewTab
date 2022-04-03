@@ -1,3 +1,5 @@
+import { elemenetGetId, elemenetGetClass, body } from '../main/function.js'
+
 function menuStyle() {
     elemenetGetId('backgroundSettings').style.backgroundColor = 'transparent';
     elemenetGetId('festuresSettings').style.backgroundColor = 'transparent';
@@ -16,7 +18,7 @@ function hideMenu() {
     elemenetGetId('donateMain').style.display = 'none';
     elemenetGetId('otherSetting').style.display = 'none';
 }
-function settingMenus() {
+export default function settingMenus() {
     var screenWidth = body().offsetWidth;//get screen width
     function mobileUse(num, name) {
         var settingMainWidth = elemenetGetId('settingMain').offsetWidth;
@@ -239,71 +241,5 @@ function settingMenus() {
             elemenetGetClass('dotImg')[2].style.maxWidth = settingWidth / 2 - 26.5 + 'px';
             mobileUse(6, '捐赠');
         }
-    }
-}
-
-function loaclImgChange() {
-    elemenetGetId('background0').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/background - 0.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/background - 0.jpg")';
-    }
-    elemenetGetId('background1').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/background - 1.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/background - 1.jpg")';
-    }
-    elemenetGetId('background2').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/background - 2.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/background - 2.jpg")';
-    }
-    elemenetGetId('background3').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/background - 3.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/background - 3.jpg")';
-    }
-    elemenetGetId('background4').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/background - 4.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/background - 4.jpg")';
-    }
-    elemenetGetId('background5').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/background - 5.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/background - 5.jpg")';
-    }
-    elemenetGetId('mbackground1').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/mobile/background - 1.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 1.jpg")';
-    }
-    elemenetGetId('mbackground2').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/mobile/background - 2.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 2.jpg")';
-    }
-    elemenetGetId('mbackground3').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/mobile/background - 3.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 3.jpg")';
-    }
-    elemenetGetId('mbackground4').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/mobile/background - 4.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 4.jpg")';
-    }
-    elemenetGetId('mbackground5').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "'imgs/mobile/background - 5.jpg'" });
-        elemenetGetId('background').style.backgroundImage = 'url("imgs/mobile/background - 5.jpg")';
-    }
-}
-
-function apiImg() {
-    elemenetGetId('bingImg').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "https://api.dujin.org/bing/1920.php" });
-        elemenetGetId('background').style.backgroundImage = 'url("https://api.dujin.org/bing/1920.php")';
-    }
-    elemenetGetId('cwImg').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "https://img.paulzzh.com/touhou/random" });
-        elemenetGetId('background').style.backgroundImage = 'url("https://img.paulzzh.com/touhou/random")';
-    }
-    elemenetGetId('bingImgMobile').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "https://api.dujin.org/bing/m.php" });
-        elemenetGetId('background').style.backgroundImage = 'url("https://api.dujin.org/bing/m.php")';
-    }
-    elemenetGetId('cwImgMobile').onclick = function () {
-        chrome.storage.local.set({ 'picUrl': "https://img.paulzzh.com/touhou/random?size=wap" });
-        elemenetGetId('background').style.backgroundImage = 'url("https://img.paulzzh.com/touhou/random?size=wap")';
     }
 }

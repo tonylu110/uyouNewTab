@@ -1,4 +1,6 @@
-function calUse() {
+import { elemenetGetId } from "../main/function.js";
+
+export default function calUse() {
     function isOperator(value) {
         var operatorString = "+-*/()";
         return operatorString.indexOf(value) > -1

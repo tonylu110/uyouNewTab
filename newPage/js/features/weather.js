@@ -1,3 +1,5 @@
+import { elemenetGetId, elemenetGetClass, body } from '../main/function.js'
+
 function weatherGet(city, day) {
     var httpRequest = new XMLHttpRequest();
     day = day - 1;
@@ -89,7 +91,7 @@ function weatherGet(city, day) {
         }
     }, 300)
 }
-function weatherUse() {
+export default function weatherUse() {
     var screenWidth = body().offsetWidth;//get screen width
     var weatherHide = true
     chrome.storage.sync.get(['weatherCity'], function (budget) {

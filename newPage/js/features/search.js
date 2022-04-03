@@ -1,11 +1,13 @@
-function searchUse() {
+import { elemenetGetId, elemenetGetClass, body, elemIdSty, elemClassSty } from "../main/function.js";
+
+export function searchUse() {
   //This is searchBar function
-  elemenetGetId('keywords').onclick = function engine() { //get searchEngin img
+  elemenetGetId('keywords').onclick = function () { //get searchEngin img
     getSearchEngine();
   }
   function getSearchEngine() { //get searchEngin img
-    s = elemenetGetId('searchEngine').src;
-    engine = s.substring(s.lastIndexOf("/") + 1)
+    var s = elemenetGetId('searchEngine').src;
+    var engine = s.substring(s.lastIndexOf("/") + 1)
   }
 
   elemenetGetId('setCus').onclick = function () {
@@ -61,7 +63,7 @@ function searchUse() {
   }
 }
 
-function searchOnload() {
+export function searchOnload() {
   chrome.storage.sync.get(['search'], function (budget) {
     if (budget.search == 'google') {
       elemenetGetId('searchEngine').hidden = false;
@@ -88,7 +90,7 @@ function searchOnload() {
   })
 }
 
-function moreSearch() {
+export function moreSearch() {
   function changeAn(an, button) {
     if (elemenetGetId(an).className == 'otherFeatures') {
       elemenetGetId(an).className = 'otherFeaturesBefore';
@@ -292,14 +294,28 @@ function moreSearch() {
   })
 }
 
-function searchChangeUse() {
+export function searchChangeUse() {
+  var screenWidth = body().offsetWidth;
+  if (screenWidth > 813) {
+    elemenetGetId('keywords').addEventListener("keyup", () => {
+      if (elemenetGetId('keywords').value) {
+        elemIdSty('searchBtn').width = '45px'
+        elemIdSty('searchBtn').color = ''
+        elemClassSty('keywordsRight', 0).display = ''
+      } else {
+        elemIdSty('searchBtn').width = ''
+        elemIdSty('searchBtn').color = 'transparent'
+        elemClassSty('keywordsRight', 0).display = 'none'
+      }
+    })
+  }
   chrome.storage.sync.get(['cusSea'], function (budget) {
     let cusSea = budget.cusSea;
     function search(cusSea) {
       elemenetGetId('keywords').onkeydown = function () {
-        s = elemenetGetId('searchEngine').src;
-        engine = s.substring(s.lastIndexOf("/") + 1)
-        if (event.keyCode == 13) {
+        var s = elemenetGetId('searchEngine').src;
+        var engine = s.substring(s.lastIndexOf("/") + 1)
+        function sea(cus) {
           var keywords = elemenetGetId('keywords').value; //get keywords
           if (engine == 'google.png') {
             window.open('https://www.google.com/search?q=' + keywords, '_self'); //if engine is google google to google search
@@ -314,15 +330,21 @@ function searchChangeUse() {
           } else if (engine == 'sougou.png') {
             window.open('https://www.sogou.com/web?query=' + keywords, '_self');
           }
-          if (cusSea != undefined && engine == 'search.png') {
-            window.open(cusSea + keywords, '_self');
+          if (cus != undefined && engine == 'search.png') {
+            window.open(cus + keywords, '_self');
           }
-          if (!cusSea) {
+          if (!cus) {
             elemenetGetId('keywords').value = '未设置自定义的搜索引擎'
             setTimeout(function () {
               elemenetGetId('keywords').value = ''
             }, 1000)
           }
+        }
+        if (event.keyCode == 13) {
+          sea(cusSea);
+        }
+        elemenetGetId('searchBtn').onclick = function () {
+          sea(cusSea);
         }
       }
     }

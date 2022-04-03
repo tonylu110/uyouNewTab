@@ -1,5 +1,7 @@
+import { elemenetGetId, body } from "../main/function.js";
+
 var httpRequest = new XMLHttpRequest();
-function one() {
+export function one() {
     httpRequest.open('GET', 'https://v1.hitokoto.cn/', true);
     httpRequest.send();
 
@@ -15,7 +17,7 @@ function one() {
     };
 }
 
-function oneUse() {
+export function oneUse() {
     var screenWidth = body().offsetWidth;//get screen width
     var screenHeight = document.documentElement.clientHeight;
     var blackBack = elemenetGetId('blackBack');

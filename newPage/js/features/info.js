@@ -1,4 +1,6 @@
-function infoUse() {
+import { elemenetGetId, body } from "../main/function.js";
+
+export default function infoUse() {
     elemenetGetId('info').onclick = function onBarButton() {
         var screenWidth = body().offsetWidth;//get screen width
         if (screenWidth <= 813) {

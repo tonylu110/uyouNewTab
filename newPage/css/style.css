@@ -1,28 +1,9 @@
-:root{
-    --searchBarColor: #ffffff90;
-    --searchBarColorHover: #ffffff70;
-    --searchBarBorderColor: #ffffff70;
-    --searchBarBorderColorHover: #ffffff50;
-    --linkColorActive: #aaaaaa50;
-    --linkBorderColorActive: #ffffff30;
-    --clickColor: #00000000;
-    --weatherColor: #ffffff70;
-    --fontColor: black;
-    --inputBackground: white;
-}
-
-:root.dark{
-    --searchBarColor: #11111190;
-    --searchBarColorHover: #00000070;
-    --searchBarBorderColor: #00000010;
-    --searchBarBorderColorHover: #00000010;
-    --linkColorActive: #00000050;
-    --linkBorderColorActive: #00000010;
-    --clickColor: #00000050;
-    --weatherColor: #44444470;
-    --fontColor: #999;
-    --inputBackground: #44444490;
-}
+@import url(./color.css);
+@import url(./setting.css);
+@import url(./cal.css);
+@import url(./history.css);
+@import url(./info.css);
+@import url(./one.css);
 
 ::-webkit-scrollbar {
     display: none; /* Chrome Safari */
@@ -185,7 +166,7 @@ input{
     background-color: transparent;
     border-radius: 6px;
     height: 30px;
-    width: 540px;
+    flex: 1;
     font-size: 20px;
     font-weight: bold;
     outline: 0px;
@@ -197,6 +178,25 @@ input{
     margin-right: 10px;
     border-radius: 50%;
     background-color: white;
+}
+.keywordsRight{
+    width: 2px;
+    height: 30px;
+    margin: 0px 10px 0px 10px;
+    background-color: var(--seaRight);
+}
+#searchBtn{
+    width: 0px;
+    text-align: center;
+    color: var(--fontColor);
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 28px;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 0.3s;
 }
 
 /* This is favourite link style */

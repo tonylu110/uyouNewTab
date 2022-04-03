@@ -1,4 +1,6 @@
-function historyUse() {
+import { elemenetGetId, elemenetGetClass } from "../main/function.js";
+
+export default function historyUse() {
     var microsecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
     var oneWeekAgo = (new Date).getTime() - microsecondsPerWeek;
     var query = {

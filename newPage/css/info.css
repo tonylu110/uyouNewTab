@@ -1,14 +1,4 @@
-:root{
-    --barColor: #ffffff90;
-    --textColor: black;
-    --inColor: #ffffff90;
-}
-
-:root.dark{
-    --barColor: #11111190;
-    --textColor: white;
-    --inColor: #44444470;
-}
+@import url(./color.css);
 
 .bottom-right{
     position: fixed;

@@ -1,4 +1,6 @@
-function changeLink() {
+import { elemenetGetId } from "../main/function.js";
+
+export function changeLink() {
     function linkChange() {
         elemenetGetId('changeLink').style.display = '';
         elemenetGetId('blackBack').style.zIndex = '201';
@@ -46,7 +48,7 @@ function changeLink() {
     }
 }
 
-function useChangeLink() {
+export function useChangeLink() {
     var numi = 0;
     var num = Number(elemenetGetId('paddingNum').innerText);
     function close() {
@@ -229,7 +231,7 @@ function useChangeLink() {
         }
     }
 }
-function useLinkChange() {
+export function useLinkChange() {
     chrome.storage.local.get(['link1Img', 'link1Padding', 'link1Width', 'link1Height', 'link1'], function (budget) {
         let num = '1';
         let linkImg = budget.link1Img;

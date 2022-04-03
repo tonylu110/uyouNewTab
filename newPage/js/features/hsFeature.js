@@ -1,4 +1,7 @@
-function hsFeature() {
+import { elemenetGetId, body } from "../main/function.js";
+import { onShow, onHide } from "../main/main.js";
+
+export function hsFeature() {
     var screenWidth = body().offsetWidth;//get screen width
     var hideHS = elemenetGetId('hideHS');
     var historyHS = elemenetGetId('historyHS');
@@ -149,7 +152,7 @@ function hsFeature() {
         }
     }
 }
-function hsFeatureUse() {
+export function hsFeatureUse() {
     var screenWidth = body().offsetWidth;//get screen width
     chrome.storage.local.get(['hideHS', 'historyHS', 'reloadHS', 'calHS', 'timeHS', 'weatherHS', 'downHS', 'infoHS', 'oneHS', 'hs'], function (budget) {
         let hideHS = budget.hideHS;

@@ -1,13 +1,19 @@
 //set function
-function elemenetGetId(id) {
+export function elemenetGetId(id) {
     return document.getElementById(id);
 }
-function elemenetGetClass(name) {
+export function elemIdSty(id) {
+    return document.getElementById(id).style;
+}
+export function elemenetGetClass(name) {
     return document.getElementsByClassName(name);
 }
-function body() {
+export function elemClassSty(name, num) {
+    return document.getElementsByClassName(name)[num].style;
+}
+export function body() {
     return document.body;
 }
-function print(str) {
+export function clog(str) {
     return console.log(str);
 }

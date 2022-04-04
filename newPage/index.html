@@ -7,7 +7,7 @@
     <title>Home</title>
     <link rel="shortcut icon" href="imgs/favicon.ico" />
     <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="js/main/load.js"></script>
+    <script type="module" src="js/main/index.js"></script>
 </head>
 <body id="background">
     <div id="loading" style="display: none;">
@@ -95,6 +95,10 @@
                         <div id="mobileApiImgs" style="display: none;">
                             <div class="apiImgButton" id="bingImgMobile">Bing 每日一图</div>
                             <div class="apiImgButton" id="cwImgMobile">东方 Project</div>
+                        </div>
+                        <div class="cusApiImg">
+                            <input type="text" placeholder="请输入你需要的 api 链接" id="cusApiPic">
+                            <div class="otherFeatures" id="cusImgApi">确定</div>
                         </div>
                     </div>
                     <div id="exImg">
@@ -483,7 +487,7 @@
             <div id="searchBtn" style="color: transparent;">搜索</div>
         </div>
         <!-- This is moreSearch area -->
-        <div class="moreSearch" id="moreSearch" hidden>
+        <div class="moreSearch" id="moreSearch" style="opacity: 0.0;">
             <div class="searchEngines" id="searchEngines"><!--set search engine-->
                 <div id="cus" style="display: none;"><img src="imgs/search.png"></div>
                 <div id="google"><img src="imgs/google.png"></div><!--google-->

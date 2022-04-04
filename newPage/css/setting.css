@@ -873,3 +873,17 @@
     background-color: var(--color50);
     padding: 10px;
 }
+
+.cusApiImg{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#cusApiPic{
+    padding: 10px;
+    margin-right: 10px;
+    outline: none;
+    border: 0px;
+    border-radius: 8px;
+}

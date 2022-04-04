@@ -1,5 +1,4 @@
-import { elemenetGetId, body } from "../main/function.js";
-import { onShow, onHide } from "../main/main.js";
+import { elemenetGetId, body, onShow, onHide } from "../main/function.js";
 
 export function hsFeature() {
     var screenWidth = body().offsetWidth;//get screen width

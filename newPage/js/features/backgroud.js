@@ -1,4 +1,4 @@
-import { elemenetGetId, body } from "../main/function.js";
+import { elemenetGetId, body, clog } from "../main/function.js";
 
 export function background() {
     var screenWidth = body().offsetWidth;//get screen width
@@ -7,7 +7,7 @@ export function background() {
     var backgroundSetButton = elemenetGetId('backgroundSetButton');
     var onlinePicUrl = elemenetGetId('onlinePicUrl');
     var picError = elemenetGetId('picError');
-    
+
     elemenetGetId('backgroundUpload').onchange = function () {
         let file = this.files[0];
         let reader = new FileReader;
@@ -117,4 +117,138 @@ export function apiImg() {
         chrome.storage.local.set({ 'picUrl': "https://img.paulzzh.com/touhou/random?size=wap" });
         elemenetGetId('background').style.backgroundImage = 'url("https://img.paulzzh.com/touhou/random?size=wap")';
     }
+
+    elemenetGetId('cusImgApi').onclick = () => {
+        var pic = elemenetGetId('cusApiPic').value
+        chrome.storage.local.set({ 'picUrl': pic });
+        elemenetGetId('background').style.backgroundImage = 'url("https://img.paulzzh.com/touhou/random?size=wap")';
+    }
+}
+
+export function loadBackground() {
+    var httpRequest = new XMLHttpRequest();
+    function picget(url) {
+        httpRequest.open('GET', url, true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var obj = JSON.parse(httpRequest.responseText);
+                var pic = obj.pic;
+
+                elemenetGetId('picurl').className = pic;
+            }
+        };
+    }
+    chrome.storage.local.get(['picUrl'], function (budget) {
+        var picUrl = budget.picUrl;
+        var background = elemenetGetId('background');
+        var down = elemenetGetId('down');
+        var button = elemenetGetId('button');
+        var picurl = elemenetGetId('picurl');
+        var oneMain = elemenetGetId('oneMain');
+        if (typeof (budget.picUrl) == 'undefined') {
+            picUrl = '';
+        }
+        if (picUrl != '') {
+            background.style.backgroundImage = 'url(' + budget.picUrl + ')';
+            down.style.display = 'none';
+        } else {
+            elemenetGetId('backgroundBefore').hidden = true;
+            elemenetGetId('backgroundSetButton').style.marginRight = '0px';
+            //This is onload script
+            //else load 'imgs/background.png'
+            var screenWidth = body().offsetWidth;
+            if (screenWidth <= 813) {
+                picget('http://mark.tnyl.xyz/api/API/mp.php?type=json');
+                setTimeout(function () {
+                    if (button.innerHTML != '') {
+                        clog('network is working');
+                        background.style.backgroundImage = "url(" + picurl.className + ")";
+                        setTimeout(function () {
+                            if (background.style.backgroundImage == 'url("")') {
+                                background.style.backgroundImage = "url(" + picurl.className + ")";
+                            }
+                        }, 200)
+                    } else {
+                        clog('network is not working');
+                        background.style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random() * 5) + ".jpg')";
+                        button.innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+                        button.onclick = oneMain.style.display = 'none';
+                        down.onclick = function () {
+                            button.innerHTML = '本地图片无法下载哦~';
+                            setTimeout(function () {
+                                button.innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+                            }, 2500)
+                        }
+                    }
+                }, 300)
+                setTimeout(function () {
+                    if (picurl.className != '') {
+                        if (background.style.backgroundImage == 'url("")') {
+                            background.style.backgroundImage = "url(" + picurl.className + ")";
+                        }
+                    } else {
+                        if (background.style.backgroundImage == 'url("")') {
+                            background.style.backgroundImage = "url('imgs/mobile/background - " + Math.ceil(Math.random() * 5) + ".jpg')";
+                            setTimeout(function () {
+                                button.innerHTML = '在线图片加载失败，已加载内建图片哦~';
+                            }, 500)
+                            button.onclick = oneMain.style.display = 'none';
+                            down.onclick = function () {
+                                button.innerHTML = '本地图片无法下载哦~';
+                                setTimeout(function () {
+                                    button.innerHTML = '在线图片加载失败，已加载内建图片哦~';
+                                }, 2500)
+                            }
+                        }
+                    }
+                }, 1000)
+            } else {
+                picget('http://mark.tnyl.xyz/api/API/pc.php?type=json');
+                setTimeout(function () {
+                    if (button.innerHTML != '') {
+                        clog('network is working');
+                        background.style.backgroundImage = "url(" + picurl.className + ")";
+                        setTimeout(function () {
+                            if (background.style.backgroundImage == 'url("")') {
+                                background.style.backgroundImage = "url(" + picurl.className + ")";
+                            }
+                        }, 200)
+                    } else {
+                        clog('network is not working');
+                        background.style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random() * 5) + ".jpg')";
+                        button.innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+                        button.onclick = oneMain.style.display = 'none';
+                        down.onclick = function () {
+                            button.innerHTML = '本地图片无法下载哦~';
+                            setTimeout(function () {
+                                button.innerHTML = '暂时没有有连接到可以访问互联网的网络哦~';
+                            }, 2500)
+                        }
+                    }
+                }, 300)
+                setTimeout(function () {
+                    if (picurl.className != '') {
+                        if (background.style.backgroundImage == 'url("")') {
+                            background.style.backgroundImage = "url(" + picurl.className + ")";
+                        }
+                    } else {
+                        if (background.style.backgroundImage == 'url("")') {
+                            background.style.backgroundImage = "url('imgs/background - " + Math.ceil(Math.random() * 5) + ".jpg')";
+                            setTimeout(function () {
+                                button.innerHTML = '在线图片加载失败，已加载内建图片哦~';
+                            }, 500)
+                            button.onclick = oneMain.style.display = 'none';
+                            down.onclick = function () {
+                                button.innerHTML = '本地图片无法下载哦~';
+                                setTimeout(function () {
+                                    button.innerHTML = '在线图片加载失败，已加载内建图片哦~';
+                                }, 2500)
+                            }
+                        }
+                    }
+                }, 1000)
+            }
+        }
+    })
 }

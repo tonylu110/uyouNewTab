@@ -25,6 +25,7 @@ export default function settingUse() {
         elemenetGetId('picError').hidden = true;
         elemIdSty('exImg').display = '';
         if (screenWidth <= 813) {
+            elemIdSty('backSettingMenus').display = 'none'
             elemIdSty('settingMenu').display = 'none';
             elemIdSty('settingMain').width = '0px';
             elemIdSty('settingMain').height = '0px';

@@ -1,4 +1,4 @@
-import { elemenetGetId, elemenetGetClass, body } from '../main/function.js'
+import { elemenetGetId, elemenetGetClass, body, elemIdSty } from '../main/function.js'
 
 function menuStyle() {
     elemenetGetId('backgroundSettings').style.backgroundColor = 'transparent';
@@ -33,8 +33,9 @@ export default function settingMenus() {
         elemenetGetId('settingMain').style.transition = 'padding 0s';
         elemenetGetClass('settingsInnerTitle')[num].style.display = 'none';
         elemenetGetId('backSettingMenuName').innerText = name;
+        elemIdSty('backSettingMenu').display = ''
     }
-    elemenetGetId('backSettingMenu').onclick = function () {
+    elemenetGetId('backSettingMenu').onclick = () => {
         var settingMainWidth = elemenetGetId('settingMain').offsetWidth;
         elemenetGetId('settingMenu').style.display = '';
         elemenetGetId('settingInnerMain').style.display = 'none';
@@ -43,9 +44,9 @@ export default function settingMenus() {
         elemenetGetId('settingMain').style.width = settingMainWidth - 82 + 'px';
         elemenetGetId('settingMain').style.transition = 'padding 0s';
     }
-    elemenetGetId('backgroundSettings').onclick = function () {
+    elemenetGetId('backgroundSettings').onclick = () => {
         menuStyle();
-        chrome.storage.sync.get(['dlMode'], function (budget) {
+        chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
                 dlMode = '';
@@ -80,9 +81,9 @@ export default function settingMenus() {
             elemenetGetClass('apiImgButton')[3].style.width = settingWidth / 2 - 46.5 + 'px';
         }
     }
-    elemenetGetId('festuresSettings').onclick = function () {
+    elemenetGetId('festuresSettings').onclick = () => {
         menuStyle();
-        chrome.storage.sync.get(['dlMode'], function (budget) {
+        chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
                 dlMode = '';
@@ -105,9 +106,9 @@ export default function settingMenus() {
             mobileUse(1, '功能设置');
         }
     }
-    elemenetGetId('linkSettings').onclick = function () {
+    elemenetGetId('linkSettings').onclick = () => {
         menuStyle();
-        chrome.storage.sync.get(['dlMode'], function (budget) {
+        chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
                 dlMode = '';
@@ -130,9 +131,9 @@ export default function settingMenus() {
             mobileUse(2, '书签设置');
         }
     }
-    elemenetGetId('searchSettings').onclick = function () {
+    elemenetGetId('searchSettings').onclick = () => {
         menuStyle();
-        chrome.storage.sync.get(['dlMode'], function (budget) {
+        chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
                 dlMode = '';
@@ -155,9 +156,9 @@ export default function settingMenus() {
             mobileUse(3, '搜索引擎');
         }
     }
-    elemenetGetId('otherSettings').onclick = function () {
+    elemenetGetId('otherSettings').onclick = () => {
         menuStyle();
-        chrome.storage.sync.get(['dlMode'], function (budget) {
+        chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
                 dlMode = '';
@@ -187,9 +188,9 @@ export default function settingMenus() {
             elemenetGetId('loadingTimeNum').style.width = otherBtnWidth - 140 - msWidth + 'px';
         }
     }
-    elemenetGetId('helpInfo').onclick = function () {
+    elemenetGetId('helpInfo').onclick = () => {
         menuStyle();
-        chrome.storage.sync.get(['dlMode'], function (budget) {
+        chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
                 dlMode = '';
@@ -212,9 +213,9 @@ export default function settingMenus() {
             mobileUse(5, '帮助 Q&A');
         }
     }
-    elemenetGetId('donateInfo').onclick = function () {
+    elemenetGetId('donateInfo').onclick = () => {
         menuStyle();
-        chrome.storage.sync.get(['dlMode'], function (budget) {
+        chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
                 dlMode = '';

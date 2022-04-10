@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "uyou 新标签页",
     "description": "这是一个很好看的新标签页！",
-    "version": "1.2.1.999",
+    "version": "1.2.2",
     "icons": {
         "128": "extension.png",
         "48": "extension.png",

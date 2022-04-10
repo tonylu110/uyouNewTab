@@ -79,6 +79,7 @@ export default function settingMenus() {
             elemenetGetId('review').style.width = '70px';
             elemenetGetClass('apiImgButton')[2].style.width = settingWidth / 2 - 46.5 + 'px';
             elemenetGetClass('apiImgButton')[3].style.width = settingWidth / 2 - 46.5 + 'px';
+            elemIdSty('cusApiPic').width = settingWidth - 160 + 'px';
         }
     }
     elemenetGetId('festuresSettings').onclick = () => {

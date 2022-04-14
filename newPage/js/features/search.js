@@ -386,3 +386,38 @@ export function searchChangeUse() {
         }
     })
 }
+
+export function showOrHideSearch() {
+    var hideSearchBar = elemenetGetId('hideSearchBar')
+    hideSearchBar.onclick = () => {
+        if (hideSearchBar.innerText == '显示') {
+            hideSearchBar.innerText = '隐藏'
+            hideSearchBar.className = 'otherFeaturesBefore'
+            hideOrShow('hide')
+        } else {
+            hideSearchBar.innerText = '显示'
+            hideSearchBar.className = 'otherFeatures'
+            hideOrShow('show')
+        }
+    }
+    function hideOrShow(hs) {
+        if (hs == 'show') {
+            elemIdSty('searchbar').display = ''
+            chrome.storage.sync.set({ 'seaBarHS': hs });
+        } else {
+            elemIdSty('searchbar').display = 'none'
+            chrome.storage.sync.set({ 'seaBarHS': hs });
+        }
+    }
+    chrome.storage.sync.get(['seaBarHS'], (budget) => {
+        var seaBarHS = budget.seaBarHS;
+        if (typeof (seaBarHS) == 'undefined') {
+            seaBarHS = 'show';
+        }
+        if (seaBarHS == 'hide') {
+            hideSearchBar.innerText = '隐藏'
+            hideSearchBar.className = 'otherFeaturesBefore'
+            elemIdSty('searchbar').display = 'none'
+        }
+    })
+}

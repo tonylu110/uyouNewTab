@@ -168,7 +168,15 @@ export function hsFeatureUse() {
         if (budget.hs == 'show') {
             onHide();
             hide.hidden = false; //show hide button
-            elemenetGetId('searchbar').style.display = ""; //show searchBar element
+            chrome.storage.sync.get(['seaBarHS'], (budget) => {
+                var seaBarHS = budget.seaBarHS;
+                if (typeof (seaBarHS) == 'undefined') {
+                    seaBarHS = 'show';
+                }
+                if (seaBarHS == 'show') {
+                    elemenetGetId('searchbar').style.display = ""; //show searchBar element
+                }
+            })
             if (screenWidth <= 813) {
                 hide.style.marginRight = '0px';
                 info.hidden = true; //hide info button

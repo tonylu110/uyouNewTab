@@ -1,6 +1,8 @@
 import { elemenetGetId, elemenetGetClass, body, onHide, onShow } from "./function.js";
+import { loadHs } from "../features/hsFeature.js";
 
 export function getTime() {
+    //with onload to get now time
     setInterval(() => {
         var time = new Date();
         var timeele = elemenetGetId('time')
@@ -22,7 +24,9 @@ export function getTime() {
     }, 1000)
 }
 
+//other feature to use with onload
 export function fesUse() {
+    //download picture
     elemenetGetId('down').onclick = () => {
         chrome.downloads.download({
             url: elemenetGetId('picurl').className,
@@ -63,7 +67,21 @@ export function fesUse() {
             }
         } else {
             elemenetGetId('mainCal').hidden = true; //hide calculator element
-            onShow();
+            chrome.storage.local.get(['hideHS', 'historyHS', 'reloadHS', 'calHS', 'timeHS', 'weatherHS', 'downHS', 'infoHS', 'oneHS', 'hs'], function (budget) {
+                let hideHS = budget.hideHS;
+                let historyHS = budget.historyHS;
+                let reloadHS = budget.reloadHS;
+                let calHS = budget.calHS;
+                let timeHS = budget.timeHS;
+                let weatherHS = budget.weatherHS;
+                let downHS = budget.downHS;
+                let infoHS = budget.infoHS;
+                let oneHS = budget.oneHS;
+                var hide = elemenetGetId('hide');
+                var info = elemenetGetId('info');
+                let hs = budget.hs;
+                loadHs(hideHS, historyHS, reloadHS, calHS, timeHS, weatherHS, downHS, infoHS, oneHS, hs, hide, info)
+            })
             if (screenWidth <= 813) {
                 elemenetGetId('history').hidden = true; //hide history button
                 elemenetGetId('clock').hidden = true; //hide clock button
@@ -72,6 +90,7 @@ export function fesUse() {
         }
     }
 
+    //show clock in page
     elemenetGetId('clock').onclick = () => {
         var hide = elemenetGetId('button').hidden;
         if (hide == false) {
@@ -85,15 +104,18 @@ export function fesUse() {
     }
 }
 
+//other default function to use with onload
 export function otherSettingOnLoad() {
+    //loading animation setting load with page onload
     chrome.storage.local.get(['loadingAn', 'loadingTime'], (budget) => {
         var loadingAn = budget.loadingAn;
         var loadingTime = budget.loadingTime;
         if (typeof (loadingTime) == 'undefined') {
             loadingTime = '300';
-        }
+        }//set default loadingTime to 300
         elemenetGetId('newTimeout').innerHTML = loadingTime;
         if (loadingAn == 'show') {
+            //loading animation show style
             elemenetGetId('loadingAn').className = 'otherFeatures';
             elemenetGetId('loadingAn').innerText = '显示';
             elemenetGetId('loading').style.zIndex = '300';
@@ -101,6 +123,7 @@ export function otherSettingOnLoad() {
             elemenetGetId('loadingTimeBtn').style.display = '';
             elemenetGetClass('otherBtn')[0].style.borderRadius = '10px 10px 0px 0px';
             elemenetGetClass('otherBtn')[0].style.borderBottom = '1px solid #00000020';
+            //at dark or light mode to show style
             chrome.storage.sync.get(['dlMode'], (budget) => {
                 let dlMode = budget.dlMode;
                 if (typeof (dlMode) == 'undefined') {
@@ -118,6 +141,7 @@ export function otherSettingOnLoad() {
                     elemenetGetClass('otherBtn')[0].style.backgroundColor = '#ffffff90';
                 }
             })
+            //loading animation time setting
             setTimeout(() => {
                 elemenetGetId('loading').style.zIndex = '-3';
                 elemenetGetId('loading').style.display = 'none';
@@ -125,12 +149,14 @@ export function otherSettingOnLoad() {
         }
     })
 
+    //dark or light mode setting load with page onload
     chrome.storage.sync.get(['dlMode'], (budget) => {
         let dlMode = budget.dlMode;
         if (typeof (dlMode) == 'undefined') {
             dlMode = '';
-        }
+        }//set default dlMode to with system
         if (dlMode == '') {
+            //white system dark or light mode load
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 if (elemenetGetId('loadingAn').innerText == '隐藏') {
                     elemenetGetClass('otherBtn')[0].style.background = '#44444450';
@@ -139,6 +165,7 @@ export function otherSettingOnLoad() {
                 }
             }
         } else if (dlMode == 'dark') {
+            //use costom dark mode
             if (elemenetGetId('loadingAn').innerText == '隐藏') {
                 elemenetGetClass('otherBtn')[0].style.background = '#44444450';
             } else {
@@ -148,6 +175,7 @@ export function otherSettingOnLoad() {
     })
 }
 
+//mobile page style
 export function changeStyle() {
     var screenWidth = body().offsetWidth;//get screen width
     var screenHeight = document.documentElement.clientHeight;
@@ -231,6 +259,7 @@ export function changeStyle() {
         elemenetGetClass('mobileExImgs')[0].style.display = '';
         elemenetGetClass('donateMsg')[0].style.borderRadius = '10px';
         elemenetGetClass('donateMsg')[0].style.padding = '10px';
+        //if in dark mode change some style
         chrome.storage.sync.get(['dlMode'], (budget) => {
             let dlMode = budget.dlMode;
             if (typeof (dlMode) == 'undefined') {
@@ -267,6 +296,7 @@ export function changeStyle() {
             titleBack(5);
             titleBack(6);
         })
+        //in mobile with keyboard on screen to change some button hide
         window.onresize = () => {
             var nowHeight = document.documentElement.clientHeight;
             if (screenHeight - nowHeight > 50) {
@@ -279,6 +309,7 @@ export function changeStyle() {
             }
         }
     } else {
+        //in desktop mode to change some style
         button.style.marginBottom = '20px'
         oneMain.className = 'oneMainBefore';
     }

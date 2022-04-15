@@ -1,5 +1,6 @@
 import { elemenetGetId, elemenetGetClass } from './function.js'
 
+//dark mode to change style
 function dark(alpha) {
     elemenetGetId('click').style.background = '#000000' + alpha;
     document.getElementsByTagName('html')[0].className = 'dark';
@@ -29,6 +30,7 @@ function dark(alpha) {
     elemenetGetClass('otherBtn')[2].style.display = '';
 }
 
+//light mode to change style
 function light() {
     elemenetGetId('click').style.background = '';
     document.getElementsByTagName('html')[0].className = '';
@@ -60,6 +62,7 @@ function light() {
 }
 
 export function loadTheme() {
+    //onload to dark or light mode
     chrome.storage.sync.get(['dlMode', 'alphaColor', 'dlAlpha'], function (budget) {
         let dlMode = budget.dlMode;
         let alphaColor = budget.alphaColor;
@@ -107,6 +110,7 @@ export function loadTheme() {
     })
 }
 
+//customize the dark or light mode
 export function dlUse() {
     elemenetGetId('dlAn').onclick = function () {
         if (elemenetGetId('dlAn').innerText == '暗色') {

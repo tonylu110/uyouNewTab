@@ -14,7 +14,7 @@ import { loadTheme, dlUse } from './dark2light.js'
 import { getTime, fesUse, otherSettingOnLoad, changeStyle } from './onLoadFeature.js'
 import { searchUse, searchOnload, searchChangeUse, showOrHideSearch } from '../features/search.js'
 
-printInfo();
+printInfo();//prtint info
 
 window.onload = () => {
     loadBackground();

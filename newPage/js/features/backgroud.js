@@ -1,5 +1,6 @@
 import { elemenetGetId, body, clog } from "../main/function.js";
 
+//backgroud setting
 export function background() {
     var screenWidth = body().offsetWidth;//get screen width
     var viewImg = elemenetGetId('viewImg');
@@ -8,6 +9,7 @@ export function background() {
     var onlinePicUrl = elemenetGetId('onlinePicUrl');
     var picError = elemenetGetId('picError');
 
+    //get img from local
     elemenetGetId('backgroundUpload').onchange = function () {
         let file = this.files[0];
         let reader = new FileReader;
@@ -29,6 +31,7 @@ export function background() {
             }
         }
     }
+    //get img from online
     elemenetGetId('review').onclick = function () {
         viewImg.src = onlinePicUrl.value
         viewImg.onerror = function () {
@@ -47,12 +50,14 @@ export function background() {
             location.reload();
         }
     }
+    //to default backgorund img
     elemenetGetId('backgroundBefore').onclick = function () {
         chrome.storage.local.set({ 'picUrl': '' });
         location.reload();
     }
 }
 
+//to use local img as background
 export function loaclImgChange() {
     elemenetGetId('background0').onclick = function () {
         chrome.storage.local.set({ 'picUrl': "'imgs/background - 0.jpg'" });
@@ -100,6 +105,7 @@ export function loaclImgChange() {
     }
 }
 
+//use other website's img as background
 export function apiImg() {
     elemenetGetId('bingImg').onclick = function () {
         chrome.storage.local.set({ 'picUrl': "https://api.dujin.org/bing/1920.php" });
@@ -125,6 +131,7 @@ export function apiImg() {
     }
 }
 
+//load background img in page
 export function loadBackground() {
     var httpRequest = new XMLHttpRequest();
     function picget(url) {

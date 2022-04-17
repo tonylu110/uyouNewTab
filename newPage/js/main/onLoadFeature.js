@@ -99,7 +99,21 @@ export function fesUse() {
             elemenetGetId('clock').hidden = false; //show calculator button
         } else {
             elemenetGetId('mainClock').style.display = "none"; //hide clock element
-            onShow();
+            chrome.storage.local.get(['hideHS', 'historyHS', 'reloadHS', 'calHS', 'timeHS', 'weatherHS', 'downHS', 'infoHS', 'oneHS', 'hs'], function (budget) {
+                let hideHS = budget.hideHS;
+                let historyHS = budget.historyHS;
+                let reloadHS = budget.reloadHS;
+                let calHS = budget.calHS;
+                let timeHS = budget.timeHS;
+                let weatherHS = budget.weatherHS;
+                let downHS = budget.downHS;
+                let infoHS = budget.infoHS;
+                let oneHS = budget.oneHS;
+                var hide = elemenetGetId('hide');
+                var info = elemenetGetId('info');
+                let hs = budget.hs;
+                loadHs(hideHS, historyHS, reloadHS, calHS, timeHS, weatherHS, downHS, infoHS, oneHS, hs, hide, info)
+            })
         }
     }
 }
@@ -216,9 +230,10 @@ export function changeStyle() {
         cal.style.marginRight = '0';//set calculator button margin right to 0px
         clock.hidden = true; //hide clock button
         history.hidden = true; //hide history button
-        button.style.marginBottom = '20vh';//chenge ui button
+        button.addEventListener('DOMNodeInserted', () => {
+            button.style.marginBottom = '20vh';//chenge ui button
+        })
         button.style.maxWidth = '280px';
-        button.style.transition = 'margin 0.5s';
         button.style.zIndex = '100';
         oneMain.style.width = '0px';
         oneMain.style.height = '0px';
@@ -300,7 +315,6 @@ export function changeStyle() {
         window.onresize = () => {
             var nowHeight = document.documentElement.clientHeight;
             if (screenHeight - nowHeight > 50) {
-                elemenetGetId('button').style.transition = '0s';
                 elemenetGetId('button').style.marginBottom = '-60px';
                 elemenetGetId('title').style.marginBottom = '-60px';
             } else {
@@ -310,7 +324,9 @@ export function changeStyle() {
         }
     } else {
         //in desktop mode to change some style
-        button.style.marginBottom = '20px'
+        button.addEventListener('DOMNodeInserted', () => {
+            button.style.marginBottom = '20px'
+        })
         oneMain.className = 'oneMainBefore';
     }
 }

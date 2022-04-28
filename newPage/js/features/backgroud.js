@@ -166,7 +166,7 @@ export function loadBackground() {
             //else load 'imgs/background.png'
             var screenWidth = body().offsetWidth;
             if (screenWidth <= 813) {
-                picget('http://mark.tnyl.xyz/api/API/mp.php?type=json');
+                picget('http://mark.tnyl.xyz/api/api.php?sort=mp&type=json');
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');
@@ -211,7 +211,7 @@ export function loadBackground() {
                     }
                 }, 1000)
             } else {
-                picget('http://mark.tnyl.xyz/api/API/pc.php?type=json');
+                picget('http://mark.tnyl.xyz/api/api.php?sort=pc&type=json');
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');

@@ -230,9 +230,6 @@ export function changeStyle() {
         cal.style.marginRight = '0';//set calculator button margin right to 0px
         clock.hidden = true; //hide clock button
         history.hidden = true; //hide history button
-        button.addEventListener('DOMNodeInserted', () => {
-            button.style.marginBottom = '20vh';//chenge ui button
-        })
         button.style.maxWidth = '280px';
         button.style.zIndex = '100';
         oneMain.style.width = '0px';
@@ -322,10 +319,29 @@ export function changeStyle() {
                 elemenetGetId('title').style.marginBottom = '5vh';
             }
         }
+        chrome.storage.local.get(['oneHS'], (budget) => {
+            var oneHS = budget.oneHS;
+            if (typeof (oneHS) == 'undefined') {
+                oneHS = 'show';
+            }
+            if (oneHS == 'show') {
+                button.addEventListener('DOMNodeInserted', () => {
+                    button.style.marginBottom = '20vh';//chenge ui button
+                })
+            }
+        })
     } else {
         //in desktop mode to change some style
-        button.addEventListener('DOMNodeInserted', () => {
-            button.style.marginBottom = '20px'
+        chrome.storage.local.get(['oneHS'], (budget) => {
+            var oneHS = budget.oneHS;
+            if (typeof (oneHS) == 'undefined') {
+                oneHS = 'show';
+            }
+            if (oneHS == 'show') {
+                button.addEventListener('DOMNodeInserted', () => {
+                    button.style.marginBottom = '20px'
+                })
+            }
         })
         oneMain.className = 'oneMainBefore';
     }

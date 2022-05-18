@@ -27,12 +27,12 @@ export function getTime() {
 //other feature to use with onload
 export function fesUse() {
     //download picture
-    elemenetGetId('down').onclick = () => {
-        chrome.downloads.download({
-            url: elemenetGetId('picurl').className,
-            filename: "pic-" + Math.ceil(Math.random() * 1000) + ".png"
-        });
-    }
+    // elemenetGetId('down').onclick = () => {
+    //     chrome.downloads.download({
+    //         url: elemenetGetId('picurl').className,
+    //         filename: "pic-" + Math.ceil(Math.random() * 1000) + ".png"
+    //     });
+    // }
 
     //This is historybar function
     elemenetGetId('history').onclick = () => {

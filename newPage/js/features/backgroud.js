@@ -133,19 +133,19 @@ export function apiImg() {
 
 //load background img in page
 export function loadBackground() {
-    var httpRequest = new XMLHttpRequest();
-    function picget(url) {
-        httpRequest.open('GET', url, true);
-        httpRequest.send();
-        httpRequest.onreadystatechange = function () {
-            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-                var obj = JSON.parse(httpRequest.responseText);
-                var pic = obj.pic;
+    // var httpRequest = new XMLHttpRequest();
+    // function picget(url) {
+    //     httpRequest.open('GET', url, true);
+    //     httpRequest.send();
+    //     httpRequest.onreadystatechange = function () {
+    //         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+    //             var obj = JSON.parse(httpRequest.responseText);
+    //             var pic = obj.pic;
 
-                elemenetGetId('picurl').className = pic;
-            }
-        };
-    }
+    //             elemenetGetId('picurl').className = pic;
+    //         }
+    //     };
+    // }
     chrome.storage.local.get(['picUrl'], function (budget) {
         var picUrl = budget.picUrl;
         var background = elemenetGetId('background');
@@ -166,7 +166,7 @@ export function loadBackground() {
             //else load 'imgs/background.png'
             var screenWidth = body().offsetWidth;
             if (screenWidth <= 813) {
-                picget('http://mark.tnyl.xyz/api/api.php?sort=mp&type=json');
+                elemenetGetId('picurl').className = 'https://iw233.cn/api.php?sort=mp'
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');
@@ -211,7 +211,7 @@ export function loadBackground() {
                     }
                 }, 1000)
             } else {
-                picget('http://mark.tnyl.xyz/api/api.php?sort=pc&type=json');
+                elemenetGetId('picurl').className = 'https://iw233.cn/api.php?sort=pc'
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');

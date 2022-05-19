@@ -8,7 +8,7 @@ import { elemenetGetId, body, elemIdSty } from './function.js';
 import { background, loaclImgChange, apiImg } from '../features/backgroud.js'
 
 export default function settingUse() {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     //close setting main function
     function closeSttingMain() {
         // close setting main to change setting style

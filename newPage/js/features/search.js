@@ -322,7 +322,7 @@ export function moreSearch() {
 }
 
 export function searchChangeUse() {
-    var screenWidth = body().offsetWidth;
+    var screenWidth = window.innerWidth;
     if (screenWidth > 813) {
         elemenetGetId('keywords').addEventListener("keyup", () => {
             if (elemenetGetId('keywords').value) {

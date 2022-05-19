@@ -19,7 +19,7 @@ function hideMenu() {
     elemenetGetId('otherSetting').style.display = 'none';
 }
 export default function settingMenus() {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     function mobileUse(num, name) {
         var settingMainWidth = elemenetGetId('settingMain').offsetWidth;
         elemenetGetId('settingMenu').style.display = 'none';

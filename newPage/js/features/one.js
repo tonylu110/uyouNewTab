@@ -18,7 +18,7 @@ export function one() {
 }
 
 export function oneUse() {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     var screenHeight = document.documentElement.clientHeight;
     var blackBack = elemenetGetId('blackBack');
     var oneMain = elemenetGetId('oneMain');

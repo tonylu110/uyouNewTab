@@ -1,7 +1,7 @@
 import { elemenetGetId, body, onShow, onHide } from "../main/function.js";
 
 export function hsFeature() {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     var hideHS = elemenetGetId('hideHS');
     var historyHS = elemenetGetId('historyHS');
     var reloadHS = elemenetGetId('reloadHS');
@@ -171,7 +171,7 @@ export function hsFeatureUse() {
 }
 
 export function loadHs(hideHS, historyHS, reloadHS, calHS, timeHS, weatherHS, downHS, infoHS, oneHS, hs, hide, info) {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     if (hs == 'show') {
         onHide();
         hide.hidden = false; //show hide button

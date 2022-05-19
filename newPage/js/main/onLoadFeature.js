@@ -27,12 +27,12 @@ export function getTime() {
 //other feature to use with onload
 export function fesUse() {
     //download picture
-    // elemenetGetId('down').onclick = () => {
-    //     chrome.downloads.download({
-    //         url: elemenetGetId('picurl').className,
-    //         filename: "pic-" + Math.ceil(Math.random() * 1000) + ".png"
-    //     });
-    // }
+    elemenetGetId('down').onclick = () => {
+        chrome.downloads.download({
+            url: elemenetGetId('picurl').className,
+            filename: "pic-" + Math.ceil(Math.random() * 1000) + ".png"
+        });
+    }
 
     //This is historybar function
     elemenetGetId('history').onclick = () => {
@@ -56,7 +56,7 @@ export function fesUse() {
 
     //This is calculator function
     elemenetGetId('cal').onclick = () => {
-        var screenWidth = body().offsetWidth;
+        var screenWidth = window.innerWidth;
         var hide = elemenetGetId('button').hidden;
         if (hide == false) {
             elemenetGetId('mainCal').hidden = false; //show calculator element
@@ -191,7 +191,7 @@ export function otherSettingOnLoad() {
 
 //mobile page style
 export function changeStyle() {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     var screenHeight = document.documentElement.clientHeight;
     var bottom_right = elemenetGetId('bottom-right');
     var down = elemenetGetId('down');

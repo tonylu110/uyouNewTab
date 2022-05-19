@@ -92,7 +92,7 @@ function weatherGet(city, day) {
     }, 300)
 }
 export default function weatherUse() {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     var weatherHide = true
     chrome.storage.sync.get(['weatherCity'], function (budget) {
         let weatherCity = budget.weatherCity

@@ -2,7 +2,7 @@ import { elemenetGetId, body, clog } from "../main/function.js";
 
 //backgroud setting
 export function background() {
-    var screenWidth = body().offsetWidth;//get screen width
+    var screenWidth = window.innerWidth;//get screen width
     var viewImg = elemenetGetId('viewImg');
     var fileName = elemenetGetId('fileName');
     var backgroundSetButton = elemenetGetId('backgroundSetButton');
@@ -153,10 +153,18 @@ export function loadBackground() {
         var button = elemenetGetId('button');
         var picurl = elemenetGetId('picurl');
         var oneMain = elemenetGetId('oneMain');
+        function imgload(imgUrl) {
+            var img = document.createElement('img')
+            img.src = imgUrl
+            img.onload = () => {
+                elemenetGetId('background').style.display = ''
+            }
+        }
         if (typeof (budget.picUrl) == 'undefined') {
             picUrl = '';
         }
         if (picUrl != '') {
+            elemenetGetId('background').style.display = ''
             background.style.backgroundImage = 'url(' + budget.picUrl + ')';
             down.style.display = 'none';
         } else {
@@ -164,9 +172,10 @@ export function loadBackground() {
             elemenetGetId('backgroundSetButton').style.marginRight = '0px';
             //This is onload script
             //else load 'imgs/background.png'
-            var screenWidth = body().offsetWidth;
+            var screenWidth = window.innerWidth;
             if (screenWidth <= 813) {
                 elemenetGetId('picurl').className = 'https://iw233.cn/api.php?sort=mp'
+                imgload('https://iw233.cn/api.php?sort=mp')
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');
@@ -190,6 +199,7 @@ export function loadBackground() {
                     }
                 }, 300)
                 setTimeout(function () {
+                    elemenetGetId('background').style.display = ''
                     if (picurl.className != '') {
                         if (background.style.backgroundImage == 'url("")') {
                             background.style.backgroundImage = "url(" + picurl.className + ")";
@@ -212,6 +222,7 @@ export function loadBackground() {
                 }, 1000)
             } else {
                 elemenetGetId('picurl').className = 'https://iw233.cn/api.php?sort=pc'
+                imgload('https://iw233.cn/api.php?sort=pc')
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');
@@ -235,6 +246,7 @@ export function loadBackground() {
                     }
                 }, 300)
                 setTimeout(function () {
+                    elemenetGetId('background').style.display = ''
                     if (picurl.className != '') {
                         if (background.style.backgroundImage == 'url("")') {
                             background.style.backgroundImage = "url(" + picurl.className + ")";

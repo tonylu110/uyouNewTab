@@ -5,7 +5,7 @@ export default function hideUse() {
     //if bottemButton is hide all element will hide
     //else show all element
     elemenetGetId('hide').onclick = function onHideOrShow() {
-        var screenWidth = body().offsetWidth;
+        var screenWidth = window.innerWidth;
         var hideButton = elemenetGetId('button').hidden;
         var hide = elemenetGetId('hide');
         var info = elemenetGetId('info');

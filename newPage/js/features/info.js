@@ -2,7 +2,7 @@ import { elemenetGetId, body } from "../main/function.js";
 
 export default function infoUse() {
     elemenetGetId('info').onclick = function onBarButton() {
-        var screenWidth = body().offsetWidth;//get screen width
+        var screenWidth = window.innerWidth;//get screen width
         if (screenWidth <= 813) {
             elemenetGetId('infoBar').className = 'barSelMobile';
             elemenetGetId('infoimgbefore').className = 'infoimgafter';

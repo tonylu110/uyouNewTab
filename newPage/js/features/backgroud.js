@@ -174,8 +174,8 @@ export function loadBackground() {
             //else load 'imgs/background.png'
             var screenWidth = window.innerWidth;
             if (screenWidth <= 813) {
-                elemenetGetId('picurl').className = 'https://iw233.cn/api.php?sort=mp'
-                imgload('https://iw233.cn/api.php?sort=mp')
+                elemenetGetId('picurl').className = 'https://dev.iw233.cn/api.php?sort=mp'
+                imgload('https://dev.iw233.cn/api.php?sort=mp')
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');
@@ -221,8 +221,8 @@ export function loadBackground() {
                     }
                 }, 1000)
             } else {
-                elemenetGetId('picurl').className = 'https://iw233.cn/api.php?sort=pc'
-                imgload('https://iw233.cn/api.php?sort=pc')
+                elemenetGetId('picurl').className = 'https://dev.iw233.cn/api.php?sort=pc'
+                imgload('https://dev.iw233.cn/api.php?sort=pc')
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');

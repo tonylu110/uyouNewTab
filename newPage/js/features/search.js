@@ -360,7 +360,7 @@ export function searchChangeUse() {
                     if (cus != undefined && engine == 'search.png') {
                         window.open(cus + keywords, '_self');
                     }
-                    if (!cus) {
+                    if (!cus && engine == 'search.png') {
                         elemenetGetId('keywords').value = '未设置自定义的搜索引擎'
                         setTimeout(() => {
                             elemenetGetId('keywords').value = ''

@@ -25,9 +25,9 @@ function dark(alpha) {
     elemenetGetClass('feaImg')[5].src = 'imgs/dark/down.png';
     elemenetGetClass('feaImg')[6].src = 'imgs/dark/info.png';
     elemenetGetId('dlAn').innerText = '暗色';
-    elemenetGetClass('otherBtn')[1].style.background = '#44444470';
-    elemenetGetClass('otherBtn')[1].style.borderRadius = '10px 10px 0px 0px';
-    elemenetGetClass('otherBtn')[2].style.display = '';
+    elemenetGetClass('otherBtn')[2].style.background = '#44444470';
+    elemenetGetClass('otherBtn')[2].style.borderRadius = '10px 10px 0px 0px';
+    elemenetGetClass('otherBtn')[3].style.display = '';
 }
 
 //light mode to change style
@@ -55,9 +55,9 @@ function light() {
     elemenetGetClass('feaImg')[5].src = 'imgs/down.png';
     elemenetGetClass('feaImg')[6].src = 'imgs/info.png';
     elemenetGetId('dlAn').innerText = '亮色'
-    elemenetGetClass('otherBtn')[1].style.background = '';
-    elemenetGetClass('otherBtn')[1].style.borderRadius = '';
-    elemenetGetClass('otherBtn')[2].style.display = 'none';
+    elemenetGetClass('otherBtn')[2].style.background = '';
+    elemenetGetClass('otherBtn')[2].style.borderRadius = '';
+    elemenetGetClass('otherBtn')[3].style.display = 'none';
 
 }
 
@@ -118,9 +118,9 @@ export function dlUse() {
             elemenetGetId('otherSettings').style.background = '#ffffff70';
             chrome.storage.sync.set({ 'dlMode': 'light' });
             if (elemenetGetId('loadingAn').innerText == '隐藏') {
-                elemenetGetClass('otherBtn')[0].style.background = '#ffffff50';
+                elemenetGetClass('otherBtn')[1].style.background = '#ffffff50';
             } else {
-                elemenetGetClass('otherBtn')[0].style.background = '#ffffff90';
+                elemenetGetClass('otherBtn')[1].style.background = '#ffffff90';
             }
             elemenetGetId('colorMode').innerText = '亮色模式';
         } else {
@@ -128,9 +128,9 @@ export function dlUse() {
             elemenetGetId('otherSettings').style.background = '#44444470';
             chrome.storage.sync.set({ 'dlMode': 'dark' });
             if (elemenetGetId('loadingAn').innerText == '隐藏') {
-                elemenetGetClass('otherBtn')[0].style.background = '#44444450';
+                elemenetGetClass('otherBtn')[1].style.background = '#44444450';
             } else {
-                elemenetGetClass('otherBtn')[0].style.background = '#44444490';
+                elemenetGetClass('otherBtn')[1].style.background = '#44444490';
             }
             elemenetGetId('colorMode').innerText = '深色模式'
         }

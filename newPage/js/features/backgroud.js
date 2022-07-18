@@ -1,4 +1,4 @@
-import { elemenetGetId, body, clog } from "../main/function.js";
+import { elemenetGetId, clog } from "../main/function.js";
 
 //backgroud setting
 export function background() {
@@ -133,19 +133,28 @@ export function apiImg() {
 
 //load background img in page
 export function loadBackground() {
-    // var httpRequest = new XMLHttpRequest();
-    // function picget(url) {
-    //     httpRequest.open('GET', url, true);
-    //     httpRequest.send();
-    //     httpRequest.onreadystatechange = function () {
-    //         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-    //             var obj = JSON.parse(httpRequest.responseText);
-    //             var pic = obj.pic;
+    var httpRequest = new XMLHttpRequest();
+    function imgload(imgUrl) {
+        var img = document.createElement('img')
+        img.src = imgUrl
+        img.onload = () => {
+            elemenetGetId('background').style.display = ''
+        }
+    }
+    function picget(url) {
+        httpRequest.open('GET', url, true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var obj = JSON.parse(httpRequest.responseText);
+                var pic = obj.pic;
 
-    //             elemenetGetId('picurl').className = pic;
-    //         }
-    //     };
-    // }
+                elemenetGetId('picurl').className = pic;
+
+                imgload(elemenetGetId('picurl').className)
+            }
+        };
+    }
     chrome.storage.local.get(['picUrl'], function (budget) {
         var picUrl = budget.picUrl;
         var background = elemenetGetId('background');
@@ -153,13 +162,6 @@ export function loadBackground() {
         var button = elemenetGetId('button');
         var picurl = elemenetGetId('picurl');
         var oneMain = elemenetGetId('oneMain');
-        function imgload(imgUrl) {
-            var img = document.createElement('img')
-            img.src = imgUrl
-            img.onload = () => {
-                elemenetGetId('background').style.display = ''
-            }
-        }
         if (typeof (budget.picUrl) == 'undefined') {
             picUrl = '';
         }
@@ -174,8 +176,8 @@ export function loadBackground() {
             //else load 'imgs/background.png'
             var screenWidth = window.innerWidth;
             if (screenWidth <= 813) {
-                elemenetGetId('picurl').className = 'https://dev.iw233.cn/api.php?sort=mp'
-                imgload('https://dev.iw233.cn/api.php?sort=mp')
+                // elemenetGetId('picurl').className = 'https://dev.iw233.cn/api.php?sort=mp'
+                picget("http://mark.tnyl.xyz/api/api.php?sort=mp&type=json")
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');
@@ -221,8 +223,8 @@ export function loadBackground() {
                     }
                 }, 1000)
             } else {
-                elemenetGetId('picurl').className = 'https://dev.iw233.cn/api.php?sort=pc'
-                imgload('https://dev.iw233.cn/api.php?sort=pc')
+                // elemenetGetId('picurl').className = 'https://dev.iw233.cn/api.php?sort=pc'
+                picget("http://mark.tnyl.xyz/api/api.php?sort=pc&type=json")
                 setTimeout(function () {
                     if (button.innerHTML != '') {
                         clog('network is working');

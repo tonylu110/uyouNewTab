@@ -7,6 +7,7 @@
     <title>Home</title>
     <link rel="shortcut icon" href="imgs/favicon.ico" />
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="components/index.js"></script>
     <script type="module" src="js/main/index.js"></script>
 </head>
 <body id="background" style="display: none;">
@@ -484,25 +485,8 @@
     </div>
     <!-- This is searchmain area -->
     <div class="main" id="main">
-        <div class="searchbar" id="searchbar" style="display: none;"><!--search bar-->
-            <img id="searchEngine" hidden>
-            <input type="text" id="keywords">
-            <div class="keywordsRight" style="display: none;"></div>
-            <div id="searchBtn" style="color: transparent;">搜索</div>
-        </div>
-        <!-- This is moreSearch area -->
-        <div class="moreSearch" id="moreSearch" style="opacity: 0.0;">
-            <div class="searchEngines" id="searchEngines"><!--set search engine-->
-                <div id="cus" style="display: none;"><img src="imgs/search.png"></div>
-                <div id="google"><img src="imgs/google.png"></div><!--google-->
-                <div id="bing" style="padding: 15px; width: 70px; height: 70px;"><img src="imgs/bing-logo.png" style="width: 70px; height: 70px;"></div><!--bing-->
-                <div id="baidu" style="padding: 20px; height: 60px; width: 60px;"><img src="imgs/baidu.png" style="width: 60px; height: 60px;"></div><!--baidu-->
-                <div id="ddg" style="display: none;"><img src="imgs/ddg.svg"></div>
-                <div id="yandex" style="display: none;"><img src="imgs/yandex.png"></div>
-                <div id="sougou" style="display: none;"><img src="imgs/sougou.png"></div>
-            </div>
-        </div>
-
+        <search-bar></search-bar>
+        <more-search></more-search>
         <div class="link" id="mainlink"><!--links-->
             <a href="https://google.com" id="link1" style="display: none;"><div id="link1Padding"><img src="imgs/google.png" id="link1Img" hidden></div></a><!--google link-->
             <a href="https://youtube.com" id="link2" style="display: none;"><div id="link2Padding"><img src="imgs/youtube.png" id="link2Img" hidden></div></a><!--youtube link-->

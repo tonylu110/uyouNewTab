@@ -19,7 +19,6 @@ export function searchUse() {
     //change search engine
     elemenetGetId('searchEngine').onclick = () => {
         var hide = elemIdSty('moreSearch').opacity;
-        console.log(hide);
         if (hide == '0') {
             setTimeout(() => {
                 elemIdSty('moreSearch').opacity = '1.0';

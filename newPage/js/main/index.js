@@ -16,7 +16,7 @@ import { searchUse, searchOnload, searchChangeUse, showOrHideSearch } from '../f
 
 printInfo();//prtint info
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     loadBackground();
     settingUse();
     loadTheme();
@@ -39,4 +39,4 @@ window.onload = () => {
     searchChangeUse();
     searchOnload();
     showOrHideSearch();
-}
+})

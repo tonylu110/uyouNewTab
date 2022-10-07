@@ -1,6 +1,5 @@
 import hideUse from '../features/hide.js'
 import weatherUse from '../features/weather.js'
-import calUse from '../features/cal.js'
 import infoUse from '../features/info.js'
 import historyUse from '../features/history.js'
 import settingUse from './settings.js'
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hsFeatureUse();
     hsLinkUse();
     useLinkChange();
-    calUse();
     getTime();
     one();
     oneUse();

@@ -1,10 +1,16 @@
-import calUse from "../js/features/cal.js"
+import { evalRpn, dal2Rpn } from "./cal.js"
+import click from "./click.js"
+import Observer from "../../js/main/reactivity.js"
 
 export default class mainCalc extends HTMLElement {
   constructor() {
     super()
+    this._data = {
+      result: ''
+    }
     this.render()
-    calUse()
+    click()
+    Observer(this._data, '#card')
   }
   render() {
     this.className = 'mainCal'
@@ -12,7 +18,7 @@ export default class mainCalc extends HTMLElement {
     this.hidden = true
     this.innerHTML = `
     <form class="card" name="cal" action="" id="card"><!--calculator card-->
-      <input type="text" class="value" id="txt" readonly="readonly" />
+      <input type="text" class="value" id="txt" readonly="readonly" value="${this._data.result}"/>
       <span class="clear" id="clear" style="margin-left: 10px;">c</span>
       <span class="num" id="/">/</span>
       <span class="num" id="*" style="margin-right: 10px;">*</span>
@@ -33,5 +39,12 @@ export default class mainCalc extends HTMLElement {
       <span class="result" id="result">=</span>
     </form>
     `
+    document.getElementById('result').onclick = () => {
+      this.result()
+    }
+  }
+  result() {
+    this._data.result = document.querySelector('#txt').value
+    this._data.result = evalRpn(dal2Rpn(document.cal.txt.value));
   }
 }

@@ -13,17 +13,17 @@ export default function Observer(obj, domNode) {
         value = newValue
         Observer(newValue)
         const domTree = document.querySelector(domNode)
-        checkDom(domTree, value, newValue)
+        checkDom(domTree, key, newValue)
       }
     })
   })
 }
 
-function checkDom (domTree, oldValue, newValue) {
+function checkDom (domTree, key, newValue) {
   domTree.childNodes.forEach(item => {
-    if (item.tagName === 'INPUT' || item.value === oldValue) {
+    if (item.tagName === 'INPUT' && item.getAttribute('data-bind') === key) {
       item.value = newValue
-    } else if (item.innerText === oldValue) {
+    } else if (item instanceof HTMLElement && item.getAttribute('data-bind') === key) {
       item.innerText = newValue
     }
   })

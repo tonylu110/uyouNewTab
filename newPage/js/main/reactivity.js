@@ -1,7 +1,9 @@
 export default function Observer(obj, domNode) {
+  const domTree = document.querySelector(domNode)
   if (!obj || typeof obj !== 'object') return
   Object.keys(obj).forEach(key => {
     let value = obj[key]
+    checkDom(domTree, key, value)
     Observer(value)
     Object.defineProperty(obj, key, {
       enumerable: true,
@@ -12,7 +14,6 @@ export default function Observer(obj, domNode) {
       set: (newValue) => {
         value = newValue
         Observer(newValue)
-        const domTree = document.querySelector(domNode)
         checkDom(domTree, key, newValue)
       }
     })

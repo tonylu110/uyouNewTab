@@ -1,6 +1,6 @@
 import { evalRpn, dal2Rpn } from "./cal.js"
 import click from "./click.js"
-import Observer from "../../js/main/reactivity.js"
+import Observer from "../../util/reactivity.js"
 
 export default class mainCalc extends HTMLElement {
   constructor() {
@@ -18,7 +18,7 @@ export default class mainCalc extends HTMLElement {
     this.hidden = true
     this.innerHTML = `
     <form class="card" name="cal" action="" id="card"><!--calculator card-->
-      <input type="text" class="value" id="txt" readonly="readonly" data-bind="result"/>
+      <input type="text" class="value" id="txt" readonly="readonly" bind-value="result"/>
       <span class="clear" id="clear" style="margin-left: 10px;">c</span>
       <span class="num" id="/">/</span>
       <span class="num" id="*" style="margin-right: 10px;">*</span>

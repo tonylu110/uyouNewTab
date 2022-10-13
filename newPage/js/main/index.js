@@ -11,7 +11,7 @@ import { useLinkChange } from '../features/changeLink.js'
 import { one, oneUse } from '../features/one.js'
 import { loadTheme, dlUse } from './dark2light.js'
 import { getTime, fesUse, otherSettingOnLoad, changeStyle } from './onLoadFeature.js'
-import { searchUse, searchOnload, searchChangeUse, showOrHideSearch } from '../features/search.js'
+import { searchUse, searchOnload, showOrHideSearch } from '../features/search.js'
 
 printInfo();//prtint info
 
@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     infoUse();
     historyUse();
     searchUse();
-    searchChangeUse();
     searchOnload();
     showOrHideSearch();
 })

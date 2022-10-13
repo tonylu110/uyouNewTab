@@ -6,6 +6,7 @@ import mainArea from "./mainArea/index.js";
 import infoBar from "./infoBar/infoBar.js";
 import historyBar from "./historyBar/historyBar.js";
 import bottomRight from "./bottomRight/bottomRight.js";
+import topRight from "./topRight/topRight.js";
 
 customElements.define('search-bar', searchBar)
 customElements.define('more-search', moreSearch)
@@ -15,3 +16,4 @@ customElements.define('main-area', mainArea)
 customElements.define('info-bar', infoBar)
 customElements.define('history-bar', historyBar)
 customElements.define('bottom-right', bottomRight)
+customElements.define('top-right', topRight)

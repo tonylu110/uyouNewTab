@@ -1,6 +1,13 @@
+import searchBar from "./searchBar.js";
+import moreSearch from "./moreSearch.js"
+import links from "./links.js";
+
 export default class mainArea extends HTMLElement {
   constructor() {
     super()
+    customElements.define('search-bar', searchBar)
+    customElements.define('more-search', moreSearch)
+    customElements.define('main-link', links)
     this.render()
   }
   render() {

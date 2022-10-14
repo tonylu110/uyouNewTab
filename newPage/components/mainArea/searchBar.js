@@ -1,3 +1,5 @@
+import isMobile from '../../util/isMobile.js'
+
 export default class searchBar extends HTMLElement {
   constructor() {
     super()
@@ -28,8 +30,7 @@ export default class searchBar extends HTMLElement {
     `
   }
   init() {
-    const screenWidth = window.innerWidth;
-    if (screenWidth > 813) {
+    if (!isMobile()) {
       document.getElementById('keywords').addEventListener("keyup", () => {
         if (document.getElementById('keywords').value) {
           document.getElementById('searchBtn').style = `

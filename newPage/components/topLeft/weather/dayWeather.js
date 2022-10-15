@@ -21,7 +21,7 @@ export default class dayWeather extends HTMLElement {
           <img src="" id="day${item}Img" style="width: 30px; height: 30px;">
           <div id="day${item}Temp"></div>
         </div>`
-      })}
+      }).join('')}
     </div>
     `
   }

@@ -4,6 +4,7 @@ import infoBar from "./infoBar/infoBar.js";
 import historyBar from "./historyBar/historyBar.js";
 import bottomRight from "./bottomRight/bottomRight.js";
 import topRight from "./topRight/topRight.js";
+import topLeft from "./topLeft/topLeft.js";
 
 customElements.define('main-calc', mainCalc)
 customElements.define('main-area', mainArea)
@@ -11,3 +12,4 @@ customElements.define('info-bar', infoBar)
 customElements.define('history-bar', historyBar)
 customElements.define('bottom-right', bottomRight)
 customElements.define('top-right', topRight)
+customElements.define('top-left', topLeft)

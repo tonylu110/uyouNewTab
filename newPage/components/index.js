@@ -8,6 +8,7 @@ import topLeft from "./topLeft/topLeft.js";
 import oneWindow from "./oneWindow/index.js";
 import backMenu from "./settingMain/backMenu.js";
 import settingMenu from "./settingMain/settingMenu/index.js";
+import backgroundMain from "./settingMain/settingInnerMain/backgroundMain/index.js";
 
 customElements.define('main-calc', mainCalc)
 customElements.define('main-area', mainArea)
@@ -20,3 +21,4 @@ customElements.define('one-window', oneWindow)
 
 customElements.define('back-menu', backMenu)
 customElements.define('setting-menu', settingMenu)
+customElements.define('background-main', backgroundMain)

@@ -43,60 +43,7 @@
         <setting-menu></setting-menu>
         <div id="settingInnerMain" style="display: none;">
             <div class="settingInner">
-                <div id="backgroundSetting" class="settingInnerTitle">
-                    <div class="settingsInnerTitle">
-                        背景设置
-                    </div>
-                    <div class="backgroundTitile">选择图片</div>
-                    <div class="uploadBtn" id="uploadBtn">
-                        <div id="fileName">选择你的图片</div>
-                        <input type="file" id="backgroundUpload" accept="image/*">
-                    </div>
-                    <div class="backgroundTitile">在线图片</div>
-                    <div class="onlinePic" id="onlinePic">
-                        <input type="text" id="onlinePicUrl" placeholder="请输入一个图片链接">
-                        <div id="review">预览</div>
-                    </div>
-                    <div id="picError"></div>
-                    <img src="" id="viewImg" style="display: none;">
-                    <div id="apiImg">
-                        <div class="backgroundTitile">自动切换图片</div>
-                        <div id="apiImgs">
-                            <div class="apiImgButton" id="bingImg">Bing 每日一图</div>
-                            <div class="apiImgButton" id="cwImg">东方 Project</div>
-                        </div>
-                        <div id="mobileApiImgs" style="display: none;">
-                            <div class="apiImgButton" id="bingImgMobile">Bing 每日一图</div>
-                            <div class="apiImgButton" id="cwImgMobile">东方 Project</div>
-                        </div>
-                        <div class="cusApiImg">
-                            <input type="text" placeholder="请输入你需要的 api 链接" id="cusApiPic">
-                            <div class="otherFeatures" id="cusImgApi">确定</div>
-                        </div>
-                    </div>
-                    <div id="exImg">
-                        <div class="backgroundTitile">本地图片</div>
-                        <div class="exImgs" id="exImgs">
-                            <img id="background0" src="imgs/background - 0.jpg">
-                            <img id="background1" src="imgs/background - 1.jpg">
-                            <img id="background2" src="imgs/background - 2.jpg">
-                            <img id="background3" src="imgs/background - 3.jpg">
-                            <img id="background4" src="imgs/background - 4.jpg">
-                            <img id="background5" src="imgs/background - 5.jpg">
-                        </div>
-                        <div class="mobileExImgs" style="display: none;">
-                            <img id="mbackground1" src="imgs/mobile/background - 1.jpg">
-                            <img id="mbackground2" src="imgs/mobile/background - 2.jpg">
-                            <img id="mbackground3" src="imgs/mobile/background - 3.jpg">
-                            <img id="mbackground4" src="imgs/mobile/background - 4.jpg">
-                            <img id="mbackground5" src="imgs/mobile/background - 5.jpg">
-                        </div>
-                    </div>
-                    <div class="backgroundButtons">
-                        <div id="backgroundSetButton" hidden>设置为此图片</div>
-                        <div id="backgroundBefore">恢复默认</div>
-                    </div>
-                </div>
+                <background-main></background-main>
                 <div id="festuresSetting" class="settingInnerTitle" style="display: none;">
                     <div class="settingsInnerTitle">
                         功能设置

@@ -16,27 +16,6 @@ export function searchUse() {
         searchChangeUse();
     }
 
-    //change search engine
-    elemenetGetId('searchEngine').onclick = () => {
-        var hide = elemIdSty('moreSearch').opacity;
-        if (hide == '0') {
-            setTimeout(() => {
-                elemIdSty('moreSearch').opacity = '1.0';
-            },100)
-            elemenetGetId('moreSearch').style.transform = 'translateY(100px)';
-            elemIdSty('moreSearch').zIndex = ''
-            elemenetGetId('click').onclick = () => {
-                elemIdSty('moreSearch').opacity = '0.0';
-                elemenetGetId('moreSearch').style.transform = '';
-                elemIdSty('moreSearch').zIndex = ''
-            }
-        } else {
-            elemIdSty('moreSearch').opacity = '0.0';
-            elemenetGetId('moreSearch').style.transform = '';
-            elemIdSty('moreSearch').zIndex = '3'
-        }
-    }
-
     //click img to engine img
     elemenetGetId('google').onclick = () => {
         chrome.storage.sync.set({ 'search': 'google' });

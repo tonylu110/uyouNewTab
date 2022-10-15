@@ -1,4 +1,4 @@
-import searchBar from "./searchBar.js";
+import searchBar from "./searchBar/searchBar.js";
 import moreSearch from "./moreSearch.js"
 import links from "./links.js";
 

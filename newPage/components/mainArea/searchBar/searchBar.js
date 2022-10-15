@@ -1,8 +1,11 @@
-import isMobile from '../../util/isMobile.js'
+import isMobile from '../../../util/isMobile.js'
 
 export default class searchBar extends HTMLElement {
   constructor() {
     super()
+    this._data = {
+      hide: true
+    }
     this.render()
     this.init()
     chrome.storage.sync.get(['cusSea'], (budget) => {
@@ -28,6 +31,10 @@ export default class searchBar extends HTMLElement {
     <div class="keywordsRight" style="display: none;"></div>
     <div id="searchBtn" style="color: transparent;">搜索</div>
     `
+    document.getElementById('searchEngine').addEventListener('click', () => {
+      this.hide()
+      this._data.hide = !this._data.hide
+    })
   }
   init() {
     if (!isMobile()) {
@@ -79,10 +86,35 @@ export default class searchBar extends HTMLElement {
       window.open(cus + keywords, '_self');
     }
     if (!cus && engine == 'search.png') {
-      elemenetGetId('keywords').value = '未设置自定义的搜索引擎'
+      document.getElementById('keywords').value = '未设置自定义的搜索引擎'
       setTimeout(() => {
-        elemenetGetId('keywords').value = ''
+        document.getElementById('keywords').value = ''
       }, 1000)
+    }
+  }
+  hide() {
+    if (this._data.hide) {
+      setTimeout(() => {
+        document.getElementById('moreSearch').style.opacity = '1.0';
+      }, 100)
+      document.getElementById('moreSearch').style = `
+        transform: translateY(100px);
+        z-index: ;
+      `
+      document.getElementById('click').addEventListener('click', () => {
+        this._data.hide = !this._data.hide
+        document.getElementById('moreSearch').style = `
+          opacity: 0.0;
+          z-index: ;
+          transform: ;
+        `
+      })
+    } else {
+      document.getElementById('moreSearch').style = `
+        opacity: 0.0;
+        z-index: 3;
+        transform: ;
+      `
     }
   }
 }

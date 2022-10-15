@@ -5,6 +5,7 @@ import historyBar from "./historyBar/historyBar.js";
 import bottomRight from "./bottomRight/bottomRight.js";
 import topRight from "./topRight/topRight.js";
 import topLeft from "./topLeft/topLeft.js";
+import oneWindow from "./oneWindow/index.js";
 
 customElements.define('main-calc', mainCalc)
 customElements.define('main-area', mainArea)
@@ -13,3 +14,4 @@ customElements.define('history-bar', historyBar)
 customElements.define('bottom-right', bottomRight)
 customElements.define('top-right', topRight)
 customElements.define('top-left', topLeft)
+customElements.define('one-window', oneWindow)

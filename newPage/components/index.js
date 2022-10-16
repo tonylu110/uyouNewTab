@@ -13,6 +13,7 @@ import festuresSetting from "./settingMain/settingInnerMain/featuresSetting/inde
 import linkSetting from "./settingMain/settingInnerMain/linkSetting/index.js";
 import searchSetting from "./settingMain/settingInnerMain/searchSetting/index.js";
 import otherSetting from "./settingMain/settingInnerMain/otherSetting/index.js";
+import helpMain from "./settingMain/settingInnerMain/helpMain/helpMain.js";
 
 customElements.define('main-calc', mainCalc)
 customElements.define('main-area', mainArea)
@@ -30,3 +31,4 @@ customElements.define('features-setting', festuresSetting)
 customElements.define('link-setting', linkSetting)
 customElements.define('search-setting', searchSetting)
 customElements.define('other-setting', otherSetting)
+customElements.define('help-main', helpMain)

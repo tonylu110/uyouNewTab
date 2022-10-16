@@ -1,4 +1,5 @@
 import backgroundMain from "./backgroundMain/index.js"
+import donateMain from "./donateMain/donateMain.js"
 import festuresSetting from "./featuresSetting/index.js"
 import helpMain from "./helpMain/helpMain.js"
 import linkSetting from "./linkSetting/index.js"
@@ -14,6 +15,7 @@ export default class settingInnerMain extends HTMLElement {
     customElements.define('search-setting', searchSetting)
     customElements.define('other-setting', otherSetting)
     customElements.define('help-main', helpMain)
+    customElements.define('donate-main', donateMain)
     this.render()
   }
   render() {
@@ -27,6 +29,7 @@ export default class settingInnerMain extends HTMLElement {
       <other-setting></other-setting>
     </div>
     <help-main></help-main>
+    <donate-main></donate-main>
     `
   }
 }

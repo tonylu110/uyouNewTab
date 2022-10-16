@@ -15,7 +15,9 @@ export default class settingMain extends HTMLElement {
     this.id = 'settingMain'
     this.innerHTML = `
     <back-menu></back-menu>
-    <div id="settingCloseButton" style="display: none;"><img src="imgs/close.png" id="settingCloseImg"></div>
+    <div id="settingCloseButton" style="display: none;">
+      <img src="imgs/close.png" id="settingCloseImg">
+    </div>
     <setting-menu></setting-menu>
     <setting-inner-main></setting-inner-main>
     `

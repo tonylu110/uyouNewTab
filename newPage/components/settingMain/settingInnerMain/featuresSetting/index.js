@@ -18,7 +18,7 @@ export default class festuresSetting extends HTMLElement {
     </div>
     <div class="backgroundTitile">设置隐藏/显示功能按钮</div>
     <div class="featureSetting">
-      ${this._data.list.map((item, index) => {
+      ${this._data.list.map(item => {
         return `
         <div class="featureBtns">
           <div class="featuresTitle">

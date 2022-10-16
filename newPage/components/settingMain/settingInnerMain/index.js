@@ -1,11 +1,13 @@
 import backgroundMain from "./backgroundMain/index.js"
 import festuresSetting from "./featuresSetting/index.js"
+import linkSetting from "./linkSetting/index.js"
 
 export default class settingInnerMain extends HTMLElement {
   constructor() {
     super()
     customElements.define('background-main', backgroundMain)
     customElements.define('features-setting', festuresSetting)
+    customElements.define('link-setting', linkSetting)
     this.render()
   }
   render() {

@@ -21,3 +21,35 @@ customElements.define('one-window', oneWindow)
 customElements.define('setting-main', settingMain)
 customElements.define('change-link', changeLink)
 customElements.define('toast-main', toast)
+
+document.body.innerHTML = `
+<div id="loading" style="display: none;">
+  <div>加载中...</div>
+</div>
+<div id="blackBack"></div>
+<div id="click"></div>
+<div id="picurl"></div>
+<change-link></change-link>
+<toast-main></toast-main>
+<setting-main></setting-main>
+<!-- This is top-right button -->
+<top-right></top-right>
+<!-- This is top-left button -->
+<top-left></top-left>
+<!-- This is bottom-right button -->
+<bottom-right></bottom-right>
+<!-- This is history bar -->
+<history-bar></history-bar>
+<!-- This is info bar -->
+<info-bar></info-bar>
+<!-- This is searchmain area -->
+<main-area></main-area>
+<!-- This is calculator area -->
+<main-calc></main-calc>
+<!-- This is Clock area -->
+<div class="mainClock" id="mainClock" style="display: none;">
+  <div id="time"></div>
+</div>
+<one-window></one-window>
+<a class="button" id="button"></a>
+`

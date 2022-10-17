@@ -20,6 +20,7 @@ export default class settingInnerMain extends HTMLElement {
   }
   render() {
     this.id = 'settingInnerMain'
+    this.style = 'display: none;'
     this.innerHTML = `
     <div class="settingInner">
       <background-main></background-main>

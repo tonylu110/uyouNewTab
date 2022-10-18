@@ -1,6 +1,5 @@
 import hideUse from '../features/hide.js'
 import weatherUse from '../features/weather.js'
-import infoUse from '../features/info.js'
 import historyUse from '../features/history.js'
 import settingUse from './settings.js'
 import printInfo from './print.js'
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     one();
     oneUse();
     changeStyle();
-    infoUse();
     historyUse();
     searchUse();
     showOrHideSearch();

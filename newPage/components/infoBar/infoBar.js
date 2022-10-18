@@ -1,3 +1,5 @@
+import isMobile from "../../util/isMobile.js";
+
 export default class infoBar extends HTMLElement {
   constructor() {
     super()
@@ -36,5 +38,22 @@ export default class infoBar extends HTMLElement {
       </div>
     </div>
     `
+    document.getElementById('info').addEventListener('click', () => {
+      if (isMobile()) {
+        document.getElementById('infoBar').className = 'barSelMobile';
+        document.getElementById('infoimgbefore').className = 'infoimgafter';
+      } else {
+        document.getElementById('infoBar').className = 'barSel';
+        document.getElementById('infoimgbefore').className = 'infoimgafter';
+      }
+      document.getElementById('click').addEventListener('click', () => {
+        document.getElementById('infoBar').className = 'bar';
+        document.getElementById('infoimgbefore').className = 'infoimgbefore';
+      })
+    })
+    document.getElementById('infoBack').addEventListener('click', () => {
+      document.getElementById('infoBar').className = 'bar';
+      document.getElementById('infoimgbefore').className = 'infoimgbefore';
+    })
   }
 }

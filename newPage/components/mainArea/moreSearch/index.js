@@ -1,7 +1,10 @@
+import click from "./click.js";
+
 export default class moreSearch extends HTMLElement {
   constructor() {
     super()
     this.render()
+    click()
   }
   render() {
     this.className = 'moreSearch'

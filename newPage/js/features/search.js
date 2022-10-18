@@ -15,57 +15,6 @@ export function searchUse() {
         chrome.storage.sync.set({ 'cusSea': cusSea });
         searchChangeUse();
     }
-
-    //click img to engine img
-    elemenetGetId('google').onclick = () => {
-        chrome.storage.sync.set({ 'search': 'google' });
-        elemIdSty('moreSearch').opacity = '0.0';
-        elemenetGetId('moreSearch').style.transform = '';
-        elemIdSty('moreSearch').zIndex = '3'
-        elemenetGetId('searchEngine').src = 'imgs/google.png';// change search engine image to google
-    }
-    elemenetGetId('bing').onclick = () => {
-        chrome.storage.sync.set({ 'search': 'bing' });
-        elemIdSty('moreSearch').opacity = '0.0';
-        elemenetGetId('moreSearch').style.transform = '';
-        elemIdSty('moreSearch').zIndex = '3'
-        elemenetGetId('searchEngine').src = 'imgs/bing-logo.png';// change search engine image to bing
-    }
-    elemenetGetId('baidu').onclick = () => {
-        chrome.storage.sync.set({ 'search': 'baidu' });
-        elemIdSty('moreSearch').opacity = '0.0';
-        elemenetGetId('moreSearch').style.transform = '';
-        elemIdSty('moreSearch').zIndex = '3'
-        elemenetGetId('searchEngine').src = 'imgs/baidu.png';//change search engine image to baidu
-    }
-    elemenetGetId('ddg').onclick = () => {
-        chrome.storage.sync.set({ 'search': 'ddg' });
-        elemIdSty('moreSearch').opacity = '0.0';
-        elemenetGetId('moreSearch').style.transform = '';
-        elemIdSty('moreSearch').zIndex = '3'
-        elemenetGetId('searchEngine').src = 'imgs/ddg.svg';
-    }
-    elemenetGetId('yandex').onclick = () => {
-        chrome.storage.sync.set({ 'search': 'yandex' });
-        elemIdSty('moreSearch').opacity = '0.0';
-        elemenetGetId('moreSearch').style.transform = '';
-        elemIdSty('moreSearch').zIndex = '3'
-        elemenetGetId('searchEngine').src = 'imgs/yandex.png';
-    }
-    elemenetGetId('sougou').onclick = () => {
-        chrome.storage.sync.set({ 'search': 'sougou' });
-        elemIdSty('moreSearch').opacity = '0.0';
-        elemenetGetId('moreSearch').style.transform = '';
-        elemIdSty('moreSearch').zIndex = '3'
-        elemenetGetId('searchEngine').src = 'imgs/sougou.png';
-    }
-    elemenetGetId('cus').onclick = () => {
-        chrome.storage.sync.set({ 'search': 'cus' });
-        elemIdSty('moreSearch').opacity = '0.0';
-        elemenetGetId('moreSearch').style.transform = '';
-        elemIdSty('moreSearch').zIndex = '3'
-        elemenetGetId('searchEngine').src = 'imgs/search.png';
-    }
 }
 
 export function searchOnload() {

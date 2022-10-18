@@ -1,5 +1,5 @@
 import searchBar from "./searchBar/searchBar.js";
-import moreSearch from "./moreSearch.js"
+import moreSearch from "./moreSearch/index.js"
 import links from "./links.js";
 
 export default class mainArea extends HTMLElement {

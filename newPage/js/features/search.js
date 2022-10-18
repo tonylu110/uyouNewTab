@@ -17,33 +17,6 @@ export function searchUse() {
     }
 }
 
-export function searchOnload() {
-    chrome.storage.sync.get(['search'], (budget) => {
-        if (budget.search == 'google') {
-            elemenetGetId('searchEngine').hidden = false;
-            elemenetGetId('searchEngine').src = 'imgs/google.png';// change search engine image to google
-        } else if (budget.search == 'bing') {
-            elemenetGetId('searchEngine').hidden = false;
-            elemenetGetId('searchEngine').src = 'imgs/bing-logo.png';// change search engine image to bing
-        } else if (budget.search == 'ddg') {
-            elemenetGetId('searchEngine').hidden = false;
-            elemenetGetId('searchEngine').src = 'imgs/ddg.svg';
-        } else if (budget.search == 'yandex') {
-            elemenetGetId('searchEngine').hidden = false;
-            elemenetGetId('searchEngine').src = 'imgs/yandex.png';
-        } else if (budget.search == 'sougou') {
-            elemenetGetId('searchEngine').hidden = false;
-            elemenetGetId('searchEngine').src = 'imgs/sougou.png';
-        } else if (budget.search == 'cus') {
-            elemenetGetId('searchEngine').hidden = false;
-            elemenetGetId('searchEngine').src = 'imgs/search.png';
-        } else {
-            elemenetGetId('searchEngine').hidden = false;
-            elemenetGetId('searchEngine').src = 'imgs/baidu.png';//change search engine image to baidu
-        }
-    })
-}
-
 export function moreSearch() {
     function changeAn(an, button) {
         if (elemenetGetId(an).className == 'otherFeatures') {

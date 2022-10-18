@@ -54,6 +54,30 @@ export default class searchBar extends HTMLElement {
         }
       })
     }
+    chrome.storage.sync.get(['search'], (budget) => {
+      if (budget.search == 'google') {
+        document.getElementById('searchEngine').hidden = false;
+        document.getElementById('searchEngine').src = 'imgs/google.png';// change search engine image to google
+      } else if (budget.search == 'bing') {
+        document.getElementById('searchEngine').hidden = false;
+        document.getElementById('searchEngine').src = 'imgs/bing-logo.png';// change search engine image to bing
+      } else if (budget.search == 'ddg') {
+        document.getElementById('searchEngine').hidden = false;
+        document.getElementById('searchEngine').src = 'imgs/ddg.svg';
+      } else if (budget.search == 'yandex') {
+        document.getElementById('searchEngine').hidden = false;
+        document.getElementById('searchEngine').src = 'imgs/yandex.png';
+      } else if (budget.search == 'sougou') {
+        document.getElementById('searchEngine').hidden = false;
+        document.getElementById('searchEngine').src = 'imgs/sougou.png';
+      } else if (budget.search == 'cus') {
+        document.getElementById('searchEngine').hidden = false;
+        document.getElementById('searchEngine').src = 'imgs/search.png';
+      } else {
+        document.getElementById('searchEngine').hidden = false;
+        document.getElementById('searchEngine').src = 'imgs/baidu.png';//change search engine image to baidu
+      }
+    })
   }
   search(cusSea) {
     document.getElementById('keywords').addEventListener('keydown', (event) => {

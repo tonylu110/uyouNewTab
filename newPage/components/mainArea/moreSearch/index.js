@@ -1,10 +1,9 @@
-import click from "./click.js";
+import engines, { changeImg } from "./list.js";
 
 export default class moreSearch extends HTMLElement {
   constructor() {
     super()
     this.render()
-    click()
   }
   render() {
     this.className = 'moreSearch'
@@ -21,5 +20,11 @@ export default class moreSearch extends HTMLElement {
       <div id="sougou" style="display: none;"><img src="imgs/sougou.png"></div>
     </div>
     `
+    engines.forEach(item => {
+      document.getElementById(item.name).addEventListener('click', () => {
+        chrome.storage.sync.set({ 'search': item.name });
+        changeImg(item.img)
+      })
+    })
   }
 }

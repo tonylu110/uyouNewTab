@@ -25,34 +25,25 @@ export default class historyBar extends HTMLElement {
   }
   init() {
     chrome.history.search(this.query, (results) => {
-      for (let i = 0; i < results.length; i++) {
-        let title = results[i].title;
-        let link = results[i].url;
-        /**
-         * create element like this:
-         *  <div class="historyInfo">
-         <div class="historyTitle">title</div>
-         <div class="historyLink">link</div>
-         </div>
-         */
+      results.forEach(item => {
         const historyInfo = document.createElement('div');
         const historyTitle = document.createElement('div');
         const historyLink = document.createElement('div');
         historyInfo.className = 'historyInfo';
         historyTitle.className = 'historyTitle';
-        historyTitle.innerText = title;
+        historyTitle.innerText = item.title;
         historyLink.className = 'historyLink';
-        historyLink.innerText = link;
+        historyLink.innerText = item.url;
         historyInfo.appendChild(historyTitle);
         historyInfo.appendChild(historyLink);
         document.getElementById('historyIn').appendChild(historyInfo);
         // open history link in new tab
-        historyInfo.onclick = () => {
+        historyInfo.addEventListener('click', () => {
           chrome.tabs.create({
             url: historyLink.innerText
           })
-        }
-      }
+        })
+      })
     });
   }
 }

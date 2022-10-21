@@ -1,5 +1,4 @@
 import hideUse from '../features/hide.js'
-import weatherUse from '../features/weather.js'
 import settingUse from './settings.js'
 import printInfo from './print.js'
 import { loadBackground } from '../features/backgroud.js'
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fesUse();
     otherSettingOnLoad();
     dlUse();
-    weatherUse();
     hideUse();
     hsFeatureUse();
     hsLinkUse();

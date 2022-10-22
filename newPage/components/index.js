@@ -31,6 +31,7 @@ document.body.innerHTML = `
 <div id="picurl"></div>
 <change-link></change-link>
 <toast-main></toast-main>
+<setting-main></setting-main>
 <!-- This is top-right button -->
 <top-right></top-right>
 <!-- This is top-left button -->
@@ -49,7 +50,6 @@ document.body.innerHTML = `
 <div class="mainClock" id="mainClock" style="display: none;">
   <div id="time"></div>
 </div>
-<setting-main></setting-main>
 <one-window></one-window>
 <a class="button" id="button"></a>
 `

@@ -1,6 +1,5 @@
 import { dayTo, dayTo2 } from "./getDatShow.js";
 import getWeatherImg from "./weatherImg.js"
-import isMobile from "../../../util/isMobile.js";
 
 export default class dayWeather extends HTMLElement {
   constructor() {

@@ -25,39 +25,6 @@ export default class settingMain extends HTMLElement {
     `
   }
   init() {
-    document.getElementById('settings').addEventListener("click", () => {
-      document.getElementById('settingMain').className = 'settingMain'
-      document.getElementById('settingMain').style.transition = '0.5s'
-      setTimeout(() => {
-        if (isMobile()) {
-          document.getElementById('settingInnerMain').style.display = 'none'
-          document.getElementById('settingMenu').style.marginRight = '-20px'
-        } else {
-          document.getElementById('settingInnerMain').style.display = ''
-        }
-        document.getElementById('settingCloseButton').style.display = ''
-        document.getElementById('settingMenu').style.display = ''
-      }, 450)
-      document.getElementById('blackBack').style = `
-      z-index: 150;
-      background-color: #00000050
-      `
-      if (isMobile()) {
-        document.getElementById('settingMain').style = `
-        width: 70%;
-        height: 50%;
-        padding: 40px;
-        `
-        document.getElementById('settingMenu').style.display = 'none'
-      }
-      document.getElementById('blackBack').addEventListener("click", () => {
-        const changLinkDisplay = document.getElementById('changeLink').style.display
-        const toastDisplay = document.getElementById('toast').style.display
-        if (changLinkDisplay === 'none' && toastDisplay === 'none') {
-          this.closeSettingMain()
-        }
-      })
-    })
     document.getElementById('settingCloseButton').addEventListener("click", () => {
       this.closeSettingMain()
     })

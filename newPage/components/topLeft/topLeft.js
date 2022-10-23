@@ -1,6 +1,7 @@
 import weather from './weather/index.js'
 import isMobile from "../../util/isMobile.js";
 import settingMain from "../settingMain/index.js";
+import closeSettingWindow from "../settingMain/closeSettingWindow.js";
 
 export default class topLeft extends HTMLElement {
   constructor() {
@@ -48,7 +49,7 @@ export default class topLeft extends HTMLElement {
         const changLinkDisplay = document.getElementById('changeLink').style.display
         const toastDisplay = document.getElementById('toast').style.display
         if (changLinkDisplay === 'none' && toastDisplay === 'none') {
-          new settingMain().closeSettingMain()
+          closeSettingWindow()
         }
       })
     })

@@ -4,7 +4,6 @@ import { loadBackground } from '../features/backgroud.js'
 import { hsFeatureUse } from '../features/hsFeature.js'
 import { hsLinkUse } from '../features/hsLink.js'
 import { useLinkChange } from '../features/changeLink.js'
-import { one, oneUse } from '../features/one.js'
 import { loadTheme, dlUse } from './dark2light.js'
 import { getTime, fesUse, otherSettingOnLoad, changeStyle } from './onLoadFeature.js'
 import { searchUse, showOrHideSearch } from '../features/search.js'
@@ -22,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hsLinkUse();
     useLinkChange();
     getTime();
-    one();
-    oneUse();
     changeStyle();
     searchUse();
     showOrHideSearch();

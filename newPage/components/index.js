@@ -50,6 +50,6 @@ document.body.innerHTML = `
 <div class="mainClock" id="mainClock" style="display: none;">
   <div id="time"></div>
 </div>
-<one-window></one-window>
 <a class="button" id="button"></a>
+<one-window></one-window>
 `

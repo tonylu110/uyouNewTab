@@ -1,3 +1,5 @@
+import hideClick from "./hide.js";
+
 export default class topRight extends HTMLElement {
   constructor() {
     super()
@@ -14,5 +16,8 @@ export default class topRight extends HTMLElement {
     <div class="titleButton" id="cal" hidden><img src="imgs/calculator.png" id="calImg"></div><!--calculator button-->
     <div class="titleButton" id="clock" hidden><img src="imgs/timer.png" id="clockImg"></div><!--clock button-->
     `
+    document.getElementById('hide').addEventListener('click', () => {
+      hideClick()
+    })
   }
 }

@@ -1,4 +1,3 @@
-import settingMenus from '../features/settingMenu.js';
 import otherFeatures from '../features/otherSetting.js';
 import { moreSearch } from '../features/search.js';
 import { hsFeature } from '../features/hsFeature.js';
@@ -13,7 +12,6 @@ export default function settingUse() {
     hsLink();//hide link
     changeLink();//change link
     useChangeLink();//change link function
-    settingMenus();//setting menu function
     loaclImgChange();//use local img background
     otherFeatures();//other setting function
     moreSearch();//more search function

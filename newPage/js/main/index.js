@@ -1,6 +1,5 @@
 import settingUse from './settings.js'
 import printInfo from './print.js'
-import { loadBackground } from '../features/backgroud.js'
 import { hsFeatureUse } from '../features/hsFeature.js'
 import { hsLinkUse } from '../features/hsLink.js'
 import { useLinkChange } from '../features/changeLink.js'
@@ -11,7 +10,6 @@ import { searchUse, showOrHideSearch } from '../features/search.js'
 printInfo();//prtint info
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadBackground();
     settingUse();
     loadTheme();
     fesUse();

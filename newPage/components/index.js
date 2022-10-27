@@ -9,6 +9,7 @@ import oneWindow from "./oneWindow/index.js";
 import settingMain from "./settingMain/index.js";
 import changeLink from "./changeLink/changeLink.js";
 import toast from "./toast/toast.js";
+import {loadBackground} from "../js/features/backgroud.js";
 
 customElements.define('main-calc', mainCalc)
 customElements.define('main-area', mainArea)
@@ -53,3 +54,5 @@ document.body.innerHTML = `
 <a class="button" id="button"></a>
 <one-window></one-window>
 `
+
+loadBackground()

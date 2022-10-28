@@ -1,5 +1,6 @@
 import apiImgs from './apiImgs.js'
 import exImgs from './exImgs.js'
+import {apiImg, loaclImgChange} from "./imgChange.js";
 
 export default class backgroundMain extends HTMLElement {
   constructor() {
@@ -7,6 +8,7 @@ export default class backgroundMain extends HTMLElement {
     customElements.define('api-imgs', apiImgs)
     customElements.define('ex-imgs', exImgs)
     this.render()
+    this.init()
   }
   render() {
     this.id = 'backgroundSetting'
@@ -34,5 +36,9 @@ export default class backgroundMain extends HTMLElement {
       <div id="backgroundBefore">恢复默认</div>
     </div>
     `
+  }
+  init() {
+    loaclImgChange()
+    apiImg()
   }
 }

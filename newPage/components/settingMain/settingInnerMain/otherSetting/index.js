@@ -1,7 +1,10 @@
+import loadAn from "./loadAn.js";
+
 export default class otherSetting extends HTMLElement {
   constructor() {
     super()
     this.render()
+    this.init()
   }
   render() {
     this.id = 'otherSetting'
@@ -45,5 +48,13 @@ export default class otherSetting extends HTMLElement {
       </div>
     </div>
     `
+  }
+  init() {
+    loadAn()
+    document.getElementById('setLoadingTime').addEventListener("click", () => {
+      const loadingTime = document.getElementById('loadingTimeNum').value
+      document.getElementById('newTimeout').innerText = loadingTime
+      chrome.storage.local.set({ 'loadingTime': loadingTime })
+    })
   }
 }

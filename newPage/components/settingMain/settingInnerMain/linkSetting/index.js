@@ -7,6 +7,7 @@ export default class linkSetting extends HTMLElement {
       list
     }
     this.render()
+    this.init()
   }
   render() {
     this.id = 'linkSetting'
@@ -31,5 +32,22 @@ export default class linkSetting extends HTMLElement {
       }).join('')}
     </div>
     `
+  }
+  init() {
+    for (let i = 1; i <= 10; i++) {
+      document.getElementById(`link${i}HS`).addEventListener("click", () => {
+        if (document.getElementById(`link${i}HS`).className === 'hsFeature') {
+          chrome.storage.local.set({ [`link${i}HS`]: 'hide' });
+          document.getElementById(`link${i}HS`).className = 'hsFeatureHide'
+          document.getElementById(`link${i}HS`).innerText = '隐藏'
+          document.getElementById(`link${i}`).style.display = 'none'
+        } else {
+          chrome.storage.local.set({ [`link${i}HS`]: 'hide' });
+          document.getElementById(`link${i}HS`).className = 'hsFeature'
+          document.getElementById(`link${i}HS`).innerText = '显示'
+          document.getElementById(`link${i}`).style.display = ''
+        }
+      })
+    }
   }
 }

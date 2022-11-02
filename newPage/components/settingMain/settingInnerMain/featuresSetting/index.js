@@ -1,4 +1,5 @@
 import list from './list.js'
+import {hsFeature} from "../../../../js/features/hsFeature.js";
 
 export default class festuresSetting extends HTMLElement {
   constructor() {
@@ -7,6 +8,7 @@ export default class festuresSetting extends HTMLElement {
       list
     }
     this.render()
+    this.init()
   }
   render() {
     this.id  = 'festuresSetting'
@@ -35,5 +37,8 @@ export default class festuresSetting extends HTMLElement {
       </div>
     </div>
     `
+  }
+  init() {
+    hsFeature()
   }
 }

@@ -42,7 +42,7 @@ export default class linkSetting extends HTMLElement {
           document.getElementById(`link${i}HS`).innerText = '隐藏'
           document.getElementById(`link${i}`).style.display = 'none'
         } else {
-          chrome.storage.local.set({ [`link${i}HS`]: 'hide' });
+          chrome.storage.local.set({ [`link${i}HS`]: 'show' });
           document.getElementById(`link${i}HS`).className = 'hsFeature'
           document.getElementById(`link${i}HS`).innerText = '显示'
           document.getElementById(`link${i}`).style.display = ''

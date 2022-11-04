@@ -1,53 +1,5 @@
 import { elemenetGetId } from "../main/function.js";
 
-export function changeLink() {
-    function linkChange() {
-        elemenetGetId('changeLink').style.display = '';
-        elemenetGetId('blackBack').style.zIndex = '201';
-        elemenetGetId('blackBack').style.backgroundColor = '#00000050';
-    }
-    elemenetGetId('link1CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link1';
-    }
-    elemenetGetId('link2CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link2';
-    }
-    elemenetGetId('link3CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link3';
-    }
-    elemenetGetId('link4CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link4';
-    }
-    elemenetGetId('link5CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link5';
-    }
-    elemenetGetId('link6CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link6';
-    }
-    elemenetGetId('link7CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link7';
-    }
-    elemenetGetId('link8CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link8';
-    }
-    elemenetGetId('link9CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link9';
-    }
-    elemenetGetId('link10CH').onclick = function () {
-        linkChange();
-        elemenetGetId('linkNum').className = 'link10';
-    }
-}
-
 export function useChangeLink() {
     var numi = 0;
     var num = Number(elemenetGetId('paddingNum').innerText);

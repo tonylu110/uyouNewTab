@@ -48,6 +48,15 @@ export default class linkSetting extends HTMLElement {
           document.getElementById(`link${i}`).style.display = ''
         }
       })
+      document.getElementById(`link${i}CH`).addEventListener("click", () => {
+        this.linkChange()
+        document.getElementById('linkNum').className = `link${i}`
+      })
     }
+  }
+  linkChange() {
+    document.getElementById('changeLink').style.display = '';
+    document.getElementById('blackBack').style.zIndex = '201';
+    document.getElementById('blackBack').style.backgroundColor = '#00000050';
   }
 }

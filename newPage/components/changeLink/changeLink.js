@@ -8,7 +8,7 @@ export default class changeLink extends HTMLElement {
     this.style = 'display: none;'
     this.innerHTML = `
     <div id="linkNum"></div>
-    <div class="linkBtn" id="linkChangePadding"><img src="imgs/dLinkIcon.png" id="linkImg" hidden></div>
+    <div class="linkBtn" id="linkChangePadding"><img src="" id="linkImg" hidden></div>
     <div id="linkImgChange">
       <div id="linkImgName">选择你的图片</div>
       <input type="file" id="linkUpload" accept="image/*">

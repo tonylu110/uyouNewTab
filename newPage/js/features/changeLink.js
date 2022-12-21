@@ -1,6 +1,7 @@
 import { elemenetGetId } from "../main/function.js";
 
 export function useChangeLink() {
+    const imgUrl = elemenetGetId('linkImg').src
     var numi = 0;
     var num = Number(elemenetGetId('paddingNum').innerText);
     function close() {
@@ -9,7 +10,7 @@ export function useChangeLink() {
         num = 25;
         numi = 0;
         elemenetGetId('paddingNum').innerText = num;
-        elemenetGetId('linkImg').src = 'imgs/dLinkIcon.png';
+        elemenetGetId('linkImg').src = '';
         elemenetGetId('linkImg').hidden = true;
         elemenetGetId('linkChangePadding').style.padding = num + 'px';
         elemenetGetId('linkChangePadding').style.width = numi * 2 + 50 + 'px';
@@ -48,6 +49,9 @@ export function useChangeLink() {
     }
     elemenetGetId('useLink').onclick = function () {
         let linkImgUrl = elemenetGetId('linkImg').src;
+        if (linkImgUrl === imgUrl) {
+            linkImgUrl = document.getElementById('changeLinkInput').value + '/favicon.ico'
+        }
         let linkPadding = elemenetGetId('linkChangePadding').style.padding;
         let linkWidth = elemenetGetId('linkChangePadding').style.width;
         let linkHeight = elemenetGetId('linkChangePadding').style.height;
@@ -180,6 +184,13 @@ export function useChangeLink() {
                 elemenetGetId('blackBack').style.zIndex = '201';
             }
             console.log(changeLinkInput.slice(0, 8));
+        }
+    }
+
+    if (document.getElementById('changeLink').style.display === 'none') {
+        document.getElementById('changeLinkInput').onblur = () => {
+            document.getElementById('linkImg').src = document.getElementById('changeLinkInput').value + '/favicon.ico'
+            document.getElementById('linkImg').hidden = false
         }
     }
 }
